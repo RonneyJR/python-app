@@ -48,7 +48,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>img/Spotify Theme Music Background Dark Bkg.png</pixmap>
+    <pixmap>../img/Spotify Theme Music Background Dark Bkg.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -94,7 +94,7 @@
     <string notr="true"/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="txt_email">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -104,12 +104,12 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"> border: 2px solid white;
- border-radius: 20px;
- padding: 10px 16px;
+    <string notr="true">border: 2px solid white;
+border-radius: 20px;
+padding: 10px 16px;
 background-color: transparent;
  color: white;
-    font-size: 14px;</string>
+ font-size: 14px;</string>
    </property>
    <property name="text">
     <string/>
@@ -118,7 +118,7 @@ background-color: transparent;
     <string>Email Or Username</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_login">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -141,7 +141,7 @@ background-color: transparent;
     <string>Log In</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="txt_password">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -264,20 +264,40 @@ background-color: transparent;
     <string>Reset Password</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QPushButton" name="btn_eye">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>500</y>
-     <width>251</width>
-     <height>41</height>
+     <x>590</x>
+     <y>310</y>
+     <width>41</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/eye-slash-solid.svg</normaloff>../img/eye-slash-solid.svg</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_register">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>490</y>
+     <width>321</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"> color: white;
-    font-size: 15px;
+    <string notr="true"> background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
     font-weight: bold;
-    letter-spacing: 0.5px;</string>
+    font-size: 20px;</string>
    </property>
    <property name="text">
     <string>Don't have an account? Sign Up</string>
@@ -287,15 +307,16 @@ background-color: transparent;
   <zorder>listWidget</zorder>
   <zorder>label_2</zorder>
   <zorder>label_4</zorder>
-  <zorder>lineEdit</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>lineEdit_2</zorder>
+  <zorder>txt_email</zorder>
+  <zorder>btn_login</zorder>
+  <zorder>txt_password</zorder>
   <zorder>label</zorder>
   <zorder>label_5</zorder>
   <zorder>label_6</zorder>
   <zorder>checkBox</zorder>
   <zorder>label_7</zorder>
-  <zorder>label_8</zorder>
+  <zorder>btn_eye</zorder>
+  <zorder>btn_register</zorder>
  </widget>
  <resources/>
  <connections/>
