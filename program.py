@@ -179,7 +179,6 @@ class Home(QWidget):
     def __init__(self, email):
         super().__init__()
         self.setWindowTitle("Home")
-        self.setFixedSize(1000, 600)
         
         # Load UI
         uic.loadUi("ui/home.ui", self)

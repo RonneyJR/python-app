@@ -327,15 +327,15 @@ border-radius: 10px;</string>
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>360</x>
      <y>520</y>
-     <width>251</width>
+     <width>261</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">   color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 0.5px;</string>
    </property>
@@ -346,14 +346,22 @@ border-radius: 10px;</string>
   <widget class="QPushButton" name="btn_login">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>530</y>
-     <width>93</width>
-     <height>29</height>
+     <x>600</x>
+     <y>520</y>
+     <width>91</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"> background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: bold;</string>
+   </property>
    <property name="text">
-    <string>login</string>
+    <string>Login</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_eye_p">
@@ -365,8 +373,12 @@ border-radius: 10px;</string>
      <height>29</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+background:none;</string>
+   </property>
    <property name="text">
-    <string>PushButton</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_eye_cp">
@@ -378,8 +390,12 @@ border-radius: 10px;</string>
      <height>29</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+background:none;</string>
+   </property>
    <property name="text">
-    <string>PushButton</string>
+    <string/>
    </property>
   </widget>
  </widget>
