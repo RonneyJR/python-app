@@ -1,7 +1,8 @@
 from PyQt6.QtWidgets import *
-from PyQt6.Qtcore import *
+from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6 import uic
+import sys
 
 class Alert(QMessageBox):
     def error_message(self,title, message):
@@ -77,7 +78,7 @@ class Login(QWidget):
 class Register(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ui/login.ui", self)
+        uic.loadUi("ui/register.ui", self)
 
         self.email_input = self.findChild(QLineEdit, "txt_email")
         self.password_input = self.findChild(QLineEdit, "txt_password")
@@ -149,3 +150,10 @@ class Home(QWidget):
         uic.loadUi("ui/home.ui", self)
 
         self.email = email
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    login = Login()
+    login.show()
+    sys.exit(app.exec())
