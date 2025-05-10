@@ -1369,28 +1369,6 @@ font-size: 25px;
      <normaloff>../img/house-solid.svg</normaloff>../img/house-solid.svg</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_10">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>10</y>
-     <width>131</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> background-color: white;
-    color: black;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 20px;</string>
-   </property>
-   <property name="text">
-    <string>Sign Up</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_13">
    <property name="geometry">
     <rect>
@@ -1764,7 +1742,6 @@ background: none</string>
   <zorder>pushButton_4</zorder>
   <zorder>pushButton</zorder>
   <zorder>horizontalSlider</zorder>
-  <zorder>pushButton_10</zorder>
   <zorder>pushButton_13</zorder>
   <zorder>pushButton_14</zorder>
   <zorder>pushButton_15</zorder>
