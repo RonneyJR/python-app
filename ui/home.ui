@@ -1388,7 +1388,7 @@ font-size: 25px;
     font-size: 20px;</string>
    </property>
    <property name="text">
-    <string>Log In</string>
+    <string>Profile</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_14">
