@@ -367,43 +367,9 @@ border-radius: 10px;</string>
   <widget class="QPushButton" name="btn_eye_p">
    <property name="geometry">
     <rect>
-     <x>580</x>
+     <x>590</x>
      <y>290</y>
      <width>93</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:none;
-background:none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_eye_cp">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>370</y>
-     <width>93</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:none;
-background:none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_eye">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>370</y>
-     <width>41</width>
      <height>29</height>
     </rect>
    </property>
@@ -419,12 +385,12 @@ background:none;</string>
      <normaloff>../img/eye-slash-solid.svg</normaloff>../img/eye-slash-solid.svg</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_eye_2">
+  <widget class="QPushButton" name="btn_eye_cp">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>290</y>
-     <width>41</width>
+     <x>590</x>
+     <y>370</y>
+     <width>93</width>
      <height>29</height>
     </rect>
    </property>
