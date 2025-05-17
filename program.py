@@ -184,6 +184,18 @@ class Home(QWidget):
         uic.loadUi("ui/home.ui", self)
         
         self.email = email
+        self.stack_widget = self.findChild(QStackedWidget, "stackedWidget")
+        self.btn_profile = self.findChild(QPushButton, "btn_profile")
+        self.btn_home = self.findChild(QPushButton, "btn_home")
+        self.btn_favorite = self.findChild(QPushButton, "btn_favorite")
+        self.btn_playlist = self.findChild(QPushButton, "btn_playlist")
+
+        self.btn_home.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 0))
+        self.btn_profile.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 1))
+        self.btn_playlist.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 2))
+
+    def navigate_screen(self, stackWidget: QStackedWidget, index: int):
+        stackWidget.setCurrentIndex(index)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -191,3 +203,4 @@ if __name__ == "__main__":
     login = Login()
     login.show()
     sys.exit(app.exec())
+
