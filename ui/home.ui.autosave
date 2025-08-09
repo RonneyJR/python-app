@@ -42,15 +42,15 @@
     <string notr="true">background-color:rgb(79, 79, 79)</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>281</width>
+       <x>10</x>
+       <y>30</y>
+       <width>321</width>
        <height>61</height>
       </rect>
      </property>
@@ -63,7 +63,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">color:rgb(255, 255, 255);
-font-size: 35px;
+font-size: 45px;
 font-weight: bold;
  etter-spacing: 0.5px;
 </string>
@@ -1345,12 +1345,6 @@ font-size: 25px;
     <iconset>
      <normaloff>../img/house-solid.svg</normaloff>../img/house-solid.svg</iconset>
    </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
   </widget>
   <widget class="QPushButton" name="btn_profile">
    <property name="geometry">
@@ -1426,7 +1420,7 @@ border:none
   <widget class="QLabel" name="label_24">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>40</x>
      <y>120</y>
      <width>101</width>
      <height>20</height>
