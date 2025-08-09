@@ -25,6 +25,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent</string>
+   </property>
    <property name="orientation">
     <enum>Qt::Orientation::Horizontal</enum>
    </property>
@@ -42,15 +45,15 @@
     <string notr="true">background-color:rgb(79, 79, 79)</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>281</width>
+       <x>10</x>
+       <y>30</y>
+       <width>321</width>
        <height>61</height>
       </rect>
      </property>
@@ -63,9 +66,10 @@
      </property>
      <property name="styleSheet">
       <string notr="true">color:rgb(255, 255, 255);
-font-size: 35px;
+font-size: 45px;
 font-weight: bold;
  etter-spacing: 0.5px;
+background:transparent
 </string>
      </property>
      <property name="text">
@@ -458,6 +462,9 @@ background-color:rgb(99,99,99)</string>
        <height>251</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background:transparent</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -508,6 +515,26 @@ background-color:rgb(99,99,99)</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="label_40">
+     <property name="geometry">
+      <rect>
+       <x>-140</x>
+       <y>-60</y>
+       <width>1081</width>
+       <height>711</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/background.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>label_40</zorder>
     <zorder>label_62</zorder>
     <zorder>listWidget</zorder>
     <zorder>label_4</zorder>
@@ -535,7 +562,7 @@ background-color:rgb(99,99,99)</string>
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>70</x>
        <y>90</y>
        <width>131</width>
        <height>51</height>
@@ -545,7 +572,8 @@ background-color:rgb(99,99,99)</string>
       <string notr="true">   color: white;
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 0.5px;</string>
+    letter-spacing: 0.5px;
+background-color: transparent</string>
      </property>
      <property name="text">
       <string>Username:</string>
@@ -554,7 +582,7 @@ background-color:rgb(99,99,99)</string>
     <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>60</x>
        <y>150</y>
        <width>281</width>
        <height>41</height>
@@ -575,7 +603,7 @@ background-color: transparent;
     <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>70</x>
        <y>200</y>
        <width>131</width>
        <height>51</height>
@@ -585,7 +613,8 @@ background-color: transparent;
       <string notr="true">   color: white;
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 0.5px;</string>
+    letter-spacing: 0.5px;
+background-color: transparent</string>
      </property>
      <property name="text">
       <string>Email:</string>
@@ -594,7 +623,7 @@ background-color: transparent;
     <widget class="QLineEdit" name="lineEdit_3">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>60</x>
        <y>260</y>
        <width>281</width>
        <height>41</height>
@@ -615,8 +644,8 @@ background-color: transparent;
     <widget class="QLabel" name="label_20">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>310</y>
+       <x>630</x>
+       <y>100</y>
        <width>131</width>
        <height>51</height>
       </rect>
@@ -625,7 +654,8 @@ background-color: transparent;
       <string notr="true">   color: white;
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 0.5px;</string>
+    letter-spacing: 0.5px;
+background-color: transparent</string>
      </property>
      <property name="text">
       <string>Password:</string>
@@ -634,8 +664,8 @@ background-color: transparent;
     <widget class="QLineEdit" name="lineEdit_4">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>370</y>
+       <x>620</x>
+       <y>150</y>
        <width>281</width>
        <height>41</height>
       </rect>
@@ -655,8 +685,8 @@ background-color: transparent;
     <widget class="QLabel" name="label_21">
      <property name="geometry">
       <rect>
-       <x>650</x>
-       <y>90</y>
+       <x>630</x>
+       <y>230</y>
        <width>131</width>
        <height>51</height>
       </rect>
@@ -665,7 +695,8 @@ background-color: transparent;
       <string notr="true"> color: white;
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 0.5px;</string>
+    letter-spacing: 0.5px;
+background-color: transparent</string>
      </property>
      <property name="text">
       <string>Gender:</string>
@@ -674,8 +705,8 @@ background-color: transparent;
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>810</x>
-       <y>90</y>
+       <x>820</x>
+       <y>210</y>
        <width>111</width>
        <height>71</height>
       </rect>
@@ -701,8 +732,8 @@ background:none;</string>
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
-       <x>730</x>
-       <y>90</y>
+       <x>720</x>
+       <y>220</y>
        <width>121</width>
        <height>61</height>
       </rect>
@@ -728,8 +759,8 @@ background:none;</string>
     <widget class="QPushButton" name="pushButton_5">
      <property name="geometry">
       <rect>
-       <x>410</x>
-       <y>10</y>
+       <x>400</x>
+       <y>20</y>
        <width>131</width>
        <height>111</height>
       </rect>
@@ -753,30 +784,11 @@ border:none;
       </size>
      </property>
     </widget>
-    <widget class="QLabel" name="label_60">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>140</y>
-       <width>241</width>
-       <height>251</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/spotify-brands.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_28">
      <property name="geometry">
       <rect>
-       <x>650</x>
-       <y>180</y>
+       <x>620</x>
+       <y>300</y>
        <width>161</width>
        <height>51</height>
       </rect>
@@ -785,7 +797,9 @@ border:none;
       <string notr="true"> color: white;
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 0.5px;</string>
+    letter-spacing: 0.5px;
+background-color: transparent
+</string>
      </property>
      <property name="text">
       <string>Date And Birth:</string>
@@ -794,8 +808,8 @@ border:none;
     <widget class="QDateEdit" name="dateEdit">
      <property name="geometry">
       <rect>
-       <x>820</x>
-       <y>190</y>
+       <x>800</x>
+       <y>320</y>
        <width>110</width>
        <height>26</height>
       </rect>
@@ -807,8 +821,8 @@ border:none;
     <widget class="QPushButton" name="pushButton_20">
      <property name="geometry">
       <rect>
-       <x>400</x>
-       <y>450</y>
+       <x>370</x>
+       <y>420</y>
        <width>191</width>
        <height>51</height>
       </rect>
@@ -826,7 +840,48 @@ border:none;
       <string>Save Information</string>
      </property>
     </widget>
-    <zorder>label_60</zorder>
+    <widget class="QLabel" name="label_60">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>150</y>
+       <width>191</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/spotify-brands.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_38">
+     <property name="geometry">
+      <rect>
+       <x>-140</x>
+       <y>-60</y>
+       <width>1081</width>
+       <height>711</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/background.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>label_38</zorder>
     <zorder>label_18</zorder>
     <zorder>lineEdit_2</zorder>
     <zorder>label_19</zorder>
@@ -840,6 +895,7 @@ border:none;
     <zorder>label_28</zorder>
     <zorder>dateEdit</zorder>
     <zorder>pushButton_20</zorder>
+    <zorder>label_60</zorder>
    </widget>
    <widget class="QWidget" name="playlist">
     <widget class="QPushButton" name="pushButton_6">
@@ -890,46 +946,6 @@ border:none</string>
       </size>
      </property>
     </widget>
-    <widget class="QLabel" name="label_22">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>290</y>
-       <width>81</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/z6565142229589_4d2c9fcab1852a83f9480390dd317c4e.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_23">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>310</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;</string>
-     </property>
-     <property name="text">
-      <string>Mất Kết Nối</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_8">
      <property name="geometry">
       <rect>
@@ -966,6 +982,10 @@ border:none</string>
        <height>131</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 10px;
+border-radius:10px</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
@@ -975,10 +995,10 @@ border:none</string>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>81</width>
-        <height>81</height>
+        <x>0</x>
+        <y>-10</y>
+        <width>141</width>
+        <height>151</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -998,9 +1018,9 @@ border:none</string>
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>50</y>
-        <width>201</width>
-        <height>31</height>
+        <y>40</y>
+        <width>241</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1022,6 +1042,10 @@ font-size: 18px;</string>
        <height>131</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 10px;
+border-radius:10px</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
@@ -1031,10 +1055,10 @@ font-size: 18px;</string>
      <widget class="QLabel" name="label_26">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>81</width>
-        <height>81</height>
+        <x>-10</x>
+        <y>-10</y>
+        <width>141</width>
+        <height>151</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1056,7 +1080,7 @@ font-size: 18px;</string>
         <x>140</x>
         <y>50</y>
         <width>201</width>
-        <height>31</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1105,6 +1129,10 @@ border:none</string>
        <height>131</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 10px;
+border-radius:10px</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
@@ -1114,10 +1142,10 @@ border:none</string>
      <widget class="QLabel" name="label_30">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>81</width>
-        <height>81</height>
+        <x>-10</x>
+        <y>-10</y>
+        <width>141</width>
+        <height>151</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1136,10 +1164,10 @@ border:none</string>
      <widget class="QLabel" name="label_31">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>50</y>
+        <x>130</x>
+        <y>40</y>
         <width>201</width>
-        <height>31</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1188,12 +1216,56 @@ border:none</string>
        <height>131</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 10px;
+border-radius:10px</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Shadow::Raised</enum>
      </property>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>-10</y>
+        <width>141</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../img/z6565142229589_4d2c9fcab1852a83f9480390dd317c4e.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>40</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">etter-spacing: 0.5px;
+color:rgb(255, 255, 255);
+font-size: 18px;</string>
+      </property>
+      <property name="text">
+       <string>Mất Kết Nối</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QLabel" name="label_61">
      <property name="geometry">
@@ -1203,6 +1275,9 @@ border:none</string>
        <width>241</width>
        <height>261</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:transparent</string>
      </property>
      <property name="text">
       <string/>
@@ -1275,13 +1350,31 @@ border:none</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="label_39">
+     <property name="geometry">
+      <rect>
+       <x>-140</x>
+       <y>-60</y>
+       <width>1081</width>
+       <height>711</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/background.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>label_39</zorder>
     <zorder>label_61</zorder>
     <zorder>frame_4</zorder>
     <zorder>frame</zorder>
     <zorder>pushButton_6</zorder>
     <zorder>pushButton_7</zorder>
-    <zorder>label_22</zorder>
-    <zorder>label_23</zorder>
     <zorder>pushButton_8</zorder>
     <zorder>frame_2</zorder>
     <zorder>frame_3</zorder>
@@ -1293,7 +1386,7 @@ border:none</string>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>530</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -1349,8 +1442,8 @@ font-size: 25px;
   <widget class="QPushButton" name="btn_profile">
    <property name="geometry">
     <rect>
-     <x>930</x>
-     <y>10</y>
+     <x>940</x>
+     <y>0</y>
      <width>131</width>
      <height>51</height>
     </rect>
@@ -1383,7 +1476,8 @@ etter-spacing: 0.5px;
 color:rgb(255, 255, 255);
 font-size: 18px;
 background:none;
-border:none</string>
+border:none;
+background-color: transparent</string>
    </property>
    <property name="text">
     <string>Playlist:</string>
@@ -1420,14 +1514,15 @@ border:none
   <widget class="QLabel" name="label_24">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>40</x>
      <y>120</y>
      <width>101</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color:rgb(255, 255, 255)</string>
+    <string notr="true">color:rgb(255, 255, 255);
+background-color: transparent</string>
    </property>
    <property name="text">
     <string>Create Playlist</string>
@@ -1471,8 +1566,8 @@ border:none
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color:rgb(255,255,255)
-</string>
+    <string notr="true">color:rgb(255,255,255);
+background-color: transparent</string>
    </property>
    <property name="text">
     <string>Liked Songs</string>
@@ -1481,8 +1576,8 @@ border:none
   <widget class="QPushButton" name="pushButton_17">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>630</y>
+     <x>720</x>
+     <y>620</y>
      <width>91</width>
      <height>51</height>
     </rect>
@@ -1508,11 +1603,14 @@ background: none</string>
   <widget class="QSlider" name="horizontalSlider_2">
    <property name="geometry">
     <rect>
-     <x>910</x>
-     <y>640</y>
-     <width>121</width>
+     <x>800</x>
+     <y>630</y>
+     <width>141</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent</string>
    </property>
    <property name="orientation">
     <enum>Qt::Orientation::Horizontal</enum>
@@ -1521,7 +1619,7 @@ background: none</string>
   <widget class="QPushButton" name="pushButton_18">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>620</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -1548,7 +1646,7 @@ background: none</string>
   <widget class="QPushButton" name="pushButton_19">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>440</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -1603,7 +1701,8 @@ background: none</string>
    <property name="styleSheet">
     <string notr="true">etter-spacing: 0.5px;
 color:rgb(255, 255, 255);
-font-size: 18px;</string>
+font-size: 18px;
+background-color: transparent</string>
    </property>
    <property name="text">
     <string>Phép Màu</string>
@@ -1620,7 +1719,8 @@ font-size: 18px;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background:none;
-border:none
+border:none;
+background-color: transparent
 </string>
    </property>
    <property name="text">
@@ -1646,6 +1746,9 @@ border:none
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -1659,7 +1762,7 @@ border:none
   <widget class="QPushButton" name="pushButton_22">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>350</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -1693,7 +1796,8 @@ background: none</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color:rgb(255,255,255)</string>
+    <string notr="true">color:rgb(255,255,255);
+background-color: transparent</string>
    </property>
    <property name="text">
     <string>0:00</string>
@@ -1709,12 +1813,33 @@ background: none</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color:rgb(255,255,255)</string>
+    <string notr="true">color:rgb(255,255,255);
+background-color: transparent</string>
    </property>
    <property name="text">
     <string>4:21</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_37">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>-1</y>
+     <width>1081</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../img/background.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label_37</zorder>
   <zorder>stackedWidget</zorder>
   <zorder>btn_home</zorder>
   <zorder>pushButton</zorder>
