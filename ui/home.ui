@@ -45,7 +45,7 @@
     <string notr="true">background-color:rgb(79, 79, 79)</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
@@ -65,7 +65,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color:rgb(255, 255, 255);
+      <string notr="true">color:white;
 font-size: 45px;
 font-weight: bold;
  etter-spacing: 0.5px;
@@ -515,26 +515,6 @@ background-color:rgb(99,99,99)</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_40">
-     <property name="geometry">
-      <rect>
-       <x>-140</x>
-       <y>-60</y>
-       <width>1081</width>
-       <height>711</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/background.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <zorder>label_40</zorder>
     <zorder>label_62</zorder>
     <zorder>listWidget</zorder>
     <zorder>label_4</zorder>
@@ -559,89 +539,89 @@ background-color:rgb(99,99,99)</string>
     <zorder>label_3</zorder>
    </widget>
    <widget class="QWidget" name="profile">
-    <widget class="QLabel" name="label_18">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>90</y>
-       <width>131</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">   color: white;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-background-color: transparent</string>
-     </property>
-     <property name="text">
-      <string>Username:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>150</y>
-       <width>281</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"> border: 2px solid white;
- border-radius: 20px;
- padding: 10px 16px;
-background-color: transparent;
- color: white;
-    font-size: 14px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Username:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_19">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>200</y>
-       <width>131</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">   color: white;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-background-color: transparent</string>
-     </property>
-     <property name="text">
-      <string>Email:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>260</y>
-       <width>281</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"> border: 2px solid white;
- border-radius: 20px;
- padding: 10px 16px;
-background-color: transparent;
- color: white;
-    font-size: 14px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Email:</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>100</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">   color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+background-color: transparent</string>
+     </property>
+     <property name="text">
+      <string>Username:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_name_2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>160</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> border: 2px solid white;
+ border-radius: 20px;
+ padding: 10px 16px;
+background-color: transparent;
+ color: white;
+    font-size: 14px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Username:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>230</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">   color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+background-color: transparent</string>
+     </property>
+     <property name="text">
+      <string>Email:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_email_2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>300</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> border: 2px solid white;
+ border-radius: 20px;
+ padding: 10px 16px;
+background-color: transparent;
+ color: white;
+    font-size: 14px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Email:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="txt_password">
      <property name="geometry">
       <rect>
        <x>630</x>
@@ -661,7 +641,7 @@ background-color: transparent</string>
       <string>Password:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="txt_password_2">
      <property name="geometry">
       <rect>
        <x>620</x>
@@ -682,10 +662,10 @@ background-color: transparent;
       <string>Password:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_21">
+    <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>630</x>
+       <x>620</x>
        <y>230</y>
        <width>131</width>
        <height>51</height>
@@ -702,61 +682,7 @@ background-color: transparent</string>
       <string>Gender:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>820</x>
-       <y>210</y>
-       <width>111</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border:none;
-background:none;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../img/child-solid.svg</normaloff>../img/child-solid.svg</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>40</width>
-       <height>40</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>720</x>
-       <y>220</y>
-       <width>121</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border:none;
-background:none;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../img/child-dress-solid.svg</normaloff>../img/child-dress-solid.svg</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>40</width>
-       <height>40</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="btn_avatar">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -784,7 +710,7 @@ border:none;
       </size>
      </property>
     </widget>
-    <widget class="QLabel" name="label_28">
+    <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
        <x>620</x>
@@ -805,7 +731,7 @@ background-color: transparent
       <string>Date And Birth:</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit">
+    <widget class="QDateEdit" name="txt_birthday">
      <property name="geometry">
       <rect>
        <x>800</x>
@@ -844,7 +770,7 @@ background-color: transparent
      <property name="geometry">
       <rect>
        <x>370</x>
-       <y>150</y>
+       <y>160</y>
        <width>191</width>
        <height>201</height>
       </rect>
@@ -862,40 +788,36 @@ background-color: transparent
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_38">
+    <widget class="QComboBox" name="txt_gender">
      <property name="geometry">
       <rect>
-       <x>-140</x>
-       <y>-60</y>
-       <width>1081</width>
-       <height>711</height>
+       <x>750</x>
+       <y>250</y>
+       <width>76</width>
+       <height>26</height>
       </rect>
      </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/background.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
+     <item>
+      <property name="text">
+       <string>None</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Male</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Female</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Other</string>
+      </property>
+     </item>
     </widget>
-    <zorder>label_38</zorder>
-    <zorder>label_18</zorder>
-    <zorder>lineEdit_2</zorder>
-    <zorder>label_19</zorder>
-    <zorder>lineEdit_3</zorder>
-    <zorder>label_20</zorder>
-    <zorder>lineEdit_4</zorder>
-    <zorder>label_21</zorder>
-    <zorder>pushButton_2</zorder>
-    <zorder>pushButton_3</zorder>
-    <zorder>pushButton_5</zorder>
-    <zorder>label_28</zorder>
-    <zorder>dateEdit</zorder>
-    <zorder>pushButton_20</zorder>
-    <zorder>label_60</zorder>
    </widget>
    <widget class="QWidget" name="playlist">
     <widget class="QPushButton" name="pushButton_6">
@@ -1044,7 +966,8 @@ font-size: 18px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">padding: 10px;
-border-radius:10px</string>
+border-radius:10px;
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
@@ -1350,26 +1273,6 @@ border:none</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_39">
-     <property name="geometry">
-      <rect>
-       <x>-140</x>
-       <y>-60</y>
-       <width>1081</width>
-       <height>711</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/background.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <zorder>label_39</zorder>
     <zorder>label_61</zorder>
     <zorder>frame_4</zorder>
     <zorder>frame</zorder>
@@ -1820,26 +1723,6 @@ background-color: transparent</string>
     <string>4:21</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_37">
-   <property name="geometry">
-    <rect>
-     <x>2</x>
-     <y>-1</y>
-     <width>1081</width>
-     <height>721</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>../img/background.jpg</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <zorder>label_37</zorder>
   <zorder>stackedWidget</zorder>
   <zorder>btn_home</zorder>
   <zorder>pushButton</zorder>
