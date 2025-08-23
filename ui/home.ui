@@ -1208,7 +1208,7 @@ border-radius:10px</string>
      <widget class="QLabel" name="label_23">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>130</x>
         <y>40</y>
         <width>201</width>
         <height>41</height>
@@ -1255,7 +1255,7 @@ border:none</string>
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>130</y>
+       <y>120</y>
        <width>241</width>
        <height>261</height>
       </rect>
@@ -1371,35 +1371,6 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_home">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>60</y>
-     <width>131</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:none;
-border:none;
-font-weight: bold;
-etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 25px;
-
-
-
-</string>
-   </property>
-   <property name="text">
-    <string>  Home</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../img/house-solid.svg</normaloff>../img/house-solid.svg</iconset>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_profile">
    <property name="geometry">
     <rect>
@@ -1425,10 +1396,10 @@ font-size: 25px;
   <widget class="QPushButton" name="btn_playlist">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>-10</x>
      <y>130</y>
-     <width>51</width>
-     <height>29</height>
+     <width>71</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -1450,30 +1421,13 @@ border:none
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="label_24">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>130</y>
-     <width>101</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:rgb(255, 255, 255);
-background-color: transparent</string>
-   </property>
-   <property name="text">
-    <string>Create Playlist</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_favorite">
    <property name="geometry">
     <rect>
      <x>-20</x>
-     <y>190</y>
-     <width>93</width>
-     <height>29</height>
+     <y>180</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -1490,7 +1444,7 @@ border:none
    </property>
    <property name="iconSize">
     <size>
-     <width>30</width>
+     <width>40</width>
      <height>30</height>
     </size>
    </property>
@@ -1506,7 +1460,8 @@ border:none
    </property>
    <property name="styleSheet">
     <string notr="true">color:rgb(255,255,255);
-background-color: transparent</string>
+background-color: transparent;
+font-size: 15px</string>
    </property>
    <property name="text">
     <string>Liked Songs</string>
@@ -1759,13 +1714,64 @@ background-color: transparent</string>
     <string>4:21</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_24">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>140</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255, 255, 255);
+background-color: transparent;
+font-size: 15px</string>
+   </property>
+   <property name="text">
+    <string>Create Playlist</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_home">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>60</y>
+     <width>161</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border:none;
+font-weight: bold;
+etter-spacing: 0.5px;
+color:rgb(255, 255, 255);
+font-size: 25px;
+
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>  Home</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/house-solid.svg</normaloff>../img/house-solid.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
   <zorder>stackedWidget</zorder>
-  <zorder>btn_home</zorder>
   <zorder>pushButton</zorder>
   <zorder>horizontalSlider</zorder>
   <zorder>btn_profile</zorder>
   <zorder>btn_playlist</zorder>
-  <zorder>label_24</zorder>
   <zorder>btn_favorite</zorder>
   <zorder>label_32</zorder>
   <zorder>pushButton_17</zorder>
@@ -1779,6 +1785,8 @@ background-color: transparent</string>
   <zorder>pushButton_22</zorder>
   <zorder>label_35</zorder>
   <zorder>label_36</zorder>
+  <zorder>label_24</zorder>
+  <zorder>btn_home</zorder>
  </widget>
  <resources/>
  <connections/>
