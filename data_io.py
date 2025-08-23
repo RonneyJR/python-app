@@ -1,7 +1,7 @@
 import json
 
 def load_json(file_path):
-    with open("data/anime.json", "r") as f:
+    with open(file_path, "r") as f:
         data = json.load(f)
     return data
 
@@ -17,7 +17,8 @@ def create_user(email, password, name, birthday = "", gender = ""):
         "password": password,
         "name": name,
         "birthday": birthday,
-        "gender": gender
+        "gender": gender,
+        "avatar": ""
     })
     write_json("data/users.json", users)
 
@@ -42,7 +43,7 @@ def get_user_by_email_and_password(email, password):
             return user
         return None
 
-def update_user(email, password, name, birthday = "", gender = ""):
+def update_user(id, name, birthday = "", gender = ""):
     users = load_json("data/users.json")
     for user in users:
         if user["id"] == id:

@@ -663,7 +663,7 @@ background-color: transparent</string>
       <string>Username:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txt_name_2">
+    <widget class="QLineEdit" name="txt_name">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -704,7 +704,7 @@ background-color: transparent</string>
       <string>Email:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txt_email_2">
+    <widget class="QLineEdit" name="txt_email">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -723,47 +723,6 @@ background-color: transparent;
      </property>
      <property name="placeholderText">
       <string>Email:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="txt_password">
-     <property name="geometry">
-      <rect>
-       <x>630</x>
-       <y>100</y>
-       <width>131</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">   color: white;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-background-color: transparent</string>
-     </property>
-     <property name="text">
-      <string>Password:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txt_password_2">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>150</y>
-       <width>281</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"> border: 2px solid white;
- border-radius: 20px;
- padding: 10px 16px;
-background-color: transparent;
- color: white;
-    font-size: 14px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Password:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_19">
