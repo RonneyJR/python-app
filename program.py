@@ -71,7 +71,7 @@ class Login(QWidget):
         user = get_user_by_email_and_password(email, password)
         if user:
             msg.success_message("Login", "Welcome to the system")
-            self.show_home(email)
+            self.show_home(user["id"])
             return
         
         msg.error_message("Login", "Invalid email or password")
@@ -82,8 +82,8 @@ class Login(QWidget):
         self.register.show()
         self.close()    
 
-    def show_home(self, email):
-        self.home = Home(email)
+    def show_home(self, id):
+        self.home = Home(id)
         self.home.show()
         self.close()
 
@@ -131,15 +131,15 @@ class Register(QWidget):
         confirm_password = self.confirm_password_input.text().strip()
 
         if email == "":
-             msg.error_message("Register", "Email is required")
-             self.email_input.setFocus()
-             return
+            msg.error_message("Register", "Email is required")
+            self.email_input.setFocus()
+            return
         
         if password == "":
             msg.error_message("Register", "Password is required")
             self.password_input.setFocus()
             return
-          
+        
         if confirm_password == "":
             msg.error_message("Register", "Confirm Password is required")
             self.confirm_password_input.setFocus()
@@ -149,20 +149,14 @@ class Register(QWidget):
             msg.error_message("Register", "Password and Confirm Password do not match")
             self.password_input.setFocus()
             return
-        
-        # Create users.txt if it doesn't exist
-        if not os.path.exists("data/users.txt"):
-            with open("data/users.txt", "w") as file:
-                pass
-                
+
         user = get_user_by_email(email)
         if user:
             msg.error_message("Register", "Email already exists")
             self.email_input.setFocus()
             return   
         
-        with open("data/users.txt", "a") as file:
-            file.write(f"{email},{password},{name}\n")
+        create_user(email, password, name)
         
         msg.success_message("Register", "Account created successfully")
         self.show_login()
@@ -189,41 +183,45 @@ class Home(QWidget):
         self.btn_home = self.findChild(QPushButton, "btn_home")
         self.btn_favorite = self.findChild(QPushButton, "btn_favorite")
         self.btn_playlist = self.findChild(QPushButton, "btn_playlist")
-        btn_save_account = self.findChild(QPushButton, "btn_save_account")
+        self.btn_save_account = self.findChild(QPushButton, "btn_save_account")
 
         #user
         self.txt_name = self.findChild(QLineEdit, "txt_name")
         self.txt_email = self.findChild(QLineEdit, "txt_email")
-        self.txt_birthday = self.findChild(QLineEdit, "txt_birthday")
-        self.txt_gender = self.findChild(QLineEdit, "txt_gender")
-        self.txt_avatar = self.findChild(QLineEdit, "txt_avatar")
+        self.txt_birthday = self.findChild(QDateEdit, "txt_birthday")
+        self.txt_gender = self.findChild(QComboBox, "txt_gender")
+        self.btn_avatar = self.findChild(QPushButton, "btn_avatar")
 
         self.btn_home.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 0))
         self.btn_profile.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 1))
         self.btn_playlist.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 2))
+        self.btn_save_account.clicked.connect(self.update_user_info)
+        self.btn_avatar.clicked.connect(self.update_avatar)
 
     def navigate_screen(self, stackWidget: QStackedWidget, index: int):
         stackWidget.setCurrentIndex(index)
 
     def load_user_info(self):
+        self.user = get_user_by_id(self.id)
         self.txt_name.setText(self.user["name"])
         self.txt_email.setText(self.user["email"])
-        self.txt_birthday.setDate(QDate.fromString(self.user["birthday"], "dd/mm/yyyy"))
+        self.txt_birthday.setDate(QDate.fromString(self.user["birthday"], "dd/MM/yyyy"))
         self.txt_gender.setCurrentText(self.user["gender"])
-        self.btn_avatar.setIcon(QIcon(self.user["avatar"]))
+        self.btn_avatar.setIcon(QIcon(self.user["avatar"] if self.user["avatar"] else "img/circle-user-solid.svg"))
 
     def update_avatar(self):
-        file,_ = QFileDialog.getOpenFileNam(self,"Select Image","","Image Files(*.png *.jpg *jpeg *bmp)")
+        file,_ = QFileDialog.getOpenFileName(self,"Select Image","","Image Files(*.png *.jpg *jpeg *bmp)")
         if file:
             self.user["avatar"] = file
-            self.btn_avatar.setIcon(QIcon(file))
+            self.btn_avatar.setIcon(QIcon(file if file else "img/default-avatar.png"))
             update_user_avatar(self.id, file)
-    
+            msg.success_message("Update", "Avatar updated succesfully")
+
     def update_user_info(self):
         name = self.txt_name.text().strip()
-        birthday = self.txt_birthday.date().toString("dd/mm/yyyy")
+        birthday = self.txt_birthday.date().toString("dd/MM/yyyy")
         gender = self.txt_gender.currentText()
-        update_user(self, id, name, birthday, gender)
+        update_user(self.id, name, birthday, gender)
         msg.success_message("Update", "User info updated succesfully")
         self.load_user_info()
 
@@ -231,5 +229,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     msg = Alert()
     login = Login()
+    login = Home(1)
     login.show()
     sys.exit(app.exec())
