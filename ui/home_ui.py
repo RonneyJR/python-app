@@ -731,3 +731,4 @@ class Ui_Form(object):
         self.label_33.setText(_translate("Form", "Phép Màu"))
         self.label_35.setText(_translate("Form", "0:00"))
         self.label_36.setText(_translate("Form", "4:21"))
+

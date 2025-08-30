@@ -63,7 +63,7 @@
 }background-color:rgb(79, 79, 79)</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
@@ -949,7 +949,7 @@ border-radius:10px</string>
        <rect>
         <x>140</x>
         <y>40</y>
-        <width>241</width>
+        <width>221</width>
         <height>51</height>
        </rect>
       </property>
@@ -965,7 +965,7 @@ font-size: 18px;</string>
      <widget class="QPushButton" name="pushButton_7">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>340</x>
         <y>30</y>
         <width>111</width>
         <height>61</height>
@@ -1037,7 +1037,7 @@ border-radius:10px</string>
         <x>130</x>
         <y>40</y>
         <width>201</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1124,7 +1124,7 @@ border-radius:10px</string>
         <x>130</x>
         <y>40</y>
         <width>201</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1211,7 +1211,7 @@ border-radius:10px</string>
         <x>130</x>
         <y>40</y>
         <width>201</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1226,7 +1226,7 @@ font-size: 18px;</string>
      <widget class="QPushButton" name="pushButton_8">
       <property name="geometry">
        <rect>
-        <x>320</x>
+        <x>330</x>
         <y>30</y>
         <width>111</width>
         <height>61</height>
