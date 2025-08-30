@@ -1,5 +1,49 @@
 import json
 
+
+def remove_vietnamese_signs(text: str) -> str:
+    # Replace Vietnamese characters with their non-accented equivalents
+    replacements = {
+        'àáạảãâầấậẩẫăằắặẳẵ': 'a',
+        'ÀÁẠẢÃĂẰẮẶẲẴÂẦẤẬẨẪ': 'A', 
+        'èéẹẻẽêềếệểễ': 'e',
+        'ÈÉẸẺẼÊỀẾỆỂỄ': 'E',
+        'òóọỏõôồốộổỗơờớợởỡ': 'o', 
+        'ÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠ': 'O',
+        'ìíịỉĩ': 'i',
+        'ÌÍỊỈĨ': 'I',
+        'ùúụủũưừứựửữ': 'u',
+        'ƯỪỨỰỬỮÙÚỤỦŨ': 'U',
+        'ỳýỵỷỹ': 'y',
+        'ỲÝỴỶỸ': 'Y',
+        'đ': 'd',
+        'Đ': 'D'
+    }
+    
+    for vietnamese, latin in replacements.items():
+        for char in vietnamese:
+            text = text.replace(char, latin)
+    return text
+
+def build_alias(name: str) -> str:
+    # Remove Vietnamese characters
+    name = remove_vietnamese_signs(name)
+    # Replace hyphens with spaces
+    name = name.replace('-', ' ')
+    # Convert to lowercase
+    name = name.lower()
+    # Trim spaces
+    name = name.strip()
+    # Replace spaces with hyphens
+    name = name.replace(' ', '-')
+    # Remove any characters that aren't a-z, 0-9, or hyphen
+    name = ''.join(c for c in name if c.isalnum() or c == '-')
+    # Replace multiple hyphens with single hyphen
+    while '--' in name:
+        name = name.replace('--', '-')
+    return name
+
+
 def load_json(file_path):
     with open(file_path, "r") as f:
         data = json.load(f)
@@ -61,3 +105,142 @@ def update_user_avatar(id, avatar):
             user["avatar"] = avatar
             break
     write_json("data/users.json", users)
+
+def get_songs_by_name_json(name):
+    """Get songs by name using JSON file"""
+    try:
+        songs = load_json("data/songs.json")
+        if not name:
+            return songs[:50]
+        
+        name_lower = name.lower()
+        filtered_songs = []
+        for song in songs:
+            if (name_lower in song.get('name', '').lower() or 
+                name_lower in song.get('alias', '').lower() or
+                name_lower in song.get('artist_names', '').lower()):
+                filtered_songs.append(song)
+                if len(filtered_songs) >= 50:
+                    break
+        return filtered_songs
+    except Exception as e:
+        print(f"Error loading songs from JSON: {e}")
+        return []
+
+def get_first_15_songs_json():
+    """Get first 15 songs using JSON file"""
+    try:
+        songs = load_json("data/songs.json")
+        return songs[:15]
+    except Exception as e:
+        print(f"Error loading songs from JSON: {e}")
+        return []
+
+def get_song_by_id_json(song_id):
+    """Get song by ID using JSON file"""
+    try:
+        songs = load_json("data/songs.json")
+        for song in songs:
+            if song.get('id') == song_id:
+                return song
+        return None
+    except Exception as e:
+        print(f"Error loading song from JSON: {e}")
+        return None
+
+# New playlist functions using JSON
+def is_song_in_user_playlist_json(user_id, song_id):
+    """Check if song is in user's playlist using JSON"""
+    try:
+        playlists = load_json("data/playlists.json")
+        for playlist in playlists:
+            if (playlist.get('user_id') == user_id and 
+                playlist.get('song_id') == song_id):
+                return True
+        return False
+    except Exception as e:
+        print(f"Error checking playlist: {e}")
+        return False
+
+def get_user_playlist_songs_json(user_id):
+    """Get all songs in user's playlist using JSON"""
+    try:
+        playlists = load_json("data/playlists.json")
+        songs = load_json("data/songs.json")
+        
+        user_songs = []
+        for playlist in playlists:
+            if playlist.get('user_id') == user_id:
+                song_id = playlist.get('song_id')
+                for song in songs:
+                    if song.get('id') == song_id:
+                        user_songs.append(song)
+                        break
+        return user_songs
+    except Exception as e:
+        print(f"Error loading playlist songs: {e}")
+        return []
+
+def add_song_to_user_playlist_json(user_id, song_id):
+    """Add song to user's playlist using JSON"""
+    try:
+        playlists = load_json("data/playlists.json")
+        
+        # Check if song already exists
+        if is_song_in_user_playlist_json(user_id, song_id):
+            return False
+        
+        # Get song details
+        song = get_song_by_id_json(song_id)
+        if not song:
+            return False
+        
+        # Generate next ID
+        next_id = 1
+        if playlists:
+            next_id = max(p.get('id', 0) for p in playlists) + 1
+        
+        new_playlist_item = {
+            'id': next_id,
+            'user_id': user_id,
+            'song_id': song_id,
+            'name': 'My Playlist',
+            'song_name': song.get('name', ''),
+            'image_path': song.get('image_path', ''),
+            'file_path': song.get('file_path', '')
+        }
+        
+        playlists.append(new_playlist_item)
+        write_json("data/playlists.json", playlists)
+        return True
+    except Exception as e:
+        print(f"Error adding song to playlist: {e}")
+        return False
+
+def remove_song_from_user_playlist_json(user_id, song_id):
+    """Remove song from user's playlist using JSON"""
+    try:
+        playlists = load_json("data/playlists.json")
+        
+        # Remove all matching playlist items
+        playlists = [p for p in playlists 
+                     if not (p.get('user_id') == user_id and p.get('song_id') == song_id)]
+        
+        write_json("data/playlists.json", playlists)
+        return True
+    except Exception as e:
+        print(f"Error removing song from playlist: {e}")
+        return False
+
+# Initialize playlists.json if it doesn't exist
+def init_playlists_file():
+    """Initialize playlists.json file if it doesn't exist"""
+    try:
+        import os
+        if not os.path.exists("data/playlists.json"):
+            write_json("data/playlists.json", [])
+    except Exception as e:
+        print(f"Error initializing playlists file: {e}")
+
+# Initialize files when module is imported
+init_playlists_file()

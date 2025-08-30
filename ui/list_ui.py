@@ -15,6 +15,16 @@ class Ui_Form(object):
         Form.resize(425, 589)
         self.label = QtWidgets.QLabel(parent=Form)
         self.label.setGeometry(QtCore.QRect(0, 0, 421, 601))
+        self.label.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,   /* bắt đầu ở trên */\n"
+"        x2:0, y2:1,   /* kéo xuống dưới */\n"
+"        stop:0 #0f2027,   /* đen đậm trên cùng */\n"
+"        stop:0.5 #203a43, /* xanh đậm ở giữa */\n"
+"        stop:1 #2c5364    /* xanh teal ở dưới */\n"
+"    );\n"
+"}")
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/black.jpg"))
         self.label.setScaledContents(True)

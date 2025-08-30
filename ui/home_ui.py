@@ -13,15 +13,33 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1080, 720)
-        Form.setStyleSheet("background-color:rgb(79,79,79)")
+        Form.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,   /* bắt đầu ở trên */\n"
+"        x2:0, y2:1,   /* kéo xuống dưới */\n"
+"        stop:0 #0f2027,   /* đen đậm trên cùng */\n"
+"        stop:0.5 #203a43, /* xanh đậm ở giữa */\n"
+"        stop:1 #2c5364    /* xanh teal ở dưới */\n"
+"    );\n"
+"}background-color:rgb(79,79,79)")
         self.horizontalSlider = QtWidgets.QSlider(parent=Form)
-        self.horizontalSlider.setGeometry(QtCore.QRect(350, 680, 431, 22))
+        self.horizontalSlider.setGeometry(QtCore.QRect(380, 680, 431, 22))
         self.horizontalSlider.setStyleSheet("background-color: transparent")
         self.horizontalSlider.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
         self.stackedWidget = QtWidgets.QStackedWidget(parent=Form)
-        self.stackedWidget.setGeometry(QtCore.QRect(140, 60, 941, 531))
-        self.stackedWidget.setStyleSheet("background-color:rgb(79, 79, 79)")
+        self.stackedWidget.setGeometry(QtCore.QRect(140, 60, 941, 541))
+        self.stackedWidget.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,   /* bắt đầu ở trên */\n"
+"        x2:0, y2:1,   /* kéo xuống dưới */\n"
+"        stop:0 #0f2027,   /* đen đậm trên cùng */\n"
+"        stop:0.5 #203a43, /* xanh đậm ở giữa */\n"
+"        stop:1 #2c5364    /* xanh teal ở dưới */\n"
+"    );\n"
+"}background-color:rgb(79, 79, 79)")
         self.stackedWidget.setObjectName("stackedWidget")
         self.home = QtWidgets.QWidget()
         self.home.setObjectName("home")
@@ -47,7 +65,15 @@ class Ui_Form(object):
         self.label_5.setObjectName("label_5")
         self.listWidget = QtWidgets.QListWidget(parent=self.home)
         self.listWidget.setGeometry(QtCore.QRect(20, 120, 221, 91))
-        self.listWidget.setStyleSheet("background-color:rgb(99, 99, 99);\n"
+        self.listWidget.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,\n"
+"        x2:1, y2:0,                /* gradient ngang (trái → phải) */\n"
+"        stop:0 #0a3d3d,            /* xanh đậm bên trái */\n"
+"        stop:1 #0f2027             /* xanh đen bên phải */\n"
+"    );\n"
+"}\n"
 "padding: 10px;\n"
 "border-radius:10px\n"
 "")
@@ -63,11 +89,20 @@ class Ui_Form(object):
 "  etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;\n"
-"background-color:rgb(99,99,99)")
+"background-color:transparent\n"
+"")
         self.label_6.setObjectName("label_6")
         self.listWidget_2 = QtWidgets.QListWidget(parent=self.home)
         self.listWidget_2.setGeometry(QtCore.QRect(280, 120, 291, 91))
-        self.listWidget_2.setStyleSheet("background-color:rgb(99, 99, 99);\n"
+        self.listWidget_2.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,\n"
+"        x2:1, y2:0,                /* gradient ngang (trái → phải) */\n"
+"        stop:0 #0a3d3d,            /* xanh đậm bên trái */\n"
+"        stop:1 #0f2027             /* xanh đen bên phải */\n"
+"    );\n"
+"}\n"
 "padding: 10px;\n"
 "border-radius:10px\n"
 "")
@@ -89,18 +124,27 @@ class Ui_Form(object):
 "  etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;\n"
-"background-color:rgb(99,99,99)")
+"background-color:transparent\n"
+"")
         self.label_8.setObjectName("label_8")
         self.listWidget_3 = QtWidgets.QListWidget(parent=self.home)
         self.listWidget_3.setGeometry(QtCore.QRect(620, 120, 241, 91))
-        self.listWidget_3.setStyleSheet("background-color:rgb(99, 99, 99);\n"
+        self.listWidget_3.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,\n"
+"        x2:1, y2:0,                /* gradient ngang (trái → phải) */\n"
+"        stop:0 #0a3d3d,            /* xanh đậm bên trái */\n"
+"        stop:1 #0f2027             /* xanh đen bên phải */\n"
+"    );\n"
+"}\n"
 "padding: 10px;\n"
 "border-radius:10px\n"
 "")
         self.listWidget_3.setObjectName("listWidget_3")
         self.label_9 = QtWidgets.QLabel(parent=self.home)
         self.label_9.setGeometry(QtCore.QRect(620, 120, 91, 91))
-        self.label_9.setStyleSheet("")
+        self.label_9.setStyleSheet("border-radius: 40px")
         self.label_9.setText("")
         self.label_9.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/z6498843329317_d5f9a2982984e39be71fa63c56255d28.jpg"))
         self.label_9.setScaledContents(True)
@@ -116,11 +160,20 @@ class Ui_Form(object):
 "  etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;\n"
-"background-color:rgb(99,99,99)")
+"background-color:transparent\n"
+"")
         self.label_10.setObjectName("label_10")
         self.listWidget_4 = QtWidgets.QListWidget(parent=self.home)
         self.listWidget_4.setGeometry(QtCore.QRect(20, 270, 221, 91))
-        self.listWidget_4.setStyleSheet("background-color:rgb(99, 99, 99);\n"
+        self.listWidget_4.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,\n"
+"        x2:1, y2:0,                /* gradient ngang (trái → phải) */\n"
+"        stop:0 #0a3d3d,            /* xanh đậm bên trái */\n"
+"        stop:1 #0f2027             /* xanh đen bên phải */\n"
+"    );\n"
+"}\n"
 "padding: 10px;\n"
 "border-radius:10px\n"
 "")
@@ -142,17 +195,27 @@ class Ui_Form(object):
 "  etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;\n"
-"background-color:rgb(99,99,99)")
+"background-color:transparent\n"
+"")
         self.label_12.setObjectName("label_12")
         self.listWidget_5 = QtWidgets.QListWidget(parent=self.home)
         self.listWidget_5.setGeometry(QtCore.QRect(280, 270, 291, 91))
-        self.listWidget_5.setStyleSheet("background-color:rgb(99, 99, 99);\n"
+        self.listWidget_5.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,\n"
+"        x2:1, y2:0,                /* gradient ngang (trái → phải) */\n"
+"        stop:0 #0a3d3d,            /* xanh đậm bên trái */\n"
+"        stop:1 #0f2027             /* xanh đen bên phải */\n"
+"    );\n"
+"}\n"
 "padding: 10px;\n"
 "border-radius:10px\n"
 "")
         self.listWidget_5.setObjectName("listWidget_5")
         self.label_13 = QtWidgets.QLabel(parent=self.home)
         self.label_13.setGeometry(QtCore.QRect(280, 270, 91, 91))
+        self.label_13.setStyleSheet("")
         self.label_13.setText("")
         self.label_13.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/z6498876897954_59ddeff9bd8129a9120778cdb6c89686.jpg"))
         self.label_13.setScaledContents(True)
@@ -168,13 +231,20 @@ class Ui_Form(object):
 "  etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;\n"
-"background-color:rgb(99,99,99)\n"
-"\n"
+"background-color:transparent\n"
 "")
         self.label_14.setObjectName("label_14")
         self.listWidget_6 = QtWidgets.QListWidget(parent=self.home)
         self.listWidget_6.setGeometry(QtCore.QRect(620, 270, 241, 91))
-        self.listWidget_6.setStyleSheet("background-color:rgb(99, 99, 99);\n"
+        self.listWidget_6.setStyleSheet("QWidget {\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0, y1:0,\n"
+"        x2:1, y2:0,                /* gradient ngang (trái → phải) */\n"
+"        stop:0 #0a3d3d,            /* xanh đậm bên trái */\n"
+"        stop:1 #0f2027             /* xanh đen bên phải */\n"
+"    );\n"
+"}\n"
 "padding: 10px;\n"
 "border-radius:10px\n"
 "")
@@ -196,17 +266,19 @@ class Ui_Form(object):
 "  etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;\n"
-"background-color:rgb(99,99,99)")
+"background-color:transparent\n"
+"")
         self.label_16.setObjectName("label_16")
         self.label_62 = QtWidgets.QLabel(parent=self.home)
-        self.label_62.setGeometry(QtCore.QRect(300, 110, 241, 251))
-        self.label_62.setStyleSheet("background:transparent")
+        self.label_62.setGeometry(QtCore.QRect(300, 130, 241, 251))
+        self.label_62.setStyleSheet("background:transparent\n"
+"")
         self.label_62.setText("")
         self.label_62.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/spotify-brands.svg"))
         self.label_62.setScaledContents(True)
         self.label_62.setObjectName("label_62")
         self.lineEdit = QtWidgets.QLineEdit(parent=self.home)
-        self.lineEdit.setGeometry(QtCore.QRect(340, 40, 321, 51))
+        self.lineEdit.setGeometry(QtCore.QRect(350, 40, 321, 51))
         self.lineEdit.setStyleSheet(" border: 2px solid white;\n"
 "    border-radius: 20px;\n"
 "    padding: 10px 16px;\n"
@@ -215,11 +287,19 @@ class Ui_Form(object):
 "    font-size: 25px;")
         self.lineEdit.setObjectName("lineEdit")
         self.label_3 = QtWidgets.QLabel(parent=self.home)
-        self.label_3.setGeometry(QtCore.QRect(610, 50, 21, 21))
+        self.label_3.setGeometry(QtCore.QRect(630, 50, 21, 21))
+        self.label_3.setStyleSheet("background-color: transparent\n"
+"")
         self.label_3.setText("")
         self.label_3.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/magnifying-glass-solid.svg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
+        self.comboBox = QtWidgets.QComboBox(parent=self.home)
+        self.comboBox.setGeometry(QtCore.QRect(690, 50, 76, 26))
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.label_62.raise_()
         self.listWidget.raise_()
         self.label_4.raise_()
@@ -237,11 +317,12 @@ class Ui_Form(object):
         self.listWidget_5.raise_()
         self.label_13.raise_()
         self.label_14.raise_()
+        self.lineEdit.raise_()
+        self.label_3.raise_()
         self.listWidget_6.raise_()
         self.label_15.raise_()
         self.label_16.raise_()
-        self.lineEdit.raise_()
-        self.label_3.raise_()
+        self.comboBox.raise_()
         self.stackedWidget.addWidget(self.home)
         self.profile = QtWidgets.QWidget()
         self.profile.setObjectName("profile")
@@ -280,7 +361,7 @@ class Ui_Form(object):
 "    font-size: 14px;")
         self.txt_email.setObjectName("txt_email")
         self.label_19 = QtWidgets.QLabel(parent=self.profile)
-        self.label_19.setGeometry(QtCore.QRect(620, 230, 131, 51))
+        self.label_19.setGeometry(QtCore.QRect(620, 240, 131, 51))
         self.label_19.setStyleSheet(" color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
@@ -288,7 +369,7 @@ class Ui_Form(object):
 "background-color: transparent")
         self.label_19.setObjectName("label_19")
         self.btn_avatar = QtWidgets.QPushButton(parent=self.profile)
-        self.btn_avatar.setGeometry(QtCore.QRect(400, 20, 131, 111))
+        self.btn_avatar.setGeometry(QtCore.QRect(400, 70, 131, 111))
         self.btn_avatar.setStyleSheet("background:none;\n"
 "border:none;\n"
 "")
@@ -299,7 +380,7 @@ class Ui_Form(object):
         self.btn_avatar.setIconSize(QtCore.QSize(100, 100))
         self.btn_avatar.setObjectName("btn_avatar")
         self.label_18 = QtWidgets.QLabel(parent=self.profile)
-        self.label_18.setGeometry(QtCore.QRect(620, 300, 161, 51))
+        self.label_18.setGeometry(QtCore.QRect(620, 310, 161, 51))
         self.label_18.setStyleSheet(" color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
@@ -308,11 +389,11 @@ class Ui_Form(object):
 "")
         self.label_18.setObjectName("label_18")
         self.txt_birthday = QtWidgets.QDateEdit(parent=self.profile)
-        self.txt_birthday.setGeometry(QtCore.QRect(800, 320, 110, 26))
+        self.txt_birthday.setGeometry(QtCore.QRect(800, 330, 110, 26))
         self.txt_birthday.setStyleSheet("color:rgb(255, 255, 255)")
         self.txt_birthday.setObjectName("txt_birthday")
         self.btn_save_account = QtWidgets.QPushButton(parent=self.profile)
-        self.btn_save_account.setGeometry(QtCore.QRect(370, 420, 191, 51))
+        self.btn_save_account.setGeometry(QtCore.QRect(370, 430, 191, 51))
         self.btn_save_account.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"
@@ -322,49 +403,30 @@ class Ui_Form(object):
 "    font-size: 20px;")
         self.btn_save_account.setObjectName("btn_save_account")
         self.label_60 = QtWidgets.QLabel(parent=self.profile)
-        self.label_60.setGeometry(QtCore.QRect(370, 160, 191, 201))
+        self.label_60.setGeometry(QtCore.QRect(370, 190, 191, 201))
         self.label_60.setStyleSheet("background-color: transparent")
         self.label_60.setText("")
         self.label_60.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/spotify-brands.svg"))
         self.label_60.setScaledContents(True)
         self.label_60.setObjectName("label_60")
         self.txt_gender = QtWidgets.QComboBox(parent=self.profile)
-        self.txt_gender.setGeometry(QtCore.QRect(750, 250, 76, 26))
+        self.txt_gender.setGeometry(QtCore.QRect(750, 260, 76, 26))
         self.txt_gender.setObjectName("txt_gender")
         self.txt_gender.addItem("")
         self.txt_gender.addItem("")
         self.txt_gender.addItem("")
         self.txt_gender.addItem("")
+        self.txt_password_3 = QtWidgets.QLabel(parent=self.profile)
+        self.txt_password_3.setGeometry(QtCore.QRect(400, 10, 181, 51))
+        self.txt_password_3.setStyleSheet("   color: white;\n"
+"    font-size: 35px;\n"
+"    font-weight: bold;\n"
+"    letter-spacing: 0.5px;\n"
+"background-color: transparent")
+        self.txt_password_3.setObjectName("txt_password_3")
         self.stackedWidget.addWidget(self.profile)
         self.playlist = QtWidgets.QWidget()
         self.playlist.setObjectName("playlist")
-        self.pushButton_6 = QtWidgets.QPushButton(parent=self.playlist)
-        self.pushButton_6.setGeometry(QtCore.QRect(20, 30, 93, 29))
-        self.pushButton_6.setStyleSheet("font-weight: bold;\n"
-"etter-spacing: 0.5px;\n"
-"color:rgb(255, 255, 255);\n"
-"font-size: 18px;\n"
-"background:none;\n"
-"border:none")
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(parent=self.playlist)
-        self.pushButton_7.setGeometry(QtCore.QRect(340, 140, 111, 61))
-        self.pushButton_7.setStyleSheet("background:none;\n"
-"border:none")
-        self.pushButton_7.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/circle-regular.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_7.setIcon(icon1)
-        self.pushButton_7.setIconSize(QtCore.QSize(50, 50))
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.pushButton_8 = QtWidgets.QPushButton(parent=self.playlist)
-        self.pushButton_8.setGeometry(QtCore.QRect(340, 290, 111, 61))
-        self.pushButton_8.setStyleSheet("background:none;\n"
-"border:none")
-        self.pushButton_8.setText("")
-        self.pushButton_8.setIcon(icon1)
-        self.pushButton_8.setIconSize(QtCore.QSize(50, 50))
-        self.pushButton_8.setObjectName("pushButton_8")
         self.frame = QtWidgets.QFrame(parent=self.playlist)
         self.frame.setGeometry(QtCore.QRect(-10, 110, 431, 131))
         self.frame.setStyleSheet("padding: 10px;\n"
@@ -385,11 +447,20 @@ class Ui_Form(object):
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;")
         self.label_17.setObjectName("label_17")
+        self.pushButton_7 = QtWidgets.QPushButton(parent=self.frame)
+        self.pushButton_7.setGeometry(QtCore.QRect(330, 30, 111, 61))
+        self.pushButton_7.setStyleSheet("background:none;\n"
+"border:none")
+        self.pushButton_7.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/circle-regular.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_7.setIcon(icon1)
+        self.pushButton_7.setIconSize(QtCore.QSize(50, 50))
+        self.pushButton_7.setObjectName("pushButton_7")
         self.frame_2 = QtWidgets.QFrame(parent=self.playlist)
         self.frame_2.setGeometry(QtCore.QRect(490, 110, 431, 131))
         self.frame_2.setStyleSheet("padding: 10px;\n"
-"border-radius:10px;\n"
-"")
+"border-radius:10px")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -401,13 +472,13 @@ class Ui_Form(object):
         self.label_26.setScaledContents(True)
         self.label_26.setObjectName("label_26")
         self.label_27 = QtWidgets.QLabel(parent=self.frame_2)
-        self.label_27.setGeometry(QtCore.QRect(140, 50, 201, 41))
+        self.label_27.setGeometry(QtCore.QRect(130, 40, 201, 41))
         self.label_27.setStyleSheet("etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;")
         self.label_27.setObjectName("label_27")
         self.pushButton_9 = QtWidgets.QPushButton(parent=self.frame_2)
-        self.pushButton_9.setGeometry(QtCore.QRect(340, 30, 111, 61))
+        self.pushButton_9.setGeometry(QtCore.QRect(320, 30, 111, 61))
         self.pushButton_9.setStyleSheet("background:none;\n"
 "border:none")
         self.pushButton_9.setText("")
@@ -415,7 +486,7 @@ class Ui_Form(object):
         self.pushButton_9.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_9.setObjectName("pushButton_9")
         self.frame_3 = QtWidgets.QFrame(parent=self.playlist)
-        self.frame_3.setGeometry(QtCore.QRect(490, 260, 431, 131))
+        self.frame_3.setGeometry(QtCore.QRect(490, 270, 431, 131))
         self.frame_3.setStyleSheet("padding: 10px;\n"
 "border-radius:10px")
         self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -435,7 +506,7 @@ class Ui_Form(object):
 "font-size: 18px;")
         self.label_31.setObjectName("label_31")
         self.pushButton_11 = QtWidgets.QPushButton(parent=self.frame_3)
-        self.pushButton_11.setGeometry(QtCore.QRect(340, 30, 111, 61))
+        self.pushButton_11.setGeometry(QtCore.QRect(320, 30, 111, 61))
         self.pushButton_11.setStyleSheet("background:none;\n"
 "border:none")
         self.pushButton_11.setText("")
@@ -457,13 +528,21 @@ class Ui_Form(object):
         self.label_22.setScaledContents(True)
         self.label_22.setObjectName("label_22")
         self.label_23 = QtWidgets.QLabel(parent=self.frame_4)
-        self.label_23.setGeometry(QtCore.QRect(140, 40, 201, 41))
+        self.label_23.setGeometry(QtCore.QRect(130, 40, 201, 41))
         self.label_23.setStyleSheet("etter-spacing: 0.5px;\n"
 "color:rgb(255, 255, 255);\n"
 "font-size: 18px;")
         self.label_23.setObjectName("label_23")
+        self.pushButton_8 = QtWidgets.QPushButton(parent=self.frame_4)
+        self.pushButton_8.setGeometry(QtCore.QRect(320, 30, 111, 61))
+        self.pushButton_8.setStyleSheet("background:none;\n"
+"border:none")
+        self.pushButton_8.setText("")
+        self.pushButton_8.setIcon(icon1)
+        self.pushButton_8.setIconSize(QtCore.QSize(50, 50))
+        self.pushButton_8.setObjectName("pushButton_8")
         self.label_61 = QtWidgets.QLabel(parent=self.playlist)
-        self.label_61.setGeometry(QtCore.QRect(320, 110, 241, 261))
+        self.label_61.setGeometry(QtCore.QRect(330, 120, 241, 261))
         self.label_61.setStyleSheet("background:transparent")
         self.label_61.setText("")
         self.label_61.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/spotify-brands.svg"))
@@ -496,9 +575,6 @@ class Ui_Form(object):
         self.label_61.raise_()
         self.frame_4.raise_()
         self.frame.raise_()
-        self.pushButton_6.raise_()
-        self.pushButton_7.raise_()
-        self.pushButton_8.raise_()
         self.frame_2.raise_()
         self.frame_3.raise_()
         self.label_2.raise_()
@@ -506,7 +582,7 @@ class Ui_Form(object):
         self.label_25.raise_()
         self.stackedWidget.addWidget(self.playlist)
         self.pushButton = QtWidgets.QPushButton(parent=Form)
-        self.pushButton.setGeometry(QtCore.QRect(530, 620, 91, 51))
+        self.pushButton.setGeometry(QtCore.QRect(550, 620, 91, 51))
         self.pushButton.setStyleSheet("border: none;\n"
 "background: none")
         self.pushButton.setText("")
@@ -515,24 +591,8 @@ class Ui_Form(object):
         self.pushButton.setIcon(icon2)
         self.pushButton.setIconSize(QtCore.QSize(40, 40))
         self.pushButton.setObjectName("pushButton")
-        self.btn_home = QtWidgets.QPushButton(parent=Form)
-        self.btn_home.setGeometry(QtCore.QRect(150, 0, 131, 61))
-        self.btn_home.setStyleSheet("background:none;\n"
-"border:none;\n"
-"font-weight: bold;\n"
-"etter-spacing: 0.5px;\n"
-"color:rgb(255, 255, 255);\n"
-"font-size: 25px;\n"
-"\n"
-"\n"
-"\n"
-"")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/house-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.btn_home.setIcon(icon3)
-        self.btn_home.setObjectName("btn_home")
         self.btn_profile = QtWidgets.QPushButton(parent=Form)
-        self.btn_profile.setGeometry(QtCore.QRect(940, 0, 131, 51))
+        self.btn_profile.setGeometry(QtCore.QRect(940, 10, 131, 41))
         self.btn_profile.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"
@@ -541,85 +601,71 @@ class Ui_Form(object):
 "    font-weight: bold;\n"
 "    font-size: 20px;")
         self.btn_profile.setObjectName("btn_profile")
-        self.pushButton_14 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_14.setGeometry(QtCore.QRect(10, 70, 93, 29))
-        self.pushButton_14.setStyleSheet("font-weight: bold;\n"
-"etter-spacing: 0.5px;\n"
-"color:rgb(255, 255, 255);\n"
-"font-size: 18px;\n"
-"background:none;\n"
-"border:none;\n"
-"background-color: transparent")
-        self.pushButton_14.setObjectName("pushButton_14")
         self.btn_playlist = QtWidgets.QPushButton(parent=Form)
-        self.btn_playlist.setGeometry(QtCore.QRect(0, 110, 51, 29))
+        self.btn_playlist.setGeometry(QtCore.QRect(-10, 130, 71, 41))
         self.btn_playlist.setStyleSheet("background:none;\n"
 "border:none\n"
 "")
         self.btn_playlist.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/plus-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.btn_playlist.setIcon(icon4)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/plus-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btn_playlist.setIcon(icon3)
         self.btn_playlist.setIconSize(QtCore.QSize(30, 30))
         self.btn_playlist.setObjectName("btn_playlist")
-        self.label_24 = QtWidgets.QLabel(parent=Form)
-        self.label_24.setGeometry(QtCore.QRect(40, 120, 101, 20))
-        self.label_24.setStyleSheet("color:rgb(255, 255, 255);\n"
-"background-color: transparent")
-        self.label_24.setObjectName("label_24")
         self.btn_favorite = QtWidgets.QPushButton(parent=Form)
-        self.btn_favorite.setGeometry(QtCore.QRect(-20, 160, 93, 29))
+        self.btn_favorite.setGeometry(QtCore.QRect(-20, 180, 101, 41))
         self.btn_favorite.setStyleSheet("background:none;\n"
 "border:none\n"
 "")
         self.btn_favorite.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/heart-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.btn_favorite.setIcon(icon5)
-        self.btn_favorite.setIconSize(QtCore.QSize(30, 30))
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/heart-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btn_favorite.setIcon(icon4)
+        self.btn_favorite.setIconSize(QtCore.QSize(40, 30))
         self.btn_favorite.setObjectName("btn_favorite")
         self.label_32 = QtWidgets.QLabel(parent=Form)
-        self.label_32.setGeometry(QtCore.QRect(50, 170, 81, 20))
+        self.label_32.setGeometry(QtCore.QRect(50, 190, 81, 20))
         self.label_32.setStyleSheet("color:rgb(255,255,255);\n"
-"background-color: transparent")
+"background-color: transparent;\n"
+"font-size: 15px")
         self.label_32.setObjectName("label_32")
         self.pushButton_17 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_17.setGeometry(QtCore.QRect(720, 620, 91, 51))
+        self.pushButton_17.setGeometry(QtCore.QRect(740, 620, 91, 51))
         self.pushButton_17.setStyleSheet("border: none;\n"
 "background: none")
         self.pushButton_17.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/volume-high-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_17.setIcon(icon6)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/volume-high-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_17.setIcon(icon5)
         self.pushButton_17.setIconSize(QtCore.QSize(40, 40))
         self.pushButton_17.setObjectName("pushButton_17")
         self.horizontalSlider_2 = QtWidgets.QSlider(parent=Form)
-        self.horizontalSlider_2.setGeometry(QtCore.QRect(800, 630, 141, 22))
+        self.horizontalSlider_2.setGeometry(QtCore.QRect(840, 640, 141, 22))
         self.horizontalSlider_2.setStyleSheet("background-color: transparent")
         self.horizontalSlider_2.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.horizontalSlider_2.setObjectName("horizontalSlider_2")
         self.pushButton_18 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_18.setGeometry(QtCore.QRect(620, 620, 91, 51))
+        self.pushButton_18.setGeometry(QtCore.QRect(630, 620, 91, 51))
         self.pushButton_18.setStyleSheet("border: none;\n"
 "background: none")
         self.pushButton_18.setText("")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/forward-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_18.setIcon(icon7)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/forward-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_18.setIcon(icon6)
         self.pushButton_18.setIconSize(QtCore.QSize(40, 40))
         self.pushButton_18.setObjectName("pushButton_18")
         self.pushButton_19 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_19.setGeometry(QtCore.QRect(440, 620, 91, 51))
+        self.pushButton_19.setGeometry(QtCore.QRect(470, 620, 91, 51))
         self.pushButton_19.setStyleSheet("border: none;\n"
 "background: none")
         self.pushButton_19.setText("")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/backward-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_19.setIcon(icon8)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/backward-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_19.setIcon(icon7)
         self.pushButton_19.setIconSize(QtCore.QSize(40, 40))
         self.pushButton_19.setObjectName("pushButton_19")
         self.label_29 = QtWidgets.QLabel(parent=Form)
-        self.label_29.setGeometry(QtCore.QRect(10, 640, 81, 71))
+        self.label_29.setGeometry(QtCore.QRect(0, 640, 91, 81))
         self.label_29.setText("")
         self.label_29.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/z6588244063627_74df258950c533ffb1a252c12d4ad801.jpg"))
         self.label_29.setScaledContents(True)
@@ -638,7 +684,7 @@ class Ui_Form(object):
 "background-color: transparent\n"
 "")
         self.pushButton_21.setText("")
-        self.pushButton_21.setIcon(icon5)
+        self.pushButton_21.setIcon(icon4)
         self.pushButton_21.setIconSize(QtCore.QSize(30, 30))
         self.pushButton_21.setObjectName("pushButton_21")
         self.label_34 = QtWidgets.QLabel(parent=Form)
@@ -649,33 +695,53 @@ class Ui_Form(object):
         self.label_34.setScaledContents(True)
         self.label_34.setObjectName("label_34")
         self.pushButton_22 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_22.setGeometry(QtCore.QRect(350, 620, 91, 51))
+        self.pushButton_22.setGeometry(QtCore.QRect(380, 620, 91, 51))
         self.pushButton_22.setStyleSheet("border: none;\n"
 "background: none")
         self.pushButton_22.setText("")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/shuffle-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_22.setIcon(icon9)
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/shuffle-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_22.setIcon(icon8)
         self.pushButton_22.setIconSize(QtCore.QSize(40, 40))
         self.pushButton_22.setObjectName("pushButton_22")
         self.label_35 = QtWidgets.QLabel(parent=Form)
-        self.label_35.setGeometry(QtCore.QRect(320, 680, 31, 20))
+        self.label_35.setGeometry(QtCore.QRect(340, 680, 31, 20))
         self.label_35.setStyleSheet("color:rgb(255,255,255);\n"
 "background-color: transparent")
         self.label_35.setObjectName("label_35")
         self.label_36 = QtWidgets.QLabel(parent=Form)
-        self.label_36.setGeometry(QtCore.QRect(790, 680, 63, 20))
+        self.label_36.setGeometry(QtCore.QRect(820, 680, 63, 20))
         self.label_36.setStyleSheet("color:rgb(255,255,255);\n"
 "background-color: transparent")
         self.label_36.setObjectName("label_36")
+        self.label_24 = QtWidgets.QLabel(parent=Form)
+        self.label_24.setGeometry(QtCore.QRect(50, 140, 141, 20))
+        self.label_24.setStyleSheet("color:rgb(255, 255, 255);\n"
+"background-color: transparent;\n"
+"font-size: 15px")
+        self.label_24.setObjectName("label_24")
+        self.btn_home = QtWidgets.QPushButton(parent=Form)
+        self.btn_home.setGeometry(QtCore.QRect(-10, 60, 161, 71))
+        self.btn_home.setStyleSheet("background:none;\n"
+"border:none;\n"
+"font-weight: bold;\n"
+"etter-spacing: 0.5px;\n"
+"color:rgb(255, 255, 255);\n"
+"font-size: 25px;\n"
+"\n"
+"\n"
+"\n"
+"")
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/house-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btn_home.setIcon(icon9)
+        self.btn_home.setIconSize(QtCore.QSize(30, 20))
+        self.btn_home.setObjectName("btn_home")
         self.stackedWidget.raise_()
-        self.btn_home.raise_()
         self.pushButton.raise_()
         self.horizontalSlider.raise_()
         self.btn_profile.raise_()
-        self.pushButton_14.raise_()
         self.btn_playlist.raise_()
-        self.label_24.raise_()
         self.btn_favorite.raise_()
         self.label_32.raise_()
         self.pushButton_17.raise_()
@@ -689,9 +755,11 @@ class Ui_Form(object):
         self.pushButton_22.raise_()
         self.label_35.raise_()
         self.label_36.raise_()
+        self.label_24.raise_()
+        self.btn_home.raise_()
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -705,6 +773,9 @@ class Ui_Form(object):
         self.label_14.setText(_translate("Form", "Legends Never Die"))
         self.label_16.setText(_translate("Form", "Faded"))
         self.lineEdit.setPlaceholderText(_translate("Form", "Search"))
+        self.comboBox.setItemText(0, _translate("Form", "Song"))
+        self.comboBox.setItemText(1, _translate("Form", "Album"))
+        self.comboBox.setItemText(2, _translate("Form", "Artist"))
         self.label_20.setText(_translate("Form", "Username:"))
         self.txt_name.setPlaceholderText(_translate("Form", "Username:"))
         self.label_21.setText(_translate("Form", "Email:"))
@@ -716,18 +787,17 @@ class Ui_Form(object):
         self.txt_gender.setItemText(1, _translate("Form", "Male"))
         self.txt_gender.setItemText(2, _translate("Form", "Female"))
         self.txt_gender.setItemText(3, _translate("Form", "Other"))
-        self.pushButton_6.setText(_translate("Form", "Playlist:"))
+        self.txt_password_3.setText(_translate("Form", "Account"))
         self.label_17.setText(_translate("Form", "Em Của Ngày Hôm Qua"))
         self.label_27.setText(_translate("Form", "Bắc Bling"))
         self.label_31.setText(_translate("Form", "Tái Sinh"))
         self.label_23.setText(_translate("Form", "Mất Kết Nối"))
         self.label_2.setText(_translate("Form", "My Playlist"))
         self.lineEdit_5.setPlaceholderText(_translate("Form", "Search"))
-        self.btn_home.setText(_translate("Form", "  Home"))
         self.btn_profile.setText(_translate("Form", "Profile"))
-        self.pushButton_14.setText(_translate("Form", "Playlist:"))
-        self.label_24.setText(_translate("Form", "Create Playlist"))
         self.label_32.setText(_translate("Form", "Liked Songs"))
         self.label_33.setText(_translate("Form", "Phép Màu"))
         self.label_35.setText(_translate("Form", "0:00"))
         self.label_36.setText(_translate("Form", "4:21"))
+        self.label_24.setText(_translate("Form", "Create Playlist"))
+        self.btn_home.setText(_translate("Form", "  Home"))
