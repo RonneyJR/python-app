@@ -1,20 +1,51 @@
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
-from PyQt6.QtMultimedia import *
+from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PyQt6 import uic
 import sys
 import os
 from data_io import *
 
+def normalize_path(path):
+    # Handle None or empty
+    if not path:
+        return ""
+    # Convert path separators to system-specific format
+    try:
+        normalized = os.path.normpath(path)
+    except Exception:
+        return ""
+    # Check if path exists, if not try to find it relative to current directory
+    if not os.path.exists(normalized):
+        # Try relative to current directory
+        relative_path = os.path.join(os.getcwd(), normalized)
+        if os.path.exists(relative_path):
+            return relative_path
+    return normalized
+
 class Alert(QMessageBox):
-    def error_message(self,title, message):
+    def error_message(self, *args):
+        # Supports: (message) or (title, message)
+        if len(args) == 1:
+            title, message = "Error", str(args[0])
+        elif len(args) >= 2:
+            title, message = str(args[0]), str(args[1])
+        else:
+            title, message = "Error", "An error occurred"
         self.setIcon(QMessageBox.Icon.Critical)
         self.setWindowTitle(title)
         self.setText(message)
         self.exec()
 
-    def success_message(self, title,message):
+    def success_message(self, *args):
+        # Supports: (message) or (title, message)
+        if len(args) == 1:
+            title, message = "Success", str(args[0])
+        elif len(args) >= 2:
+            title, message = str(args[0]), str(args[1])
+        else:
+            title, message = "Success", "Action completed successfully"
         self.setIcon(QMessageBox.Icon.Information)
         self.setWindowTitle(title)
         self.setText(message)
@@ -194,7 +225,9 @@ class SongItemWidget(QWidget):
         # Set initial values
         self.name.setText(self.song_name)
         self.artist.setText(self.artist_names)
-        self.image.setPixmap(QPixmap(self.image_path.replace("/", "\\")))
+        img_path = normalize_path(self.image_path)
+        if img_path:
+            self.image.setPixmap(QPixmap(img_path))
         
         # Connect signals
         self.btn_play.clicked.connect(self.play)
@@ -266,7 +299,7 @@ class PlaylistWidget(QWidget):
         col = 0
         for song in songs:
             # Create widget in playlist mode (Remove button only)
-            item = SongItemWidget(song['id'], song['name'], song['image_path'].replace("/", "\\"), song['artist_names'], is_playlist_mode=True)
+            item = SongItemWidget(song['id'], song['name'], normalize_path(song['image_path']), song['artist_names'], is_playlist_mode=True)
             item.setFixedSize(400, 80)  # Set fixed size for each item
             item.play_song.connect(self.on_play_song)  # Connect to intermediate handler
             item.remove_song_from_playlist.connect(self.remove_song)
@@ -299,25 +332,26 @@ class Home(QWidget):
         self.user = get_user_by_id(id)
         self.load_user_info()
 
+        # Initialize media player and audio output early
+        self.audio_output = QAudioOutput()
+        self.player = QMediaPlayer()
+        self.player.setAudioOutput(self.audio_output)
+
+        # Initialize playback/playlist state
+        self.current_playlist = []
+        self.current_song_index = -1
+        self.current_volume = 50
+
         self.stack_widget = self.findChild(QStackedWidget, "stackedWidget")
 
-        # Bọc từng page bằng scroll mà KHÔNG remove page
-        for i in range(self.stack_widget.count()):
-            page = self.stack_widget.widget(i)
-
-            scroll = QScrollArea()
-            scroll.setWidgetResizable(True)
-
-            # container chứa page
-            container = QWidget()
-            layout = QVBoxLayout(container)
-            layout.setContentsMargins(0,0,0,0)
-            layout.addWidget(page)
-
-            scroll.setWidget(container)
-
-            # thay thế trực tiếp
-            self.stack_widget.insertWidget(i, scroll)
+        # Ensure we show the 'home' page initially (no extra wrapping)
+        home_page = self.findChild(QWidget, 'home')
+        if self.stack_widget and home_page:
+            self.stack_widget.setCurrentIndex(self.stack_widget.indexOf(home_page))
+        
+        # Build UI elements and layouts, then load data
+        self.setup_ui()
+        self.load_initial_songs()
     
     def navigate_screen(self, stackWidget: QStackedWidget, index: int):
         stackWidget.setCurrentIndex(index)
@@ -359,9 +393,10 @@ class Home(QWidget):
         self.volumeBar = self.findChild(QSlider, "slider_volume")
         self.durationBar = self.findChild(QSlider, "slider_duration")
         self.timeLabel = self.findChild(QLabel, "lbl_time")
+        # Current playing info labels (fallback to existing objectNames in ui/home.ui)
         self.curr_name = self.findChild(QLabel, "lbl_curr_name")
         self.curr_img = self.findChild(QLabel, "lbl_curr_img")
-        self.curr_artist = self.findChild(QLabel, "lbl_curr_artist")
+        self.curr_artist = self.findChild(QLabel, "lbl_curr_artist")  # May not exist in UI
         
         # Initialize icons
         try:
@@ -401,6 +436,14 @@ class Home(QWidget):
         self.btn_song_list = self.findChild(QPushButton, 'btn_song_list')
         self.btn_playlist = self.findChild(QPushButton, 'playlist_btn')
         self.stackedWidget = self.findChild(QStackedWidget, 'stackedWidget')
+        # Ensure default page shows the song list (the 'home' page)
+        if self.stackedWidget:
+            for i in range(self.stackedWidget.count()):
+                wrapper = self.stackedWidget.widget(i)
+                if wrapper.findChild(QWidget, 'home') is not None:
+                    self.stackedWidget.setCurrentIndex(i)
+                    break
+        # Detail page disabled
         
         # Find player control buttons
         self.btn_prev_song = self.findChild(QPushButton, 'btn_prev_song')
@@ -418,55 +461,83 @@ class Home(QWidget):
         # Setup scroll area
         self.scroll_area = QScrollArea(self.song_container)
         self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setStyleSheet("QScrollArea{background: transparent;} QWidget{background: transparent;}")
         
         # Create scroll content
         self.scroll_content = QWidget()
+        self.scroll_content.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.song_layout = QGridLayout(self.scroll_content)
         self.song_layout.setSpacing(20)
         self.song_layout.setContentsMargins(20, 20, 20, 20)
+        self.song_layout.setColumnStretch(0, 1)
+        self.song_layout.setColumnStretch(1, 1)
         
         # Setup scroll area layout
         self.scroll_area.setWidget(self.scroll_content)
         scroll_layout = QVBoxLayout(self.song_container)
         scroll_layout.setContentsMargins(0, 0, 0, 0)
         scroll_layout.addWidget(self.scroll_area)
+
+        # Make sure container is visible and has a size
+        self.song_container.show()
+        self.song_container.raise_()
+        self.scroll_area.show()
+        self.scroll_content.show()
+        self.scroll_area.raise_()
         
         # Setup playlist container
         self.playlist_container = self.findChild(QWidget, 'playlist_widget')
-        self.playlist_widget = PlaylistWidget(self.user_id)
-        self.playlist_widget.play_song_signal.connect(self.play_song)  # Connect playlist signal
-        playlist_layout = QVBoxLayout(self.playlist_container)
-        playlist_layout.setContentsMargins(0, 0, 0, 0)
-        playlist_layout.addWidget(self.playlist_widget)
+        if self.playlist_container is None:
+            # Fallback: use the 'playlist' page itself as container
+            self.playlist_container = self.findChild(QWidget, 'playlist')
+        if self.playlist_container is not None:
+            self.playlist_widget = PlaylistWidget(self.user_id)
+            self.playlist_widget.play_song_signal.connect(self.play_song)  # Connect playlist signal
+            playlist_layout = QVBoxLayout(self.playlist_container)
+            playlist_layout.setContentsMargins(0, 0, 0, 0)
+            playlist_layout.addWidget(self.playlist_widget)
         
-        # Connect signals
-        self.btn_user.clicked.connect(lambda: self.navigate(0))  # Account page
-        self.btn_playlist.clicked.connect(lambda: self.navigate(1))  # Playlist page
-        self.btn_song_list.clicked.connect(lambda: self.navigate(2))  # Song list page
+        # Connect signals (stack order: 0=home, 1=profile, 2=playlist)
+        self.btn_song_list.clicked.connect(lambda: self.navigate(0))  # Home (song list)
+        self.btn_user.clicked.connect(lambda: self.navigate(1))       # Profile page
+        self.btn_playlist.clicked.connect(lambda: self.navigate(2))   # Playlist page
         self.btn_search.clicked.connect(self.search_song)
     
     def load_initial_songs(self):
         # Clear existing widgets
+        if not hasattr(self, 'song_layout') or self.song_layout is None:
+            print('song_layout not initialized')
+            return
         for i in reversed(range(self.song_layout.count())):
             self.song_layout.itemAt(i).widget().setParent(None)
             
         # Get first 15 songs using JSON
         songs = get_first_15_songs_json()
+        print(f'Loaded {len(songs)} songs')
         
         # Add songs to the layout in 2 columns
         row = 0
         col = 0
+        added = 0
         for song in songs:
-            item = SongItemWidget(song['id'], song['name'], song['image_path'].replace("/", "\\"), song['artist_names'], is_playlist_mode=False)
+            item = SongItemWidget(song['id'], song['name'], normalize_path(song['image_path']), song['artist_names'], is_playlist_mode=False)
             item.setFixedSize(400, 80)  # Set fixed size for each item
+            # Temporary debug styling to make items visible
+            item.setStyleSheet("background: rgba(255,255,255,0.06); color: white;")
             item.play_song.connect(self.play_song)
             item.add_song_to_playlist.connect(self.add_to_playlist)
             item.remove_song_from_playlist.connect(self.remove_from_playlist)
             self.song_layout.addWidget(item, row, col)
+            item.show()
             col += 1
             if col == 2:  # Show 2 columns
                 col = 0
                 row += 1
+            added += 1
+        self.scroll_content.adjustSize()
+        self.scroll_area.update()
+        self.scroll_content.update()
+        print(f'Grid now has {self.song_layout.count()} widgets, attempted to add {added}')
 
     def add_to_playlist(self, song_id):
         try:
@@ -536,8 +607,17 @@ class Home(QWidget):
         
         self.current_song = song_id
         song = get_song_by_id_json(song_id)
-        file_path = QUrl.fromLocalFile(song["file_path"].replace("/", "\\"))
-        self.player.setSource(file_path)
+        if not song:
+            msg = Alert()
+            msg.error_message("Song not found")
+            return
+        file_str = normalize_path(song.get("file_path"))
+        if not file_str:
+            msg = Alert()
+            msg.error_message("Audio file path missing or invalid")
+            return
+        file_url = QUrl.fromLocalFile(file_str)
+        self.player.setSource(file_url)
         self.player.play()
         
         if self.playBtn and self.pauseIcon:
@@ -545,10 +625,31 @@ class Home(QWidget):
         elif self.playBtn:
             self.playBtn.setText("Pause")
         
-        self.curr_name.setText(f"Now playing: {song['name']}")
-        self.curr_img.setPixmap(QPixmap(song["image_path"].replace("/", "\\")))
-        self.curr_img.setScaledContents(True)
-        self.curr_artist.setText(f"Artist: {song['artist_names']}")
+        if self.curr_name:
+            self.curr_name.setText(f"Now playing: {song['name']}")
+        img = normalize_path(song.get("image_path"))
+        if self.curr_img and img:
+            self.curr_img.setPixmap(QPixmap(img))
+            self.curr_img.setScaledContents(True)
+        if self.curr_artist:
+            self.curr_artist.setText(f"Artist: {song['artist_names']}")
+        # Update detail view
+        try:
+            if getattr(self, 'd_cover', None):
+                img = normalize_path(song.get('image_path'))
+                if img:
+                    self.d_cover.setPixmap(QPixmap(img))
+            if getattr(self, 'd_title', None):
+                self.d_title.setText(song.get('name', ''))
+            if getattr(self, 'd_artist', None):
+                self.d_artist.setText(song.get('artist_names', ''))
+            if getattr(self, 'd_time_left', None):
+                self.d_time_left.setText('0:00')
+            # Navigate to detail if currently on home
+            if self.stackedWidget and self.stackedWidget.currentIndex() == 0:
+                self.navigate(3)
+        except Exception as e:
+            print(f"Warning updating detail view: {e}")
     
     def navigate(self, index):
         self.stackedWidget.setCurrentIndex(index)
@@ -564,7 +665,7 @@ class Home(QWidget):
         column = 0
         for song in song_list:
             # Create widget in song list mode (Add button only)
-            itemWidget = SongItemWidget(song["id"], song["name"], song["image_path"].replace("/", "\\"), song["artist_names"], is_playlist_mode=False)
+            itemWidget = SongItemWidget(song["id"], song["name"], normalize_path(song["image_path"]), song["artist_names"], is_playlist_mode=False)
             itemWidget.setFixedSize(400, 80)  # Set fixed size for each item
             itemWidget.play_song.connect(self.play_song)
             itemWidget.add_song_to_playlist.connect(self.add_to_playlist)
@@ -689,5 +790,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     msg = Alert()
     login = Login()
+    login = Home(1)
     login.show()
     sys.exit(app.exec())

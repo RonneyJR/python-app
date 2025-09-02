@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "id": 1,
+        "user_id": 1,
+        "song_id": "1",
+        "name": "My Playlist",
+        "song_name": "Hit Me Up (feat. Nomovodka)",
+        "image_path": "songs_images/ab67616d0000b2732103bdcdf1d4369f212b6862.jpg",
+        "file_path": "music_files/4acXEYw7ayyJnm9GXDrqiL.m4a"
+    }
+]

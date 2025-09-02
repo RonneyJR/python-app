@@ -25,7 +25,7 @@
     );
 }background-color:rgb(79,79,79)</string>
   </property>
-  <widget class="QSlider" name="horizontalSlider">
+  <widget class="QSlider" name="slider_duration">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -63,7 +63,7 @@
 }background-color:rgb(79, 79, 79)</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
@@ -94,462 +94,7 @@ background:transparent
       <string>Good Afternoon</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>81</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/z6498815129163_52317030fda41617c77e971ac6f6aace.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QListWidget" name="listWidget">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>221</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWidget {
-    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,
-        x2:1, y2:0,                /* gradient ngang (trái → phải) */
-        stop:0 #0a3d3d,            /* xanh đậm bên trái */
-        stop:1 #0f2027             /* xanh đen bên phải */
-    );
-}
-padding: 10px;
-border-radius:10px
-</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>150</y>
-       <width>121</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sans Serif Collection</family>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-weight: bold;
-  etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;
-background-color:transparent
-</string>
-     </property>
-     <property name="text">
-      <string>The Spectre</string>
-     </property>
-    </widget>
-    <widget class="QListWidget" name="listWidget_2">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>120</y>
-       <width>291</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWidget {
-    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,
-        x2:1, y2:0,                /* gradient ngang (trái → phải) */
-        stop:0 #0a3d3d,            /* xanh đậm bên trái */
-        stop:1 #0f2027             /* xanh đen bên phải */
-    );
-}
-padding: 10px;
-border-radius:10px
-</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>120</y>
-       <width>91</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/z6498832574348_16983d2b2cb3fb4741b1091fefff519d.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>150</y>
-       <width>171</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sans Serif Collection</family>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-weight: bold;
-  etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;
-background-color:transparent
-</string>
-     </property>
-     <property name="text">
-      <string>Die With A Smile</string>
-     </property>
-    </widget>
-    <widget class="QListWidget" name="listWidget_3">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>120</y>
-       <width>241</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWidget {
-    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,
-        x2:1, y2:0,                /* gradient ngang (trái → phải) */
-        stop:0 #0a3d3d,            /* xanh đậm bên trái */
-        stop:1 #0f2027             /* xanh đen bên phải */
-    );
-}
-padding: 10px;
-border-radius:10px
-</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>120</y>
-       <width>91</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 40px</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/z6498843329317_d5f9a2982984e39be71fa63c56255d28.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>730</x>
-       <y>150</y>
-       <width>121</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sans Serif Collection</family>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-weight: bold;
-  etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;
-background-color:transparent
-</string>
-     </property>
-     <property name="text">
-      <string>Daylight</string>
-     </property>
-    </widget>
-    <widget class="QListWidget" name="listWidget_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>270</y>
-       <width>221</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWidget {
-    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,
-        x2:1, y2:0,                /* gradient ngang (trái → phải) */
-        stop:0 #0a3d3d,            /* xanh đậm bên trái */
-        stop:1 #0f2027             /* xanh đen bên phải */
-    );
-}
-padding: 10px;
-border-radius:10px
-</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>270</y>
-       <width>81</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/z6498855803386_3a41d86ed3e261a2cff390b13dae6e42.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>300</y>
-       <width>91</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sans Serif Collection</family>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-weight: bold;
-  etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;
-background-color:transparent
-</string>
-     </property>
-     <property name="text">
-      <string>APT</string>
-     </property>
-    </widget>
-    <widget class="QListWidget" name="listWidget_5">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>270</y>
-       <width>291</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWidget {
-    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,
-        x2:1, y2:0,                /* gradient ngang (trái → phải) */
-        stop:0 #0a3d3d,            /* xanh đậm bên trái */
-        stop:1 #0f2027             /* xanh đen bên phải */
-    );
-}
-padding: 10px;
-border-radius:10px
-</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_13">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>270</y>
-       <width>91</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/z6498876897954_59ddeff9bd8129a9120778cdb6c89686.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_14">
-     <property name="geometry">
-      <rect>
-       <x>380</x>
-       <y>290</y>
-       <width>181</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sans Serif Collection</family>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-weight: bold;
-  etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;
-background-color:transparent
-</string>
-     </property>
-     <property name="text">
-      <string>Legends Never Die</string>
-     </property>
-    </widget>
-    <widget class="QListWidget" name="listWidget_6">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>270</y>
-       <width>241</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWidget {
-    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,
-        x2:1, y2:0,                /* gradient ngang (trái → phải) */
-        stop:0 #0a3d3d,            /* xanh đậm bên trái */
-        stop:1 #0f2027             /* xanh đen bên phải */
-    );
-}
-padding: 10px;
-border-radius:10px
-</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_15">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>270</y>
-       <width>91</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/z6498882588427_34e9891f52d595a569a46ffdaf578fbe.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_16">
-     <property name="geometry">
-      <rect>
-       <x>740</x>
-       <y>300</y>
-       <width>91</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sans Serif Collection</family>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-weight: bold;
-  etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;
-background-color:transparent
-</string>
-     </property>
-     <property name="text">
-      <string>Faded</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_62">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>130</y>
-       <width>241</width>
-       <height>251</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background:transparent
-</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/spotify-brands.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="txt_search">
      <property name="geometry">
       <rect>
        <x>350</x>
@@ -570,7 +115,7 @@ background-color:transparent
       <string>Search</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QPushButton" name="btn_search">
      <property name="geometry">
       <rect>
        <x>630</x>
@@ -586,11 +131,15 @@ background-color:transparent
      <property name="text">
       <string/>
      </property>
-     <property name="pixmap">
-      <pixmap>../img/magnifying-glass-solid.svg</pixmap>
+     <property name="icon">
+      <iconset>
+       <normaloff>../img/magnifying-glass-solid.svg</normaloff>../img/magnifying-glass-solid.svg</iconset>
      </property>
-     <property name="scaledContents">
-      <bool>true</bool>
+     <property name="iconSize">
+      <size>
+       <width>21</width>
+       <height>21</height>
+      </size>
      </property>
     </widget>
     <widget class="QComboBox" name="comboBox">
@@ -618,29 +167,16 @@ background-color:transparent
       </property>
      </item>
     </widget>
-    <zorder>label_62</zorder>
-    <zorder>listWidget</zorder>
-    <zorder>label_4</zorder>
-    <zorder>label_5</zorder>
-    <zorder>label_6</zorder>
-    <zorder>listWidget_2</zorder>
-    <zorder>label_7</zorder>
-    <zorder>label_8</zorder>
-    <zorder>listWidget_3</zorder>
-    <zorder>label_9</zorder>
-    <zorder>label_10</zorder>
-    <zorder>listWidget_4</zorder>
-    <zorder>label_11</zorder>
-    <zorder>label_12</zorder>
-    <zorder>listWidget_5</zorder>
-    <zorder>label_13</zorder>
-    <zorder>label_14</zorder>
-    <zorder>lineEdit</zorder>
-    <zorder>label_3</zorder>
-    <zorder>listWidget_6</zorder>
-    <zorder>label_15</zorder>
-    <zorder>label_16</zorder>
-    <zorder>comboBox</zorder>
+    <widget class="QWidget" name="song_container" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>941</width>
+       <height>441</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="profile">
     <widget class="QLabel" name="label_20">
@@ -1343,8 +879,9 @@ border:none</string>
     <zorder>lineEdit_5</zorder>
     <zorder>label_25</zorder>
    </widget>
+   <widget class="QWidget" name="detail"/>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_play">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -1371,7 +908,7 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_profile">
+  <widget class="QPushButton" name="user_btn">
    <property name="geometry">
     <rect>
      <x>940</x>
@@ -1393,7 +930,7 @@ background: none</string>
     <string>Profile</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_playlist">
+  <widget class="QPushButton" name="playlist_btn">
    <property name="geometry">
     <rect>
      <x>-10</x>
@@ -1467,7 +1004,7 @@ font-size: 15px</string>
     <string>Liked Songs</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_17">
+  <widget class="QPushButton" name="btn_volume">
    <property name="geometry">
     <rect>
      <x>740</x>
@@ -1494,7 +1031,7 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QSlider" name="horizontalSlider_2">
+  <widget class="QSlider" name="slider_volume">
    <property name="geometry">
     <rect>
      <x>840</x>
@@ -1510,7 +1047,7 @@ background: none</string>
     <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_18">
+  <widget class="QPushButton" name="btn_next_song">
    <property name="geometry">
     <rect>
      <x>630</x>
@@ -1537,7 +1074,7 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_19">
+  <widget class="QPushButton" name="btn_prev_song">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -1564,7 +1101,7 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="label_29">
+  <widget class="QLabel" name="lbl_curr_img">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -1583,11 +1120,11 @@ background: none</string>
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_33">
+  <widget class="QLabel" name="lbl_curr_name">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>660</y>
+     <y>640</y>
      <width>201</width>
      <height>31</height>
     </rect>
@@ -1605,8 +1142,8 @@ background-color: transparent</string>
   <widget class="QPushButton" name="pushButton_21">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>660</y>
+     <x>100</x>
+     <y>690</y>
      <width>93</width>
      <height>29</height>
     </rect>
@@ -1680,12 +1217,12 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="label_35">
+  <widget class="QLabel" name="lbl_time">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>820</x>
      <y>680</y>
-     <width>31</width>
+     <width>161</width>
      <height>20</height>
     </rect>
    </property>
@@ -1695,23 +1232,6 @@ background-color: transparent</string>
    </property>
    <property name="text">
     <string>0:00</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_36">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>680</y>
-     <width>63</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:rgb(255,255,255);
-background-color: transparent</string>
-   </property>
-   <property name="text">
-    <string>4:21</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_24">
@@ -1732,7 +1252,7 @@ font-size: 15px</string>
     <string>Create Playlist</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_home">
+  <widget class="QPushButton" name="btn_song_list">
    <property name="geometry">
     <rect>
      <x>-10</x>
@@ -1767,26 +1287,6 @@ font-size: 25px;
     </size>
    </property>
   </widget>
-  <zorder>stackedWidget</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>horizontalSlider</zorder>
-  <zorder>btn_profile</zorder>
-  <zorder>btn_playlist</zorder>
-  <zorder>btn_favorite</zorder>
-  <zorder>label_32</zorder>
-  <zorder>pushButton_17</zorder>
-  <zorder>horizontalSlider_2</zorder>
-  <zorder>pushButton_18</zorder>
-  <zorder>pushButton_19</zorder>
-  <zorder>label_29</zorder>
-  <zorder>label_33</zorder>
-  <zorder>pushButton_21</zorder>
-  <zorder>label_34</zorder>
-  <zorder>pushButton_22</zorder>
-  <zorder>label_35</zorder>
-  <zorder>label_36</zorder>
-  <zorder>label_24</zorder>
-  <zorder>btn_home</zorder>
  </widget>
  <resources/>
  <connections/>

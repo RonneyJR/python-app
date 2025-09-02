@@ -140,8 +140,10 @@ def get_song_by_id_json(song_id):
     """Get song by ID using JSON file"""
     try:
         songs = load_json("data/songs.json")
+        # Compare IDs as strings to be robust to int/str mismatches
+        target_id = str(song_id)
         for song in songs:
-            if song.get('id') == song_id:
+            if str(song.get('id')) == target_id:
                 return song
         return None
     except Exception as e:
@@ -153,9 +155,11 @@ def is_song_in_user_playlist_json(user_id, song_id):
     """Check if song is in user's playlist using JSON"""
     try:
         playlists = load_json("data/playlists.json")
+        song_id_str = str(song_id)
+        user_id_str = str(user_id)
         for playlist in playlists:
-            if (playlist.get('user_id') == user_id and 
-                playlist.get('song_id') == song_id):
+            if (str(playlist.get('user_id')) == user_id_str and 
+                str(playlist.get('song_id')) == song_id_str):
                 return True
         return False
     except Exception as e:
@@ -169,11 +173,12 @@ def get_user_playlist_songs_json(user_id):
         songs = load_json("data/songs.json")
         
         user_songs = []
+        user_id_str = str(user_id)
         for playlist in playlists:
-            if playlist.get('user_id') == user_id:
-                song_id = playlist.get('song_id')
+            if str(playlist.get('user_id')) == user_id_str:
+                song_id = str(playlist.get('song_id'))
                 for song in songs:
-                    if song.get('id') == song_id:
+                    if str(song.get('id')) == song_id:
                         user_songs.append(song)
                         break
         return user_songs
