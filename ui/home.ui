@@ -64,7 +64,7 @@
 }</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
@@ -182,9 +182,9 @@ padding: 5px;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>10</y>
+       <y>100</y>
        <width>941</width>
-       <height>531</height>
+       <height>441</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -456,7 +456,6 @@ background-color: transparent</string>
       <string>Account</string>
      </property>
     </widget>
-<<<<<<< HEAD
     <widget class="QWidget" name="song_container_2" native="true">
      <property name="geometry">
       <rect>
@@ -627,11 +626,6 @@ font-size: 25px;</string>
      </widget>
     </widget>
    </widget>
-=======
-   </widget>
-   <widget class="QWidget" name="playlist"/>
-   <widget class="QWidget" name="history"/>
->>>>>>> a09c7d15e7a53e72b4d5fbc1b4934ed38e945a6c
   </widget>
   <widget class="QPushButton" name="btn_play">
    <property name="geometry">
