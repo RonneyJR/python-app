@@ -334,6 +334,7 @@ class Home(QWidget):
         self.user = get_user_by_id(id)
         self.load_user_info()
 
+
         # Initialize media player and audio output early
         self.audio_output = QAudioOutput()
         self.player = QMediaPlayer()
