@@ -47,12 +47,12 @@ def build_alias(name: str) -> str:
 
 
 def load_json(file_path):
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data
 
 def write_json(file_path, data):
-    with open(file_path, "w") as f:
+    with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent = 4)
 
 def create_user(email, password, name, birthday = "", gender = ""):
@@ -242,8 +242,10 @@ def remove_song_from_user_playlist_json(user_id, song_id):
 def add_song_to_history_json(user_id, song_id):
     """Append a play event to history with timestamp."""
     try:
-        with open("data/history.json", "r") as f:
-            history = json.load(f)
+        # Ensure file exists
+        if not os.path.exists("data/history.json"):
+            write_json("data/history.json", [])
+        history = load_json("data/history.json")
         # Don't duplicate consecutive same song for the same user
         if history and str(history[-1].get('user_id')) == str(user_id) and str(history[-1].get('song_id')) == str(song_id):
             return False
@@ -252,8 +254,7 @@ def add_song_to_history_json(user_id, song_id):
             'song_id': song_id,
             'played_at': datetime.now().isoformat(timespec='seconds')
         })
-        with open("data/history.json", "w") as f:
-            json.dump(history, f, indent=4)
+        write_json("data/history.json", history)
         return True
     except Exception as e:
         print(f"Error adding to history: {e}")
@@ -262,8 +263,10 @@ def add_song_to_history_json(user_id, song_id):
 def get_user_history_songs_json(user_id, limit=50):
     """Get recent songs a user played, newest first."""
     try:
-        with open("data/history.json", "r") as f:
-            history = json.load(f)
+        # Ensure file exists
+        if not os.path.exists("data/history.json"):
+            write_json("data/history.json", [])
+        history = load_json("data/history.json")
         songs = load_json("data/songs.json")
         user_items = [h for h in history if str(h.get('user_id')) == str(user_id)]
         # Sort by played_at descending
