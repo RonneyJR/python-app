@@ -241,50 +241,36 @@ def remove_song_from_user_playlist_json(user_id, song_id):
 
 def add_song_to_history_json(user_id, song_id):
     """Append a play event to history with timestamp."""
-    try:
-        # Ensure file exists
-        if not os.path.exists("data/history.json"):
-            write_json("data/history.json", [])
-        history = load_json("data/history.json")
-        # Don't duplicate consecutive same song for the same user
-        if history and str(history[-1].get('user_id')) == str(user_id) and str(history[-1].get('song_id')) == str(song_id):
-            return False
-        history.append({
-            'user_id': user_id,
-            'song_id': song_id,
-            'played_at': datetime.now().isoformat(timespec='seconds')
-        })
-        write_json("data/history.json", history)
-        return True
-    except Exception as e:
-        print(f"Error adding to history: {e}")
+    history = load_json("data/history.json")
+    # Don't duplicate consecutive same song for the same user
+    if history and str(history[-1].get('user_id')) == str(user_id) and str(history[-1].get('song_id')) == str(song_id):
         return False
+    history.append({
+        'user_id': user_id,
+        'song_id': song_id,
+        'played_at': datetime.now().isoformat(timespec='seconds')
+    })
+    write_json("data/history.json", history)
+    return True
 
 def get_user_history_songs_json(user_id, limit=50):
     """Get recent songs a user played, newest first."""
-    try:
-        # Ensure file exists
-        if not os.path.exists("data/history.json"):
-            write_json("data/history.json", [])
-        history = load_json("data/history.json")
-        songs = load_json("data/songs.json")
-        user_items = [h for h in history if str(h.get('user_id')) == str(user_id)]
-        # Sort by played_at descending
-        user_items.sort(key=lambda x: x.get('played_at', ''), reverse=True)
-        result = []
-        seen = set()
-        for item in user_items:
-            sid = str(item.get('song_id'))
-            if sid in seen:
-                continue
-            for song in songs:
-                if str(song.get('id')) == sid:
-                    result.append(song)
-                    seen.add(sid)
-                    break
-            if len(result) >= limit:
+    history = load_json("data/history.json")
+    songs = load_json("data/songs.json")
+    user_items = [h for h in history if str(h.get('user_id')) == str(user_id)]
+    # Sort by played_at descending
+    user_items.sort(key=lambda x: x.get('played_at', ''), reverse=True)
+    result = []
+    seen = set()
+    for item in user_items:
+        sid = str(item.get('song_id'))
+        if sid in seen:
+            continue
+        for song in songs:
+            if str(song.get('id')) == sid:
+                result.append(song)
+                seen.add(sid)
                 break
-        return result
-    except Exception as e:
-        print(f"Error reading history: {e}")
-        return []
+        if len(result) >= limit:
+            break
+    return result
