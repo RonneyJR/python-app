@@ -150,6 +150,25 @@ class Register(QWidget):
         else:
             input.setEchoMode(QLineEdit.EchoMode.Password)
             button.setIcon(QIcon("img/eye-slash-solid.svg"))
+    
+        # Hàm mới để kiểm tra độ mạnh của mật khẩu
+    def validate_password_strength(self, password):
+        # Yêu cầu 1: Mật khẩu phải có ít nhất 8 ký tự
+        if len(password) < 8:
+            return "Password must be at least 8 characters long"
+
+        # Yêu cầu 2: Mật khẩu phải chứa ít nhất một chữ số
+        has_digit = any(char.isdigit() for char in password)
+        if not has_digit:
+            return "Password must contain at least one digit"
+
+        # Yêu cầu 3: Mật khẩu phải chứa ít nhất một ký tự đặc biệt
+        special_chars = "!@#$%^&*()-_+=[]{}|;:',.<>/?`~"
+        has_special = any(char in special_chars for char in password)
+        if not has_special:
+            return "Password must contain at least one special character"
+        
+        return None # Trả về None nếu mật khẩu hợp lệ
 
     def register(self):
         email = self.email_input.text().strip()
@@ -164,6 +183,11 @@ class Register(QWidget):
         
         if password == "":
             msg.error_message("Register", "Password is required")
+            self.password_input.setFocus()
+            return
+        
+        if self.validate_password_strength(password):
+            msg.error_message("Register",self.validate_password_strength(password))
             self.password_input.setFocus()
             return
         
