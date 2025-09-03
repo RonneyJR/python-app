@@ -239,10 +239,10 @@ font: 700 12pt &quot;Microsoft YaHei&quot;;</string>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>370</x>
      <y>10</y>
-     <width>31</width>
-     <height>31</height>
+     <width>41</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
