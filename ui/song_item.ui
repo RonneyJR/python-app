@@ -69,10 +69,9 @@ font-weight: bold</string>
      <item>
       <widget class="QLabel" name="lbl_artist">
        <property name="styleSheet">
-        <string notr="true">color:rgb(255,255,255);
+        <string notr="true">color:rgb(189, 189, 189);
 background-color: transparent;
-font-size: 20px;
-font-weight: bold</string>
+font-size: 20px;</string>
        </property>
        <property name="text">
         <string>Artist</string>

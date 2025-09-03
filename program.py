@@ -155,18 +155,18 @@ class Register(QWidget):
     def validate_password_strength(self, password):
         # Yêu cầu 1: Mật khẩu phải có ít nhất 8 ký tự
         if len(password) < 8:
-            return "Password must be at least 8 characters long"
+            return "Mật khẩu phải có ít nhất 8 ký tự."
 
         # Yêu cầu 2: Mật khẩu phải chứa ít nhất một chữ số
         has_digit = any(char.isdigit() for char in password)
         if not has_digit:
-            return "Password must contain at least one digit"
+            return "Mật khẩu phải chứa ít nhất một chữ số."
 
         # Yêu cầu 3: Mật khẩu phải chứa ít nhất một ký tự đặc biệt
         special_chars = "!@#$%^&*()-_+=[]{}|;:',.<>/?`~"
         has_special = any(char in special_chars for char in password)
         if not has_special:
-            return "Password must contain at least one special character"
+            return "Mật khẩu phải chứa ít nhất một ký tự đặc biệt."
         
         return None # Trả về None nếu mật khẩu hợp lệ
 
@@ -483,13 +483,6 @@ class Home(QWidget):
         # Connect player control buttons
         self.btn_prev_song.clicked.connect(self.previous_song)
         self.btn_next_song.clicked.connect(self.next_song)
-        
-        # START - PHẦN BỔ SUNG CHO CHỨC NĂNG TRỘN BÀI HÁT
-        self.btn_shuffle = self.findChild(QPushButton, 'btn_shuffle')
-        if self.btn_shuffle:
-            self.btn_shuffle.clicked.connect(self.shuffle_songs)
-        # END - PHẦN BỔ SUNG CHO CHỨC NĂNG TRỘN BÀI HÁT
-        
         
         # Setup song container with scroll area
         self.btn_search = self.findChild(QPushButton, 'btn_search')
