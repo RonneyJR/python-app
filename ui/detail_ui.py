@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/list.ui'
+# Form implementation generated from reading ui file '/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/detail.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.0
 #
