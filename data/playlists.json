@@ -7,5 +7,14 @@
         "song_name": "Hit Me Up (feat. Nomovodka)",
         "image_path": "songs_images/ab67616d0000b2732103bdcdf1d4369f212b6862.jpg",
         "file_path": "music_files/4acXEYw7ayyJnm9GXDrqiL.m4a"
+    },
+    {
+        "id": 2,
+        "user_id": 1,
+        "song_id": "3",
+        "name": "My Playlist",
+        "song_name": "03 Hay L\u00e0",
+        "image_path": "songs_images/ab67616d0000b273d888433c9ebc10a6fd994962.jpg",
+        "file_path": "music_files/6yLbighkE0kn1OH9zd4aBi.m4a"
     }
 ]

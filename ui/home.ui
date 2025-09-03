@@ -64,7 +64,7 @@
 }</string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
@@ -456,6 +456,7 @@ background-color: transparent</string>
       <string>Account</string>
      </property>
     </widget>
+<<<<<<< HEAD
     <widget class="QWidget" name="song_container_2" native="true">
      <property name="geometry">
       <rect>
@@ -626,6 +627,11 @@ font-size: 25px;</string>
      </widget>
     </widget>
    </widget>
+=======
+   </widget>
+   <widget class="QWidget" name="playlist"/>
+   <widget class="QWidget" name="history"/>
+>>>>>>> a09c7d15e7a53e72b4d5fbc1b4934ed38e945a6c
   </widget>
   <widget class="QPushButton" name="btn_play">
    <property name="geometry">
@@ -704,7 +710,7 @@ border:none
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_favorite">
+  <widget class="QPushButton" name="btn_history">
    <property name="geometry">
     <rect>
      <x>-20</x>
@@ -747,7 +753,7 @@ background-color: transparent;
 font-size: 15px</string>
    </property>
    <property name="text">
-    <string>Liked Songs</string>
+    <string>History</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_volume">
@@ -1096,7 +1102,7 @@ background: transparent;
   <zorder>lbl_curr_name</zorder>
   <zorder>lbl_time</zorder>
   <zorder>btn_song_list</zorder>
-  <zorder>btn_favorite</zorder>
+  <zorder>btn_history</zorder>
   <zorder>label_32</zorder>
   <zorder>pushButton_21</zorder>
   <zorder>label_34</zorder>

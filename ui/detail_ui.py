@@ -89,7 +89,7 @@ class Ui_Form(object):
         self.label_10.setScaledContents(True)
         self.label_10.setObjectName("label_10")
         self.label_11 = QtWidgets.QLabel(parent=Form)
-        self.label_11.setGeometry(QtCore.QRect(380, 10, 31, 31))
+        self.label_11.setGeometry(QtCore.QRect(370, 10, 41, 41))
         self.label_11.setText("")
         self.label_11.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/spotify-brands (1).svg"))
         self.label_11.setScaledContents(True)
