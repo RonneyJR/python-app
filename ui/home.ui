@@ -181,408 +181,15 @@ padding: 5px;</string>
     <widget class="QWidget" name="song_container" native="true">
      <property name="geometry">
       <rect>
-       <x>-20</x>
-       <y>100</y>
+       <x>0</x>
+       <y>10</y>
        <width>941</width>
-       <height>441</height>
+       <height>531</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
-     <widget class="QFrame" name="frame_5">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>60</y>
-        <width>291</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 1px solid rgba(255, 255, 255, 40);
-border-radius: 8px;
-padding: 4px;
-</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label_3">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>121</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../img/z6498876897954_59ddeff9bd8129a9120778cdb6c89686.jpg</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_5">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>50</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>Legend Never Die</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_6">
-      <property name="geometry">
-       <rect>
-        <x>360</x>
-        <y>60</y>
-        <width>281</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 1px solid rgba(255, 255, 255, 40);
-border-radius: 8px;
-padding: 4px;
-</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label_9">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>50</y>
-         <width>151</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: white;
-font-size: 17px;
-font-weight: bold;
-background: transparent</string>
-       </property>
-       <property name="text">
-        <string>Die With A Smile</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_8">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>121</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../img/z6498832574348_16983d2b2cb3fb4741b1091fefff519d.jpg</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_7">
-      <property name="geometry">
-       <rect>
-        <x>670</x>
-        <y>60</y>
-        <width>261</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 1px solid rgba(255, 255, 255, 40);
-border-radius: 8px;
-padding: 4px;
-</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>121</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../img/z6498882588427_34e9891f52d595a569a46ffdaf578fbe.jpg</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_11">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>50</y>
-         <width>131</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>Faded</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="label_12">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>0</y>
-        <width>321</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>MS UI Gothic</family>
-        <pointsize>-1</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:white;
-font-size: 30px;
-font-weight: bold;
-etter-spacing: 0.5px;
-background:transparent
-</string>
-      </property>
-      <property name="text">
-       <string>Most Popular Songs:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>180</y>
-        <width>321</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>MS UI Gothic</family>
-        <pointsize>-1</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:white;
-font-size: 30px;
-font-weight: bold;
-etter-spacing: 0.5px;
-background:transparent
-</string>
-      </property>
-      <property name="text">
-       <string>Top Vietnam Singers:</string>
-      </property>
-     </widget>
-     <widget class="QFrame" name="frame_8">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>250</y>
-        <width>121</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 1px solid rgba(255, 255, 255, 40);
-border-radius: 8px;
-padding: 4px;
-</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label_16">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>121</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: 1px solid rgba(255, 255, 255, 40);
-border-radius: 8px;
-padding: 4px;
-</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../img/sơn tùng.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="label_35">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>290</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background: transparent;</string>
-      </property>
-      <property name="text">
-       <string>Hiếu Thứ Hai</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_33">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>250</y>
-        <width>121</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 1px solid rgba(255, 255, 255, 40);
-border-radius: 8px;
-padding: 4px;
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/hiếu thứ 2.jpg</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_36">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>290</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background: transparent;</string>
-      </property>
-      <property name="text">
-       <string>Sơn Tùng MTP</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_38">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>250</y>
-        <width>121</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 1px solid rgba(255, 255, 255, 40);
-border-radius: 8px;
-padding: 4px;
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/dương domic.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_39">
-      <property name="geometry">
-       <rect>
-        <x>790</x>
-        <y>290</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background: transparent;</string>
-      </property>
-      <property name="text">
-       <string>Dương Domic</string>
-      </property>
-     </widget>
     </widget>
     <zorder>song_container</zorder>
     <zorder>label_4</zorder>
@@ -849,364 +456,34 @@ background-color: transparent</string>
       <string>Account</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="playlist">
-    <widget class="QFrame" name="frame">
-     <property name="geometry">
-      <rect>
-       <x>-10</x>
-       <y>110</y>
-       <width>431</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">padding: 10px;
-border-radius:10px</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Raised</enum>
-     </property>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>-10</y>
-        <width>141</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/z6565114390107_1053d1259e768448bbed37d712417041.jpg</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_17">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>40</y>
-        <width>241</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;             
-font-size: 18px;             
-font-weight: bold;         
-background: transparent;     
-</string>
-      </property>
-      <property name="text">
-       <string>Em Của Ngày Hôm Qua</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_7">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>30</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background:none;
-border:none</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../img/circle-regular.svg</normaloff>../img/circle-regular.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QFrame" name="frame_2">
-     <property name="geometry">
-      <rect>
-       <x>490</x>
-       <y>110</y>
-       <width>431</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">padding: 10px;
-border-radius:10px</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Raised</enum>
-     </property>
-     <widget class="QLabel" name="label_26">
-      <property name="geometry">
-       <rect>
-        <x>-10</x>
-        <y>-10</y>
-        <width>141</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/z6565170373515_ba2aeac2b06b9103f36f7c72b0168d5e.jpg</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_27">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>40</y>
-        <width>201</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;             
-font-size: 18px;             
-font-weight: bold;         
-background: transparent;     
-</string>
-      </property>
-      <property name="text">
-       <string>Bắc Bling</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_9">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>30</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background:none;
-border:none</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../img/circle-regular.svg</normaloff>../img/circle-regular.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QFrame" name="frame_3">
-     <property name="geometry">
-      <rect>
-       <x>490</x>
-       <y>270</y>
-       <width>431</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">padding: 10px;
-border-radius:10px</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Raised</enum>
-     </property>
-     <widget class="QLabel" name="label_30">
-      <property name="geometry">
-       <rect>
-        <x>-10</x>
-        <y>-10</y>
-        <width>141</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/z6565175587746_eb8f98ae579a50c9db81346956f12136.jpg</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_31">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>40</y>
-        <width>201</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;             
-font-size: 18px;             
-font-weight: bold;         
-background: transparent;     
-</string>
-      </property>
-      <property name="text">
-       <string>Tái Sinh</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>30</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background:none;
-border:none</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../img/circle-regular.svg</normaloff>../img/circle-regular.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QFrame" name="frame_4">
+    <widget class="QWidget" name="song_container_2" native="true">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>270</y>
-       <width>421</width>
-       <height>131</height>
+       <y>0</y>
+       <width>941</width>
+       <height>531</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 10px;
-border-radius:10px</string>
+      <string notr="true"/>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Raised</enum>
-     </property>
-     <widget class="QLabel" name="label_22">
-      <property name="geometry">
-       <rect>
-        <x>-10</x>
-        <y>-10</y>
-        <width>141</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/z6565142229589_4d2c9fcab1852a83f9480390dd317c4e.jpg</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_23">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>40</y>
-        <width>201</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;             
-font-size: 18px;             
-font-weight: bold;         
-background: transparent;     
-</string>
-      </property>
-      <property name="text">
-       <string>Mất Kết Nối</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_8">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>30</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background:none;
-border:none</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../img/circle-regular.svg</normaloff>../img/circle-regular.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-     </widget>
     </widget>
+    <zorder>song_container_2</zorder>
+    <zorder>label_20</zorder>
+    <zorder>txt_name</zorder>
+    <zorder>label_21</zorder>
+    <zorder>txt_email</zorder>
+    <zorder>label_19</zorder>
+    <zorder>btn_avatar</zorder>
+    <zorder>label_18</zorder>
+    <zorder>txt_birthday</zorder>
+    <zorder>btn_save_account</zorder>
+    <zorder>label_60</zorder>
+    <zorder>txt_gender</zorder>
+    <zorder>txt_password_3</zorder>
+   </widget>
+   <widget class="QWidget" name="playlist">
     <widget class="QLabel" name="label_61">
      <property name="geometry">
       <rect>
@@ -1293,16 +570,62 @@ font-size: 25px;</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QWidget" name="song_container_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>-10</y>
+       <width>941</width>
+       <height>541</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <zorder>song_container_3</zorder>
     <zorder>label_61</zorder>
-    <zorder>frame_4</zorder>
-    <zorder>frame</zorder>
-    <zorder>frame_2</zorder>
-    <zorder>frame_3</zorder>
     <zorder>label_2</zorder>
     <zorder>lineEdit_5</zorder>
     <zorder>label_25</zorder>
    </widget>
-   <widget class="QWidget" name="page"/>
+   <widget class="QWidget" name="page">
+    <widget class="QWidget" name="song_container_4" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>941</width>
+       <height>531</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QLabel" name="label_62">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>180</y>
+        <width>231</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../img/spotify-brands.svg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
   </widget>
   <widget class="QPushButton" name="btn_play">
    <property name="geometry">
