@@ -55,6 +55,12 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="lbl_name">
+       <property name="styleSheet">
+        <string notr="true">color:rgb(255,255,255);
+background-color: transparent;
+font-size: 20px;
+font-weight: bold</string>
+       </property>
        <property name="text">
         <string>Song Name</string>
        </property>
@@ -62,6 +68,12 @@
      </item>
      <item>
       <widget class="QLabel" name="lbl_artist">
+       <property name="styleSheet">
+        <string notr="true">color:rgb(255,255,255);
+background-color: transparent;
+font-size: 20px;
+font-weight: bold</string>
+       </property>
        <property name="text">
         <string>Artist</string>
        </property>

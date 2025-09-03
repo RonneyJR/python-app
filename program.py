@@ -484,6 +484,13 @@ class Home(QWidget):
         self.btn_prev_song.clicked.connect(self.previous_song)
         self.btn_next_song.clicked.connect(self.next_song)
         
+        # START - PHẦN BỔ SUNG CHO CHỨC NĂNG TRỘN BÀI HÁT
+        self.btn_shuffle = self.findChild(QPushButton, 'btn_shuffle')
+        if self.btn_shuffle:
+            self.btn_shuffle.clicked.connect(self.shuffle_songs)
+        # END - PHẦN BỔ SUNG CHO CHỨC NĂNG TRỘN BÀI HÁT
+        
+        
         # Setup song container with scroll area
         self.btn_search = self.findChild(QPushButton, 'btn_search')
         self.txt_search = self.findChild(QLineEdit, 'txt_search')
