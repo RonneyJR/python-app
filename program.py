@@ -292,32 +292,35 @@ class Home(QWidget):
     def __init__(self, id):
         super().__init__()
         self.setWindowTitle("Home")
+        
+        # Load UI
         uic.loadUi("ui/home.ui", self)
-
+        
         self.id = id
         self.user_id = id  # Add user_id for compatibility
         self.user = get_user_by_id(id)
         self.load_user_info()
 
+        self.btn_log_out = self.findChild(QPushbutton, "btn_log_out")
         self.stack_widget = self.findChild(QStackedWidget, "stackedWidget")
+        self.btn_profile = self.findChild(QPushButton, "btn_profile")
+        self.btn_home = self.findChild(QPushButton, "btn_home")
+        self.btn_favorite = self.findChild(QPushButton, "btn_favorite")
+        self.btn_playlist = self.findChild(QPushButton, "btn_playlist")
+        self.btn_save_account = self.findChild(QPushButton, "btn_save_account")
 
-        # Bọc từng page bằng scroll mà KHÔNG remove page
-        for i in range(self.stack_widget.count()):
-            page = self.stack_widget.widget(i)
+        #user
+        self.txt_name = self.findChild(QLineEdit, "txt_name")
+        self.txt_email = self.findChild(QLineEdit, "txt_email")
+        self.txt_birthday = self.findChild(QDateEdit, "txt_birthday")
+        self.txt_gender = self.findChild(QComboBox, "txt_gender")
+        self.btn_avatar = self.findChild(QPushButton, "btn_avatar")
 
-            scroll = QScrollArea()
-            scroll.setWidgetResizable(True)
-
-            # container chứa page
-            container = QWidget()
-            layout = QVBoxLayout(container)
-            layout.setContentsMargins(0,0,0,0)
-            layout.addWidget(page)
-
-            scroll.setWidget(container)
-
-            # thay thế trực tiếp
-            self.stack_widget.insertWidget(i, scroll)
+        self.btn_home.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 0))
+        self.btn_profile.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 1))
+        self.btn_playlist.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 2))
+        self.btn_save_account.clicked.connect(self.update_user_info)
+        self.btn_avatar.clicked.connect(self.update_avatar)
     
     def navigate_screen(self, stackWidget: QStackedWidget, index: int):
         stackWidget.setCurrentIndex(index)

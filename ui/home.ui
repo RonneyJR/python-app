@@ -44,23 +44,26 @@
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>150</x>
      <y>60</y>
-     <width>941</width>
+     <width>931</width>
      <height>541</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget {
-    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,   /* bắt đầu ở trên */
-        x2:0, y2:1,   /* kéo xuống dưới */
-        stop:0 #0f2027,   /* đen đậm trên cùng */
-        stop:0.5 #203a43, /* xanh đậm ở giữa */
-        stop:1 #2c5364    /* xanh teal ở dưới */
-    );
-}background-color:rgb(79, 79, 79)</string>
+    <string notr="true">QToolButton {
+    background-color: rgba(255, 255, 255, 40); /* nền nhạt */
+    border-radius: 10px;
+    padding: 5px;
+}
+
+QToolButton:hover {
+    background-color: rgba(255, 255, 255, 80); /* sáng hơn khi hover */
+}
+
+QToolButton:pressed {
+    background-color: rgba(255, 255, 255, 120); /* rõ hơn khi nhấn */
+}</string>
    </property>
    <property name="currentIndex">
     <number>1</number>
@@ -91,7 +94,7 @@ background:transparent
 </string>
      </property>
      <property name="text">
-      <string>Good Afternoon</string>
+      <string>Welcome Back !</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -729,7 +732,7 @@ background-color: transparent;
      <property name="geometry">
       <rect>
        <x>620</x>
-       <y>240</y>
+       <y>170</y>
        <width>131</width>
        <height>51</height>
       </rect>
@@ -777,7 +780,7 @@ border:none;
      <property name="geometry">
       <rect>
        <x>620</x>
-       <y>310</y>
+       <y>270</y>
        <width>161</width>
        <height>51</height>
       </rect>
@@ -798,7 +801,7 @@ background-color: transparent
      <property name="geometry">
       <rect>
        <x>800</x>
-       <y>330</y>
+       <y>280</y>
        <width>110</width>
        <height>26</height>
       </rect>
@@ -855,7 +858,7 @@ background-color: transparent
      <property name="geometry">
       <rect>
        <x>750</x>
-       <y>260</y>
+       <y>180</y>
        <width>76</width>
        <height>26</height>
       </rect>
@@ -899,6 +902,25 @@ background-color: transparent</string>
      </property>
      <property name="text">
       <string>Account</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>40</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
      </property>
     </widget>
    </widget>
@@ -947,16 +969,18 @@ border-radius:10px</string>
      <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>130</x>
         <y>40</y>
         <width>241</width>
         <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;</string>
+       <string notr="true">color: white;             
+font-size: 18px;             
+font-weight: bold;         
+background: transparent;     
+</string>
       </property>
       <property name="text">
        <string>Em Của Ngày Hôm Qua</string>
@@ -1041,9 +1065,11 @@ border-radius:10px</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;</string>
+       <string notr="true">color: white;             
+font-size: 18px;             
+font-weight: bold;         
+background: transparent;     
+</string>
       </property>
       <property name="text">
        <string>Bắc Bling</string>
@@ -1128,9 +1154,11 @@ border-radius:10px</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;</string>
+       <string notr="true">color: white;             
+font-size: 18px;             
+font-weight: bold;         
+background: transparent;     
+</string>
       </property>
       <property name="text">
        <string>Tái Sinh</string>
@@ -1215,9 +1243,11 @@ border-radius:10px</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">etter-spacing: 0.5px;
-color:rgb(255, 255, 255);
-font-size: 18px;</string>
+       <string notr="true">color: white;             
+font-size: 18px;             
+font-weight: bold;         
+background: transparent;     
+</string>
       </property>
       <property name="text">
        <string>Mất Kết Nối</string>
@@ -1304,12 +1334,12 @@ border:none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true"> border: 2px solid white;
-    border-radius: 20px;
-    padding: 10px 16px;
-    background-color: transparent;
-    color: white;
-    font-size: 25px;</string>
+      <string notr="true">border: 2px solid white;
+border-radius: 20px;
+padding: 10px 16px;
+background-color: transparent;
+color: white;
+font-size: 25px;</string>
      </property>
      <property name="placeholderText">
       <string>Search</string>
@@ -1323,6 +1353,9 @@ border:none</string>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:transparent</string>
      </property>
      <property name="text">
       <string/>
@@ -1374,20 +1407,20 @@ background: none</string>
   <widget class="QPushButton" name="btn_profile">
    <property name="geometry">
     <rect>
-     <x>940</x>
+     <x>950</x>
      <y>10</y>
-     <width>131</width>
+     <width>121</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"> background-color: white;
-    color: black;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 20px;</string>
+    <string notr="true">background-color: white;
+color: black;
+border: none;
+border-radius: 20px;
+padding: 10px;
+font-weight: bold;
+font-size: 20px;</string>
    </property>
    <property name="text">
     <string>Profile</string>
@@ -1444,7 +1477,7 @@ border:none
    </property>
    <property name="iconSize">
     <size>
-     <width>40</width>
+     <width>30</width>
      <height>30</height>
     </size>
    </property>
@@ -1634,10 +1667,10 @@ background-color: transparent
   <widget class="QLabel" name="label_34">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>121</width>
-     <height>51</height>
+     <x>0</x>
+     <y>0</y>
+     <width>161</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -1767,7 +1800,53 @@ font-size: 25px;
     </size>
    </property>
   </widget>
-  <zorder>stackedWidget</zorder>
+  <widget class="QPushButton" name="btn_log_out">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>0</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border:none
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/log-out-solid-full.svg</normaloff>../img/log-out-solid-full.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_37">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>10</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);
+background-color: transparent;
+font-size: 20px;
+font-weight: bold</string>
+   </property>
+   <property name="text">
+    <string>Log Out</string>
+   </property>
+  </widget>
   <zorder>pushButton</zorder>
   <zorder>horizontalSlider</zorder>
   <zorder>btn_profile</zorder>
@@ -1787,6 +1866,9 @@ font-size: 25px;
   <zorder>label_36</zorder>
   <zorder>label_24</zorder>
   <zorder>btn_home</zorder>
+  <zorder>stackedWidget</zorder>
+  <zorder>btn_log_out</zorder>
+  <zorder>label_37</zorder>
  </widget>
  <resources/>
  <connections/>

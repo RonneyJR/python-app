@@ -134,6 +134,7 @@ class Ui_Form(object):
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;")
+        
         self.label_10.setObjectName("label_10")
         self.btn_login = QtWidgets.QPushButton(parent=Form)
         self.btn_login.setGeometry(QtCore.QRect(600, 520, 91, 41))
