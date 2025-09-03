@@ -723,7 +723,7 @@ border:none
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../img/heart-solid.svg</normaloff>../img/heart-solid.svg</iconset>
+     <normaloff>../img/history-solid-full.svg</normaloff>../img/history-solid-full.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -851,9 +851,9 @@ background: none</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>640</y>
+     <y>630</y>
      <width>91</width>
-     <height>81</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="text">
@@ -871,7 +871,7 @@ background: none</string>
     <rect>
      <x>100</x>
      <y>660</y>
-     <width>201</width>
+     <width>241</width>
      <height>31</height>
     </rect>
    </property>
@@ -884,35 +884,6 @@ background: transparent;
    </property>
    <property name="text">
     <string>Phép Màu</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_21">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>660</y>
-     <width>93</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:none;
-border:none;
-background-color: transparent
-</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../img/heart-solid.svg</normaloff>../img/heart-solid.svg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
    </property>
   </widget>
   <widget class="QLabel" name="label_34">
@@ -1098,7 +1069,6 @@ background: transparent;
   <zorder>btn_song_list</zorder>
   <zorder>btn_history</zorder>
   <zorder>label_32</zorder>
-  <zorder>pushButton_21</zorder>
   <zorder>label_34</zorder>
   <zorder>pushButton_22</zorder>
   <zorder>label_24</zorder>
