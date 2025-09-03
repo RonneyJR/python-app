@@ -334,9 +334,6 @@ class Home(QWidget):
         self.user = get_user_by_id(id)
         self.load_user_info()
 
-<<<<<<< HEAD
-        self.btn_log_out = self.findChild(QPushbutton, "btn_log_out")
-=======
         # Initialize media player and audio output early
         self.audio_output = QAudioOutput()
         self.player = QMediaPlayer()
@@ -347,28 +344,8 @@ class Home(QWidget):
         self.current_song_index = -1
         self.current_volume = 50
 
->>>>>>> 9a9aa82113d51dd394333f0c33b1fe512bb9968e
         self.stack_widget = self.findChild(QStackedWidget, "stackedWidget")
-        self.btn_profile = self.findChild(QPushButton, "btn_profile")
-        self.btn_home = self.findChild(QPushButton, "btn_home")
-        self.btn_favorite = self.findChild(QPushButton, "btn_favorite")
-        self.btn_playlist = self.findChild(QPushButton, "btn_playlist")
-        self.btn_save_account = self.findChild(QPushButton, "btn_save_account")
 
-<<<<<<< HEAD
-        #user
-        self.txt_name = self.findChild(QLineEdit, "txt_name")
-        self.txt_email = self.findChild(QLineEdit, "txt_email")
-        self.txt_birthday = self.findChild(QDateEdit, "txt_birthday")
-        self.txt_gender = self.findChild(QComboBox, "txt_gender")
-        self.btn_avatar = self.findChild(QPushButton, "btn_avatar")
-
-        self.btn_home.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 0))
-        self.btn_profile.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 1))
-        self.btn_playlist.clicked.connect(lambda: self.navigate_screen(self.stack_widget, 2))
-        self.btn_save_account.clicked.connect(self.update_user_info)
-        self.btn_avatar.clicked.connect(self.update_avatar)
-=======
         # Ensure we show the 'home' page initially (no extra wrapping)
         home_page = self.findChild(QWidget, 'home')
         if self.stack_widget and home_page:
@@ -377,7 +354,6 @@ class Home(QWidget):
         # Build UI elements and layouts, then load data
         self.setup_ui()
         self.load_initial_songs()
->>>>>>> 9a9aa82113d51dd394333f0c33b1fe512bb9968e
     
     def navigate_screen(self, stackWidget: QStackedWidget, index: int):
         stackWidget.setCurrentIndex(index)
