@@ -818,6 +818,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     msg = Alert()
     login = Login()
-    login = Home(1)
     login.show()
     sys.exit(app.exec())
