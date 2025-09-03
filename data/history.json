@@ -43,5 +43,20 @@
         "user_id": 2,
         "song_id": "5",
         "played_at": "2025-09-03T21:14:17"
+    },
+    {
+        "user_id": 2,
+        "song_id": "1",
+        "played_at": "2025-09-03T21:49:18"
+    },
+    {
+        "user_id": 2,
+        "song_id": "3",
+        "played_at": "2025-09-03T21:49:25"
+    },
+    {
+        "user_id": 2,
+        "song_id": "1",
+        "played_at": "2025-09-03T21:49:26"
     }
 ]

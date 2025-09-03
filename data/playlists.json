@@ -16,5 +16,14 @@
         "song_name": "03 Hay L\u00e0",
         "image_path": "songs_images/ab67616d0000b273d888433c9ebc10a6fd994962.jpg",
         "file_path": "music_files/6yLbighkE0kn1OH9zd4aBi.m4a"
+    },
+    {
+        "id": 3,
+        "user_id": 2,
+        "song_id": "4",
+        "name": "My Playlist",
+        "song_name": "B\u1ea1n th\u1ecf tivi nh\u1ecf",
+        "image_path": "songs_images/ab67616d0000b2730771b564830e3dedb2d31358.jpg",
+        "file_path": "music_files/1UDAnignfiklanSQ6MfPUE.m4a"
     }
 ]
