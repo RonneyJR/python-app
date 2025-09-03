@@ -466,6 +466,8 @@ class Home(QWidget):
         # Setup scroll area
         self.scroll_area = QScrollArea(self.song_container)
         self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.scroll_area.setStyleSheet("QScrollArea{background: transparent;} QWidget{background: transparent;}")
         
         # Create scroll content
@@ -684,6 +686,10 @@ class Home(QWidget):
             if column == 2:  # Show 2 columns
                 column = 0
                 row += 1
+        # push items to top and enable proper scrolling
+        self.song_layout.setRowStretch(row + 1, 1)
+        self.scroll_content.adjustSize()
+        self.scroll_area.update()
 
     def render_history(self):
         if not hasattr(self, 'history_layout') or self.history_layout is None:
@@ -704,7 +710,11 @@ class Home(QWidget):
         self.history_layout.addStretch(1)
 
     def search_song(self):
-        name = self.txt_search.text()
+        name = self.txt_search.text().strip()
+        if name == "":
+            # show the first 15 only when query is empty
+            self.load_initial_songs()
+            return
         song_list = get_songs_by_name_json(name)
         self.render_song_list(song_list)
         
