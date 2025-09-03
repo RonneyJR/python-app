@@ -20,8 +20,11 @@ class Ui_Form(object):
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.listWidget = QtWidgets.QListWidget(parent=Form)
-        self.listWidget.setGeometry(QtCore.QRect(340, 20, 371, 551))
-        self.listWidget.setStyleSheet("background-color:rgb(138, 138, 138);\n"
+        self.listWidget.setGeometry(QtCore.QRect(320, 30, 381, 561))
+        self.listWidget.setStyleSheet("border: 1px solid rgba(255, 255, 255, 40);\n"
+"border-radius: 8px;\n"
+"padding: 4px;\n"
+"background-color:rgb(138, 138, 138);\n"
 "padding: 10px;\n"
 "border-radius: 10px;")
         self.listWidget.setObjectName("listWidget")
@@ -32,7 +35,7 @@ class Ui_Form(object):
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.txt_name = QtWidgets.QLineEdit(parent=Form)
-        self.txt_name.setGeometry(QtCore.QRect(360, 140, 311, 41))
+        self.txt_name.setGeometry(QtCore.QRect(350, 120, 311, 51))
         self.txt_name.setStyleSheet(" border: 2px solid white;\n"
 "    border-radius: 20px;\n"
 "    padding: 10px 16px;\n"
@@ -41,28 +44,28 @@ class Ui_Form(object):
 "    font-size: 14px;")
         self.txt_name.setObjectName("txt_name")
         self.label_3 = QtWidgets.QLabel(parent=Form)
-        self.label_3.setGeometry(QtCore.QRect(370, 110, 141, 20))
+        self.label_3.setGeometry(QtCore.QRect(360, 90, 141, 20))
         self.label_3.setStyleSheet("   color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(parent=Form)
-        self.label_4.setGeometry(QtCore.QRect(470, 70, 171, 41))
+        self.label_4.setGeometry(QtCore.QRect(460, 40, 171, 41))
         self.label_4.setStyleSheet("   color: white;\n"
 "    font-size: 30px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(parent=Form)
-        self.label_5.setGeometry(QtCore.QRect(370, 180, 141, 31))
+        self.label_5.setGeometry(QtCore.QRect(360, 170, 141, 31))
         self.label_5.setStyleSheet("   color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;")
         self.label_5.setObjectName("label_5")
         self.txt_email = QtWidgets.QLineEdit(parent=Form)
-        self.txt_email.setGeometry(QtCore.QRect(360, 210, 311, 41))
+        self.txt_email.setGeometry(QtCore.QRect(350, 200, 311, 51))
         self.txt_email.setStyleSheet(" border: 2px solid white;\n"
 "    border-radius: 20px;\n"
 "    padding: 10px 16px;\n"
@@ -71,14 +74,14 @@ class Ui_Form(object):
 "    font-size: 14px;")
         self.txt_email.setObjectName("txt_email")
         self.label_6 = QtWidgets.QLabel(parent=Form)
-        self.label_6.setGeometry(QtCore.QRect(370, 250, 141, 31))
+        self.label_6.setGeometry(QtCore.QRect(360, 250, 141, 31))
         self.label_6.setStyleSheet("   color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;")
         self.label_6.setObjectName("label_6")
         self.txt_password = QtWidgets.QLineEdit(parent=Form)
-        self.txt_password.setGeometry(QtCore.QRect(360, 280, 311, 41))
+        self.txt_password.setGeometry(QtCore.QRect(350, 280, 311, 51))
         self.txt_password.setStyleSheet(" border: 2px solid white;\n"
 "    border-radius: 20px;\n"
 "    padding: 10px 16px;\n"
@@ -88,14 +91,14 @@ class Ui_Form(object):
         self.txt_password.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.txt_password.setObjectName("txt_password")
         self.label_7 = QtWidgets.QLabel(parent=Form)
-        self.label_7.setGeometry(QtCore.QRect(360, 320, 201, 31))
+        self.label_7.setGeometry(QtCore.QRect(350, 340, 201, 31))
         self.label_7.setStyleSheet("   color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;")
         self.label_7.setObjectName("label_7")
         self.txt_confirm_password = QtWidgets.QLineEdit(parent=Form)
-        self.txt_confirm_password.setGeometry(QtCore.QRect(360, 360, 311, 41))
+        self.txt_confirm_password.setGeometry(QtCore.QRect(350, 370, 311, 51))
         self.txt_confirm_password.setStyleSheet(" border: 2px solid white;\n"
 "    border-radius: 20px;\n"
 "    padding: 10px 16px;\n"
@@ -105,7 +108,7 @@ class Ui_Form(object):
         self.txt_confirm_password.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.txt_confirm_password.setObjectName("txt_confirm_password")
         self.btn_register = QtWidgets.QPushButton(parent=Form)
-        self.btn_register.setGeometry(QtCore.QRect(370, 460, 321, 51))
+        self.btn_register.setGeometry(QtCore.QRect(350, 480, 321, 51))
         self.btn_register.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"
@@ -126,18 +129,17 @@ class Ui_Form(object):
         self.label_9.setScaledContents(True)
         self.label_9.setObjectName("label_9")
         self.checkBox = QtWidgets.QCheckBox(parent=Form)
-        self.checkBox.setGeometry(QtCore.QRect(350, 410, 351, 41))
+        self.checkBox.setGeometry(QtCore.QRect(340, 430, 351, 41))
         self.checkBox.setObjectName("checkBox")
         self.label_10 = QtWidgets.QLabel(parent=Form)
-        self.label_10.setGeometry(QtCore.QRect(360, 520, 261, 41))
+        self.label_10.setGeometry(QtCore.QRect(350, 540, 261, 41))
         self.label_10.setStyleSheet("   color: white;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;")
-        
         self.label_10.setObjectName("label_10")
         self.btn_login = QtWidgets.QPushButton(parent=Form)
-        self.btn_login.setGeometry(QtCore.QRect(600, 520, 91, 41))
+        self.btn_login.setGeometry(QtCore.QRect(600, 540, 91, 41))
         self.btn_login.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"

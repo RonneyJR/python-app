@@ -1,4 +1,6 @@
 import json
+import os
+from datetime import datetime
 
 
 def remove_vietnamese_signs(text: str) -> str:
@@ -237,15 +239,49 @@ def remove_song_from_user_playlist_json(user_id, song_id):
         print(f"Error removing song from playlist: {e}")
         return False
 
-# Initialize playlists.json if it doesn't exist
-def init_playlists_file():
-    """Initialize playlists.json file if it doesn't exist"""
+def add_song_to_history_json(user_id, song_id):
+    """Append a play event to history with timestamp."""
     try:
-        import os
-        if not os.path.exists("data/playlists.json"):
-            write_json("data/playlists.json", [])
+        with open("data/history.json", "r") as f:
+            history = json.load(f)
+        # Don't duplicate consecutive same song for the same user
+        if history and str(history[-1].get('user_id')) == str(user_id) and str(history[-1].get('song_id')) == str(song_id):
+            return False
+        history.append({
+            'user_id': user_id,
+            'song_id': song_id,
+            'played_at': datetime.now().isoformat(timespec='seconds')
+        })
+        with open("data/history.json", "w") as f:
+            json.dump(history, f, indent=4)
+        return True
     except Exception as e:
-        print(f"Error initializing playlists file: {e}")
+        print(f"Error adding to history: {e}")
+        return False
 
-# Initialize files when module is imported
-init_playlists_file()
+def get_user_history_songs_json(user_id, limit=50):
+    """Get recent songs a user played, newest first."""
+    try:
+        with open("data/history.json", "r") as f:
+            history = json.load(f)
+        songs = load_json("data/songs.json")
+        user_items = [h for h in history if str(h.get('user_id')) == str(user_id)]
+        # Sort by played_at descending
+        user_items.sort(key=lambda x: x.get('played_at', ''), reverse=True)
+        result = []
+        seen = set()
+        for item in user_items:
+            sid = str(item.get('song_id'))
+            if sid in seen:
+                continue
+            for song in songs:
+                if str(song.get('id')) == sid:
+                    result.append(song)
+                    seen.add(sid)
+                    break
+            if len(result) >= limit:
+                break
+        return result
+    except Exception as e:
+        print(f"Error reading history: {e}")
+        return []

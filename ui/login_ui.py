@@ -14,12 +14,6 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(1000, 600)
         Form.setStyleSheet("background-color:rgb(108, 108, 108)")
-        self.label_2 = QtWidgets.QLabel(parent=Form)
-        self.label_2.setGeometry(QtCore.QRect(430, 50, 151, 61))
-        self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/img/565210f00d0debfe7ebe356cabfcfdd7.png"))
-        self.label_2.setScaledContents(True)
-        self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(parent=Form)
         self.label_3.setGeometry(QtCore.QRect(0, 0, 1001, 601))
         self.label_3.setText("")
@@ -27,24 +21,29 @@ class Ui_Form(object):
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(parent=Form)
-        self.label_4.setGeometry(QtCore.QRect(390, 100, 261, 61))
+        self.label_4.setGeometry(QtCore.QRect(450, 60, 151, 71))
         font = QtGui.QFont()
         font.setFamily("Tahoma")
         font.setPointSize(-1)
         font.setBold(True)
         self.label_4.setFont(font)
-        self.label_4.setStyleSheet(" color: white;\n"
-"    font-size: 25px;\n"
+        self.label_4.setStyleSheet("   color: white;\n"
+"    font-size: 35px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;\n"
-"")
+"background-color: transparent")
         self.label_4.setObjectName("label_4")
         self.listWidget = QtWidgets.QListWidget(parent=Form)
-        self.listWidget.setGeometry(QtCore.QRect(340, 40, 341, 511))
-        self.listWidget.setStyleSheet("")
+        self.listWidget.setGeometry(QtCore.QRect(340, 40, 351, 521))
+        self.listWidget.setStyleSheet("border: 1px solid rgba(255, 255, 255, 40);\n"
+"border-radius: 8px;\n"
+"padding: 4px;\n"
+"background-color:rgb(138, 138, 138);\n"
+"padding: 10px;\n"
+"border-radius: 10px;")
         self.listWidget.setObjectName("listWidget")
         self.txt_email = QtWidgets.QLineEdit(parent=Form)
-        self.txt_email.setGeometry(QtCore.QRect(360, 210, 281, 41))
+        self.txt_email.setGeometry(QtCore.QRect(370, 190, 281, 51))
         self.txt_email.setStyleSheet("border: 2px solid white;\n"
 "border-radius: 20px;\n"
 "padding: 10px 16px;\n"
@@ -54,7 +53,7 @@ class Ui_Form(object):
         self.txt_email.setText("")
         self.txt_email.setObjectName("txt_email")
         self.btn_login = QtWidgets.QPushButton(parent=Form)
-        self.btn_login.setGeometry(QtCore.QRect(380, 430, 261, 51))
+        self.btn_login.setGeometry(QtCore.QRect(370, 420, 291, 51))
         self.btn_login.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"
@@ -65,7 +64,7 @@ class Ui_Form(object):
 "")
         self.btn_login.setObjectName("btn_login")
         self.txt_password = QtWidgets.QLineEdit(parent=Form)
-        self.txt_password.setGeometry(QtCore.QRect(360, 300, 281, 41))
+        self.txt_password.setGeometry(QtCore.QRect(370, 290, 281, 51))
         self.txt_password.setStyleSheet(" border: 2px solid white;\n"
 " border-radius: 20px;\n"
 " padding: 10px 16px;\n"
@@ -75,32 +74,29 @@ class Ui_Form(object):
         self.txt_password.setText("")
         self.txt_password.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.txt_password.setObjectName("txt_password")
-        self.label = QtWidgets.QLabel(parent=Form)
-        self.label.setGeometry(QtCore.QRect(600, 310, 31, 21))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/img/eye-slash-solid.svg"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
         self.label_5 = QtWidgets.QLabel(parent=Form)
-        self.label_5.setGeometry(QtCore.QRect(370, 180, 211, 20))
+        self.label_5.setGeometry(QtCore.QRect(370, 150, 211, 20))
         self.label_5.setStyleSheet(" color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
-"    letter-spacing: 0.5px;")
+"    letter-spacing: 0.5px;\n"
+"background-color: transparent")
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(parent=Form)
-        self.label_6.setGeometry(QtCore.QRect(370, 270, 211, 20))
+        self.label_6.setGeometry(QtCore.QRect(370, 250, 211, 20))
         self.label_6.setStyleSheet(" color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
-"    letter-spacing: 0.5px;")
+"    letter-spacing: 0.5px;\n"
+"background-color: transparent")
         self.label_6.setObjectName("label_6")
         self.checkBox = QtWidgets.QCheckBox(parent=Form)
-        self.checkBox.setGeometry(QtCore.QRect(370, 380, 191, 31))
+        self.checkBox.setGeometry(QtCore.QRect(370, 370, 191, 51))
         self.checkBox.setStyleSheet(" color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
 "    letter-spacing: 0.5px;\n"
+"background-color: transparent\n"
 "")
         self.checkBox.setObjectName("checkBox")
         self.label_7 = QtWidgets.QLabel(parent=Form)
@@ -108,19 +104,11 @@ class Ui_Form(object):
         self.label_7.setStyleSheet(" color: white;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
-"    letter-spacing: 0.5px;")
+"    letter-spacing: 0.5px;\n"
+"background-color: transparent")
         self.label_7.setObjectName("label_7")
-        self.btn_eye = QtWidgets.QPushButton(parent=Form)
-        self.btn_eye.setGeometry(QtCore.QRect(590, 310, 41, 29))
-        self.btn_eye.setStyleSheet("border:none;\n"
-"background:none;")
-        self.btn_eye.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/eye-slash-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.btn_eye.setIcon(icon)
-        self.btn_eye.setObjectName("btn_eye")
         self.btn_register = QtWidgets.QPushButton(parent=Form)
-        self.btn_register.setGeometry(QtCore.QRect(350, 490, 321, 51))
+        self.btn_register.setGeometry(QtCore.QRect(560, 500, 121, 51))
         self.btn_register.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"
@@ -129,20 +117,41 @@ class Ui_Form(object):
 "    font-weight: bold;\n"
 "    font-size: 20px;")
         self.btn_register.setObjectName("btn_register")
+        self.label_8 = QtWidgets.QLabel(parent=Form)
+        self.label_8.setGeometry(QtCore.QRect(350, 510, 201, 21))
+        self.label_8.setStyleSheet(" color: white;\n"
+"    font-size: 16px;\n"
+"    font-weight: bold;\n"
+"    letter-spacing: 0.5px;\n"
+"background-color: transparent")
+        self.label_8.setObjectName("label_8")
+        self.btn_eye = QtWidgets.QPushButton(parent=Form)
+        self.btn_eye.setGeometry(QtCore.QRect(550, 220, 141, 181))
+        self.btn_eye.setStyleSheet("border: none;\n"
+"outline: none;\n"
+"background: transparent;\n"
+"\n"
+"\n"
+"")
+        self.btn_eye.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA09/NguyenKhoi/python-app/ui/../img/eye-slash-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btn_eye.setIcon(icon)
+        self.btn_eye.setIconSize(QtCore.QSize(20, 20))
+        self.btn_eye.setObjectName("btn_eye")
         self.label_3.raise_()
         self.listWidget.raise_()
-        self.label_2.raise_()
         self.label_4.raise_()
         self.txt_email.raise_()
         self.btn_login.raise_()
         self.txt_password.raise_()
-        self.label.raise_()
         self.label_5.raise_()
         self.label_6.raise_()
         self.checkBox.raise_()
         self.label_7.raise_()
-        self.btn_eye.raise_()
         self.btn_register.raise_()
+        self.label_8.raise_()
+        self.btn_eye.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -150,7 +159,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_4.setText(_translate("Form", "Log In To Continue"))
+        self.label_4.setText(_translate("Form", "Log In"))
         self.txt_email.setPlaceholderText(_translate("Form", "Email Or Username"))
         self.btn_login.setText(_translate("Form", "Log In"))
         self.txt_password.setPlaceholderText(_translate("Form", "Password"))
@@ -158,4 +167,5 @@ class Ui_Form(object):
         self.label_6.setText(_translate("Form", "Password:"))
         self.checkBox.setText(_translate("Form", "  Remember me"))
         self.label_7.setText(_translate("Form", "Reset Password"))
-        self.btn_register.setText(_translate("Form", "Don\'t have an account? Sign Up"))
+        self.btn_register.setText(_translate("Form", " Sign Up"))
+        self.label_8.setText(_translate("Form", "Don\'t Have An Account?"))

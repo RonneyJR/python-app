@@ -355,6 +355,7 @@ class Home(QWidget):
         # Build UI elements and layouts, then load data
         self.setup_ui()
         self.load_initial_songs()
+        self.render_history()
     
     def navigate_screen(self, stackWidget: QStackedWidget, index: int):
         stackWidget.setCurrentIndex(index)
@@ -438,6 +439,7 @@ class Home(QWidget):
         self.btn_user = self.findChild(QPushButton, 'user_btn')
         self.btn_song_list = self.findChild(QPushButton, 'btn_song_list')
         self.btn_playlist = self.findChild(QPushButton, 'playlist_btn')
+        self.btn_history = self.findChild(QPushButton, 'btn_history')
         self.stackedWidget = self.findChild(QStackedWidget, 'stackedWidget')
         # Ensure default page shows the song list (the 'home' page)
         if self.stackedWidget:
@@ -504,7 +506,22 @@ class Home(QWidget):
         self.btn_song_list.clicked.connect(lambda: self.navigate(0))  # Home (song list)
         self.btn_user.clicked.connect(lambda: self.navigate(1))       # Profile page
         self.btn_playlist.clicked.connect(lambda: self.navigate(2))   # Playlist page
+        self.btn_history.clicked.connect(lambda: self.navigate(3))   # History page
         self.btn_search.clicked.connect(self.search_song)
+
+        # Setup history container on 'history' page if present
+        self.history_page = self.findChild(QWidget, 'history')
+        if self.history_page is not None:
+            self.history_scroll = QScrollArea(self.history_page)
+            self.history_scroll.setWidgetResizable(True)
+            self.history_content = QWidget()
+            self.history_layout = QVBoxLayout(self.history_content)
+            self.history_layout.setContentsMargins(10,10,10,10)
+            self.history_layout.setSpacing(10)
+            self.history_scroll.setWidget(self.history_content)
+            h_layout = QVBoxLayout(self.history_page)
+            h_layout.setContentsMargins(0,0,0,0)
+            h_layout.addWidget(self.history_scroll)
     
     def load_initial_songs(self):
         # Clear existing widgets
@@ -622,6 +639,13 @@ class Home(QWidget):
         file_url = QUrl.fromLocalFile(file_str)
         self.player.setSource(file_url)
         self.player.play()
+
+        # Add to listening history
+        try:
+            add_song_to_history_json(self.user_id, song_id)
+            self.render_history()
+        except Exception as e:
+            print(f"Warning: cannot add to history: {e}")
         
         if self.playBtn and self.pauseIcon:
             self.playBtn.setIcon(self.pauseIcon)
@@ -636,23 +660,6 @@ class Home(QWidget):
             self.curr_img.setScaledContents(True)
         if self.curr_artist:
             self.curr_artist.setText(f"Artist: {song['artist_names']}")
-        # Update detail view
-        try:
-            if getattr(self, 'd_cover', None):
-                img = normalize_path(song.get('image_path'))
-                if img:
-                    self.d_cover.setPixmap(QPixmap(img))
-            if getattr(self, 'd_title', None):
-                self.d_title.setText(song.get('name', ''))
-            if getattr(self, 'd_artist', None):
-                self.d_artist.setText(song.get('artist_names', ''))
-            if getattr(self, 'd_time_left', None):
-                self.d_time_left.setText('0:00')
-            # Navigate to detail if currently on home
-            if self.stackedWidget and self.stackedWidget.currentIndex() == 0:
-                self.navigate(3)
-        except Exception as e:
-            print(f"Warning updating detail view: {e}")
     
     def navigate(self, index):
         self.stackedWidget.setCurrentIndex(index)
@@ -677,6 +684,24 @@ class Home(QWidget):
             if column == 2:  # Show 2 columns
                 column = 0
                 row += 1
+
+    def render_history(self):
+        if not hasattr(self, 'history_layout') or self.history_layout is None:
+            return
+        # Clear
+        while self.history_layout.count():
+            child = self.history_layout.takeAt(0)
+            w = child.widget()
+            if w:
+                w.setParent(None)
+        # Load recent songs
+        songs = get_user_history_songs_json(self.user_id, limit=50)
+        for song in songs:
+            widget = SongItemWidget(song['id'], song['name'], normalize_path(song['image_path']), song['artist_names'], is_playlist_mode=False)
+            widget.setFixedHeight(80)
+            widget.play_song.connect(self.play_song)
+            self.history_layout.addWidget(widget)
+        self.history_layout.addStretch(1)
 
     def search_song(self):
         name = self.txt_search.text()
@@ -793,5 +818,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     msg = Alert()
     login = Login()
+    login = Home(1)
     login.show()
     sys.exit(app.exec())
