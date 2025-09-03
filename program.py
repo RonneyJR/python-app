@@ -95,11 +95,6 @@ class Login(QWidget):
             self.password_input.setFocus()
             return
         
-        # Create users.txt if it doesn't exist
-        if not os.path.exists("data/users.txt"):
-            with open("data/users.txt", "w") as file:
-                pass
-        
         user = get_user_by_email_and_password(email, password)
         if user:
             msg.success_message("Login", "Welcome to the system")
@@ -356,6 +351,11 @@ class Home(QWidget):
         self.setup_ui()
         self.load_initial_songs()
         self.render_history()
+
+    def show_login(self):
+        self.login = Login()
+        self.login.show()
+        self.close()
     
     def navigate_screen(self, stackWidget: QStackedWidget, index: int):
         stackWidget.setCurrentIndex(index)
@@ -441,6 +441,8 @@ class Home(QWidget):
         self.btn_playlist = self.findChild(QPushButton, 'playlist_btn')
         self.btn_history = self.findChild(QPushButton, 'btn_history')
         self.stackedWidget = self.findChild(QStackedWidget, 'stackedWidget')
+        self.btn_log_out = self.findChild(QPushButton, "btn_log_out")
+        self.btn_log_out.clicked.connect(self.show_login)
         # Ensure default page shows the song list (the 'home' page)
         if self.stackedWidget:
             for i in range(self.stackedWidget.count()):

@@ -7,5 +7,14 @@
         "birthday": "01/01/2000",
         "gender": "None",
         "avatar": ""
+    },
+    {
+        "id": 2,
+        "email": "maillahopthu9@gmail.com",
+        "password": "123456",
+        "name": "RonneyJR",
+        "birthday": "",
+        "gender": "",
+        "avatar": ""
     }
 ]

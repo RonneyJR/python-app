@@ -87,7 +87,7 @@ def get_user_by_email_and_password(email, password):
     for user in users:
         if user["email"] == email and user["password"] == password:
             return user
-        return None
+    return None
 
 def update_user(id, name, birthday = "", gender = ""):
     users = load_json("data/users.json")
