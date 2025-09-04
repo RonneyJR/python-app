@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>80</height>
+    <height>83</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -89,10 +89,26 @@ font-size: 20px;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: white; 
-background-color: #2c3e50; 
-border: 1px solid gray;
-padding: 5px;</string>
+      <string notr="true">/* QPushButton */
+QPushButton {
+    background-color: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1DB954, stop:1 #15883e
+    );
+    color: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1ed760, stop:1 #1aa34a
+    );
+}
+QPushButton:pressed {
+    background-color: #0d5727;
+}</string>
      </property>
      <property name="text">
       <string>Play</string>
@@ -108,10 +124,26 @@ padding: 5px;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: white; 
-background-color: #2c3e50; 
-border: 1px solid gray;
-padding: 5px;</string>
+      <string notr="true">/* QPushButton */
+QPushButton {
+    background-color: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1DB954, stop:1 #15883e
+    );
+    color: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1ed760, stop:1 #1aa34a
+    );
+}
+QPushButton:pressed {
+    background-color: #0d5727;
+}</string>
      </property>
      <property name="text">
       <string>Add</string>
