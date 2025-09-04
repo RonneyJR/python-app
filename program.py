@@ -175,6 +175,11 @@ class Register(QWidget):
         name = self.name_input.text().strip()
         password = self.password_input.text().strip()
         confirm_password = self.confirm_password_input.text().strip()
+        
+        if name == "":
+            msg.error_message("Register", "Name is required")
+            self.email_input.setFocus()
+            return
 
         if email == "":
             msg.error_message("Register", "Email is required")
