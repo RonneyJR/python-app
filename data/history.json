@@ -111,22 +111,22 @@
     },
     {
         "user_id": 2,
-        "song_id": 224,
+        "song_id": "224",
         "played_at": "2025-09-03T21:57:06"
     },
     {
         "user_id": 2,
-        "song_id": 71,
+        "song_id": "71",
         "played_at": "2025-09-03T21:57:07"
     },
     {
         "user_id": 2,
-        "song_id": 224,
+        "song_id": "224",
         "played_at": "2025-09-03T21:57:08"
     },
     {
         "user_id": 2,
-        "song_id": 298,
+        "song_id": "298",
         "played_at": "2025-09-03T21:57:08"
     },
     {
@@ -168,5 +168,20 @@
         "user_id": 2,
         "song_id": "71",
         "played_at": "2025-09-04T11:34:17"
+    },
+    {
+        "user_id": 1,
+        "song_id": "1",
+        "played_at": "2025-09-05T21:21:58"
+    },
+    {
+        "user_id": 1,
+        "song_id": "3",
+        "played_at": "2025-09-05T21:26:23"
+    },
+    {
+        "user_id": 1,
+        "song_id": "6",
+        "played_at": "2025-09-05T21:26:25"
     }
 ]

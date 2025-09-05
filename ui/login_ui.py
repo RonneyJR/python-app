@@ -53,7 +53,7 @@ class Ui_Form(object):
         self.txt_email.setText("")
         self.txt_email.setObjectName("txt_email")
         self.btn_login = QtWidgets.QPushButton(parent=Form)
-        self.btn_login.setGeometry(QtCore.QRect(370, 420, 291, 51))
+        self.btn_login.setGeometry(QtCore.QRect(370, 410, 291, 51))
         self.btn_login.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"
@@ -91,7 +91,7 @@ class Ui_Form(object):
 "background-color: transparent")
         self.label_6.setObjectName("label_6")
         self.checkBox = QtWidgets.QCheckBox(parent=Form)
-        self.checkBox.setGeometry(QtCore.QRect(370, 370, 191, 51))
+        self.checkBox.setGeometry(QtCore.QRect(370, 350, 191, 51))
         self.checkBox.setStyleSheet(" color: white;\n"
 "    font-size: 20px;\n"
 "    font-weight: bold;\n"
@@ -99,16 +99,8 @@ class Ui_Form(object):
 "background-color: transparent\n"
 "")
         self.checkBox.setObjectName("checkBox")
-        self.label_7 = QtWidgets.QLabel(parent=Form)
-        self.label_7.setGeometry(QtCore.QRect(370, 350, 181, 20))
-        self.label_7.setStyleSheet(" color: white;\n"
-"    font-size: 15px;\n"
-"    font-weight: bold;\n"
-"    letter-spacing: 0.5px;\n"
-"background-color: transparent")
-        self.label_7.setObjectName("label_7")
         self.btn_register = QtWidgets.QPushButton(parent=Form)
-        self.btn_register.setGeometry(QtCore.QRect(560, 500, 121, 51))
+        self.btn_register.setGeometry(QtCore.QRect(560, 490, 121, 51))
         self.btn_register.setStyleSheet(" background-color: white;\n"
 "    color: black;\n"
 "    border: none;\n"
@@ -118,7 +110,7 @@ class Ui_Form(object):
 "    font-size: 20px;")
         self.btn_register.setObjectName("btn_register")
         self.label_8 = QtWidgets.QLabel(parent=Form)
-        self.label_8.setGeometry(QtCore.QRect(350, 510, 201, 21))
+        self.label_8.setGeometry(QtCore.QRect(350, 500, 201, 21))
         self.label_8.setStyleSheet(" color: white;\n"
 "    font-size: 16px;\n"
 "    font-weight: bold;\n"
@@ -148,7 +140,6 @@ class Ui_Form(object):
         self.label_5.raise_()
         self.label_6.raise_()
         self.checkBox.raise_()
-        self.label_7.raise_()
         self.btn_register.raise_()
         self.label_8.raise_()
         self.btn_eye.raise_()
@@ -166,6 +157,5 @@ class Ui_Form(object):
         self.label_5.setText(_translate("Form", "Email Or Username:"))
         self.label_6.setText(_translate("Form", "Password:"))
         self.checkBox.setText(_translate("Form", "  Remember me"))
-        self.label_7.setText(_translate("Form", "Reset Password"))
         self.btn_register.setText(_translate("Form", " Sign Up"))
         self.label_8.setText(_translate("Form", "Don\'t Have An Account?"))

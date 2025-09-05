@@ -382,6 +382,9 @@ class Home(QWidget):
         self.render_history()
 
     def show_login(self):
+        # Stop player before closing
+        if hasattr(self, 'player'):
+            self.player.stop()
         self.login = Login()
         self.login.show()
         self.close()
@@ -471,7 +474,7 @@ class Home(QWidget):
         self.btn_history = self.findChild(QPushButton, 'btn_history')
         self.stackedWidget = self.findChild(QStackedWidget, 'stackedWidget')
         self.btn_log_out = self.findChild(QPushButton, "btn_log_out")
-        self.btn_log_out.clicked.connect(self.show_login)
+        self.btn_avatar = self.findChild(QPushButton, "btn_avatar")
         # Ensure default page shows the song list (the 'home' page)
         if self.stackedWidget:
             for i in range(self.stackedWidget.count()):
@@ -541,6 +544,8 @@ class Home(QWidget):
         self.btn_playlist.clicked.connect(lambda: self.navigate(2))   # Playlist page
         self.btn_history.clicked.connect(lambda: self.navigate(3))   # History page
         self.btn_search.clicked.connect(self.search_song)
+        self.btn_log_out.clicked.connect(self.show_login)
+        self.btn_avatar.clicked.connect(self.update_avatar)
 
         # Setup history container on 'history' page if present
         self.history_page = self.findChild(QWidget, 'history')
@@ -696,6 +701,11 @@ class Home(QWidget):
     
     def navigate(self, index):
         self.stackedWidget.setCurrentIndex(index)
+        # Refresh history when navigating to history page
+        if index == 3:  # History page index
+            self.render_history()
+        if index == 1:
+            self.load_user_info()
         
     def render_song_list(self, song_list:list):
         # clear the grid layout

@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_SongItem(object):
     def setupUi(self, SongItem):
         SongItem.setObjectName("SongItem")
-        SongItem.resize(400, 80)
+        SongItem.resize(400, 83)
         self.horizontalLayout = QtWidgets.QHBoxLayout(SongItem)
         self.horizontalLayout.setContentsMargins(10, 10, 10, 10)
         self.horizontalLayout.setSpacing(10)
@@ -27,18 +27,59 @@ class Ui_SongItem(object):
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.lbl_name = QtWidgets.QLabel(parent=SongItem)
+        self.lbl_name.setStyleSheet("color:rgb(255,255,255);\n"
+"background-color: transparent;\n"
+"font-size: 20px;\n"
+"font-weight: bold")
         self.lbl_name.setObjectName("lbl_name")
         self.verticalLayout.addWidget(self.lbl_name)
         self.lbl_artist = QtWidgets.QLabel(parent=SongItem)
+        self.lbl_artist.setStyleSheet("color:rgb(189, 189, 189);\n"
+"background-color: transparent;\n"
+"font-size: 20px;")
         self.lbl_artist.setObjectName("lbl_artist")
         self.verticalLayout.addWidget(self.lbl_artist)
         self.horizontalLayout.addLayout(self.verticalLayout)
         self.btn_play = QtWidgets.QPushButton(parent=SongItem)
         self.btn_play.setMinimumSize(QtCore.QSize(60, 40))
+        self.btn_play.setStyleSheet("QPushButton {\n"
+"    background-color: #116530;   /* xanh lá đậm giống Save Account */\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 8px;\n"
+"    padding: 8px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1DB954;   /* xanh Spotify sáng hơn khi hover */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0b4520;   /* xanh lá tối hơn khi nhấn */\n"
+"}")
         self.btn_play.setObjectName("btn_play")
         self.horizontalLayout.addWidget(self.btn_play)
         self.btn_add = QtWidgets.QPushButton(parent=SongItem)
         self.btn_add.setMinimumSize(QtCore.QSize(60, 40))
+        self.btn_add.setStyleSheet("QPushButton {\n"
+"    background-color: #116530;   /* xanh lá đậm giống Save Account */\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 8px;\n"
+"    padding: 8px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1DB954;   /* xanh Spotify sáng hơn khi hover */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0b4520;   /* xanh lá tối hơn khi nhấn */\n"
+"}")
         self.btn_add.setObjectName("btn_add")
         self.horizontalLayout.addWidget(self.btn_add)
 

@@ -246,8 +246,8 @@ def add_song_to_history_json(user_id, song_id):
     if history and str(history[-1].get('user_id')) == str(user_id) and str(history[-1].get('song_id')) == str(song_id):
         return False
     history.append({
-        'user_id': user_id,
-        'song_id': song_id,
+        'user_id': int(user_id),
+        'song_id': str(song_id),
         'played_at': datetime.now().isoformat(timespec='seconds')
     })
     write_json("data/history.json", history)
