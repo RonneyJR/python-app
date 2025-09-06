@@ -112,8 +112,14 @@ class Login(QWidget):
             return
         
         user = get_user_by_email_and_password(email, password)
+        
         if user:
-            # ✅ Nếu login thành công và có tick remember thì lưu
+            msg.success_message("Login", "Welcome to the system")
+            self.show_home(user["id"])
+            return
+        
+        if user:
+            # Nếu login thành công và có tick remember thì lưu
             if self.btn_remember_check.isChecked():
                 with open("data/account.json", "w") as f:
                     json.dump({
@@ -127,11 +133,6 @@ class Login(QWidget):
                 except FileNotFoundError:
                     pass
 
-        if user:
-            msg.success_message("Login", "Welcome to the system")
-            self.show_home(user["id"])
-            return
-        
         msg.error_message("Login", "Invalid email or password")
         self.email_input.setFocus()
 
