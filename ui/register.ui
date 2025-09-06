@@ -337,21 +337,17 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">   QCheckBox {
-        color: white;       /* chữ màu trắng */
-        font-size: 14px;    /* giữ font size */
+    <string notr="true">    QCheckBox {
+        color: white;
+        font-size: 14px;
         spacing: 6px;
     }
     QCheckBox::indicator {
         width: 18px;
         height: 18px;
-        border-radius: 3px;       /* hình vuông bo nhẹ */
-        border: 2px solid white;  /* viền trắng */
+        border-radius: 3px;
+        border: 2px solid white;
         background: transparent;
-    }
-    QCheckBox::indicator:checked {
-        background-color: transparent;  /* vẫn trong suốt */
-        image: url(:/icons/tick.png);   /* hiển thị dấu tick */
     }</string>
    </property>
    <property name="text">
