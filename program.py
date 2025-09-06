@@ -220,8 +220,8 @@ class Register(QWidget):
         return True        # Correct email
 
     def register(self):
-        # CHECK BOX 
-        if not self.abtn_gree_check.isChecked():
+        # Check Box
+        if not self.btn_agree_check.isChecked():
             msg.error_message("Register", "You must agree to the terms and conditions")
             return
         
