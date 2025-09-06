@@ -337,18 +337,12 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">    QCheckBox {
+    <string notr="true">
         color: white;
         font-size: 14px;
         spacing: 6px;
-    }
-    QCheckBox::indicator {
-        width: 18px;
-        height: 18px;
-        border-radius: 3px;
-        border: 2px solid white;
-        background: transparent;
-    }</string>
+
+ </string>
    </property>
    <property name="text">
     <string>I agree to Spotify' s Terms and Conditions of Use
