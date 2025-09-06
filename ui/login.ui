@@ -194,7 +194,7 @@ background-color: transparent</string>
     <string>Password:</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox">
+  <widget class="QCheckBox" name="remember_check">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -296,7 +296,7 @@ background: transparent;
   <zorder>txt_password</zorder>
   <zorder>label_5</zorder>
   <zorder>label_6</zorder>
-  <zorder>checkBox</zorder>
+  <zorder>remember_check</zorder>
   <zorder>btn_register</zorder>
   <zorder>label_8</zorder>
   <zorder>btn_eye</zorder>

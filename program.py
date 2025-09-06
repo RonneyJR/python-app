@@ -66,6 +66,14 @@ class Login(QWidget):
         self.btn_register = self.findChild(QPushButton, "btn_register") 
         self.btn_eye = self.findChild(QPushButton, "btn_eye")
 
+        # ✅ Remember me checkbox
+        self.remember_check = QCheckBox("Remember me", self)
+        layout = self.layout() or QVBoxLayout(self)  # gắn vào layout hiện có
+        layout.addWidget(self.remember_check)
+
+        # Load account.json nếu có
+        self.load_account()
+
         # Connect signals
         if self.btn_eye:
             self.btn_eye.clicked.connect(lambda: self.show_password(self.btn_eye, self.password_input))
@@ -105,6 +113,30 @@ class Login(QWidget):
         msg.error_message("Login", "Invalid email or password")
         self.email_input.setFocus()
 
+        # ✅ Nếu có tick Remember me thì lưu account
+        if self.remember_check.isChecked():
+                with open("account.json", "w") as f:
+                    json.dump({
+                        "email": email,
+                        "password": password,
+                        "remember": True
+                    }, f, indent=4)
+        else:
+            try:
+                os.remove("account.json")
+            except FileNotFoundError:
+                pass
+
+    def load_account(self):
+        """Tự động load email + password nếu đã lưu trước đó"""
+        if os.path.exists("account.json"):
+            with open("account.json", "r") as f:
+                data = json.load(f)
+                self.email_input.setText(data.get("email", ""))
+                self.password_input.setText(data.get("password", ""))
+                if data.get("remember", False):
+                    self.remember_check.setChecked(True)
+
     def show_register(self):
         self.register = Register()
         self.register.show()
@@ -123,12 +155,6 @@ class Register(QWidget):
         
         # Load UI
         uic.loadUi("ui/register.ui", self)
-
-        layout = QVBoxLayout(self)   # <-- layout được định nghĩa ở đây
-
-        # Checkbox Remember me
-        self.remember_check = QCheckBox("Remember account")  # <-- self chỉ hợp lệ trong class
-        layout.addWidget(self.remember_check)
 
         # Find widgets
         self.email_input = self.findChild(QLineEdit, "txt_email")
@@ -233,19 +259,6 @@ class Register(QWidget):
             msg.error_message("Register", "Password and Confirm Password do not match")
             self.password_input.setFocus()
             return
-        
-        if self.remember_check.isChecked():
-            with open("account.json", "w") as f:
-                json.dump({
-                    "email": email,
-                    "password": password,
-                    "remember": True  # để biết có tick remember hay không
-            }, f, indent=4)  # indent=4 cho dễ đọc
-        else:
-            try:
-                os.remove("account.json")
-            except FileNotFoundError:
-                pass
 
         user = get_user_by_email(email)
         if user:
