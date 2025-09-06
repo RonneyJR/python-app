@@ -800,7 +800,7 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="pixma">
+  <widget class="QLabel" name="image_path">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -824,7 +824,7 @@ QFrame:hover {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../img/z6588244063627_74df258950c533ffb1a252c12d4ad801.jpg</pixmap>
+    <pixmap>../img/Black bg.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -1000,7 +1000,7 @@ background: transparent;
   <zorder>slider_volume</zorder>
   <zorder>btn_next_song</zorder>
   <zorder>btn_prev_song</zorder>
-  <zorder>pixma</zorder>
+  <zorder>image_path</zorder>
   <zorder>lbl_curr_name</zorder>
   <zorder>lbl_time</zorder>
   <zorder>btn_song_list</zorder>
