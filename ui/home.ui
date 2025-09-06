@@ -800,7 +800,7 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="image_path">
+  <widget class="QLabel" name="lbl_curr_img">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -1000,7 +1000,7 @@ background: transparent;
   <zorder>slider_volume</zorder>
   <zorder>btn_next_song</zorder>
   <zorder>btn_prev_song</zorder>
-  <zorder>image_path</zorder>
+  <zorder>lbl_curr_img</zorder>
   <zorder>lbl_curr_name</zorder>
   <zorder>lbl_time</zorder>
   <zorder>btn_song_list</zorder>
