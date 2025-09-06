@@ -6,6 +6,7 @@ from PyQt6 import uic
 import sys
 import os
 import re
+import random
 from data_io import *
 
 def normalize_path(path):
@@ -452,6 +453,8 @@ class Home(QWidget):
         self.user = get_user_by_id(id)
         self.load_user_info()
 
+        self.shuffle_mode = False  # tắt/bật ngẫu nhiên
+        self.repeat_mode = 0       # 0 = không lặp, 1 = repeat one, 2 = repeat all
 
         # Initialize media player and audio output early
         self.audio_output = QAudioOutput()
@@ -469,6 +472,24 @@ class Home(QWidget):
         home_page = self.findChild(QWidget, 'home')
         if self.stack_widget and home_page:
             self.stack_widget.setCurrentIndex(self.stack_widget.indexOf(home_page))
+
+        self.btn_shuffle = self.findChild(QPushButton, "btn_shuffle")
+        self.btn_repeat = self.findChild(QPushButton, "btn_repeat")
+
+        # Icon (tự thêm file svg/png)
+        self.shuffleIcon = QIcon("img/shuffle-solid.svg")
+        self.repeatIcon = QIcon("img/repeat-solid.svg")
+        self.repeatOneIcon = QIcon("img/repeat-one-solid.svg")
+
+        # Set default
+        if self.btn_shuffle:
+            self.btn_shuffle.setIcon(self.shuffleIcon)
+            self.btn_shuffle.setCheckable(True)
+            self.btn_shuffle.clicked.connect(self.toggle_shuffle)
+
+        if self.btn_repeat:
+            self.btn_repeat.setIcon(self.repeatIcon)
+            self.btn_repeat.clicked.connect(self.toggle_repeat)
         
         # Build UI elements and layouts, then load data
         self.setup_ui()
@@ -516,6 +537,7 @@ class Home(QWidget):
         self.player.playbackStateChanged.connect(self.mediaStateChanged)
         self.player.positionChanged.connect(self.positionChanged)
         self.player.durationChanged.connect(self.durationChanged)
+        self.player.mediaStatusChanged.connect(self.handle_media_status)
         
         # Initialize UI elements
         self.playBtn = self.findChild(QPushButton, "btn_play")
@@ -931,20 +953,6 @@ class Home(QWidget):
         minutes, seconds = divmod(remainder, 60)
         return f"{hours:02}:{minutes:02}:{seconds:02}"
 
-    def next_song(self):
-        if not self.current_playlist:
-            msg = Alert()
-            msg.error_message("No playlist is currently loaded")
-            return
-            
-        if self.current_song_index < len(self.current_playlist) - 1:
-            next_song = self.current_playlist[self.current_song_index + 1]
-            self.play_song(next_song['id'])
-        else:
-            # Loop back to the start of the playlist
-            first_song = self.current_playlist[0]
-            self.play_song(first_song['id'])
-
     def previous_song(self):
         if not self.current_playlist:
             msg = Alert()
@@ -958,6 +966,68 @@ class Home(QWidget):
             # Go to the last song in the playlist
             last_song = self.current_playlist[-1]
             self.play_song(last_song['id'])
+
+    def toggle_shuffle(self):
+        """Bật/tắt chế độ phát ngẫu nhiên"""
+        self.shuffle_mode = not self.shuffle_mode
+        msg = Alert()
+        if self.shuffle_mode:
+            msg.success_message("Shuffle ON")
+        else:
+            msg.success_message("Shuffle OFF")
+
+def toggle_repeat(self):
+    """Đổi trạng thái repeat: OFF -> ONE -> ALL"""
+    self.repeat_mode = (self.repeat_mode + 1) % 3
+    msg = Alert()
+    if self.repeat_mode == 0:
+        msg.success_message("Repeat OFF")
+    elif self.repeat_mode == 1:
+        msg.success_message("Repeat ONE")
+    elif self.repeat_mode == 2:
+        msg.success_message("Repeat ALL")
+
+def handle_media_status(self, status):
+    """Tự động chuyển bài khi bài hát kết thúc"""
+    from PyQt6.QtMultimedia import QMediaPlayer
+    if status == QMediaPlayer.MediaStatus.EndOfMedia:
+        self.next_song()
+
+def next_song(self):
+    """Phát bài tiếp theo (theo Shuffle/Repeat mode)"""
+    if not self.current_playlist:
+        msg = Alert()
+        msg.error_message("No playlist is currently loaded")
+        return
+
+    # 🔀 Shuffle mode
+    if self.shuffle_mode:
+        next_song = random.choice(self.current_playlist)
+        self.play_song(next_song['id'])
+        return
+
+    # 🔂 Repeat One
+    if self.repeat_mode == 1:
+        current_song = self.current_playlist[self.current_song_index]
+        self.play_song(current_song['id'])
+        return
+
+    # 🔁 Repeat All
+    if self.repeat_mode == 2:
+        if self.current_song_index < len(self.current_playlist) - 1:
+            next_song = self.current_playlist[self.current_song_index + 1]
+        else:
+            next_song = self.current_playlist[0]
+        self.play_song(next_song['id'])
+        return
+
+    # ▶️ No Repeat
+    if self.current_song_index < len(self.current_playlist) - 1:
+        next_song = self.current_playlist[self.current_song_index + 1]
+        self.play_song(next_song['id'])
+    else:
+        msg = Alert()
+        msg.success_message("Reached end of playlist")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
