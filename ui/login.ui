@@ -114,14 +114,26 @@ background-color: transparent;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"> background-color: white;
-    color: black;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 20px;
-</string>
+    <string notr="true">  QPushButton {
+        background-color: white;
+        color: black;
+        border: none;           /* bỏ viền */
+        border-radius: 12px;
+        padding: 8px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+    QPushButton:disabled {
+        background-color: #f2f2f2;
+        color: #aaaaaa;
+    }
+    QPushButton:hover:!disabled {
+        transform: scale(1.05);  /* phóng to khi hover */
+    }
+    QPushButton:pressed:!disabled {
+        transform: scale(0.95);  /* thu nhỏ khi nhấn */
+    }</string>
    </property>
    <property name="text">
     <string>Log In</string>
@@ -194,7 +206,7 @@ background-color: transparent</string>
     <string>Password:</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="remember_check">
+  <widget class="QCheckBox" name="btn_remember_check">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -225,13 +237,26 @@ background-color: transparent
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"> background-color: white;
-    color: black;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 20px;</string>
+    <string notr="true">  QPushButton {
+        background-color: white;
+        color: black;
+        border: none;           /* bỏ viền */
+        border-radius: 12px;
+        padding: 8px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+    QPushButton:disabled {
+        background-color: #f2f2f2;
+        color: #aaaaaa;
+    }
+    QPushButton:hover:!disabled {
+        transform: scale(1.05);  /* phóng to khi hover */
+    }
+    QPushButton:pressed:!disabled {
+        transform: scale(0.95);  /* thu nhỏ khi nhấn */
+    }</string>
    </property>
    <property name="text">
     <string> Sign Up</string>
@@ -296,7 +321,7 @@ background: transparent;
   <zorder>txt_password</zorder>
   <zorder>label_5</zorder>
   <zorder>label_6</zorder>
-  <zorder>remember_check</zorder>
+  <zorder>btn_remember_check</zorder>
   <zorder>btn_register</zorder>
   <zorder>label_8</zorder>
   <zorder>btn_eye</zorder>

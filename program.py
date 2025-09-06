@@ -65,7 +65,7 @@ class Login(QWidget):
         self.btn_login = self.findChild(QPushButton, "btn_login") 
         self.btn_register = self.findChild(QPushButton, "btn_register") 
         self.btn_eye = self.findChild(QPushButton, "btn_eye")
-        self.remember_check = self.findChild(QCheckBox, "remember_check")
+        self.btn_remember_check = self.findChild(QCheckBox, "btn_remember_check")
 
         # Load account.json nếu có
         self.load_account()
@@ -85,7 +85,7 @@ class Login(QWidget):
                 if data.get("remember"):
                     self.email_input.setText(data.get("email", ""))
                     self.password_input.setText(data.get("password", ""))
-                    self.remember_check.setChecked(True)
+                    self.btn_remember_check.setChecked(True)
         except FileNotFoundError:
             pass
 
@@ -114,7 +114,7 @@ class Login(QWidget):
         user = get_user_by_email_and_password(email, password)
         if user:
             # ✅ Nếu login thành công và có tick remember thì lưu
-            if self.remember_check.isChecked():
+            if self.btn_remember_check.isChecked():
                 with open("data/account.json", "w") as f:
                     json.dump({
                         "email": email,
@@ -163,6 +163,13 @@ class Register(QWidget):
         self.btn_register = self.findChild(QPushButton, "btn_register") 
         self.btn_eye_p = self.findChild(QPushButton, "btn_eye_p")    
         self.btn_eye_cp = self.findChild(QPushButton, "btn_eye_cp")
+        self.btn_agree_check = self.findChild(QCheckBox, "btn_agree_check")
+
+        # Disable the register button
+        self.btn_register.setEnabled(False)
+
+        # Connect checkbox to button toggle function
+        self.btn_agree_check.stateChanged.connect(self.toggle_register_button)
 
         # Connect signals
         if self.btn_eye_p:
@@ -174,6 +181,10 @@ class Register(QWidget):
         if self.btn_login:
             self.btn_login.clicked.connect(self.show_login)
 
+    # Register button on/off function
+    def toggle_register_button(self):
+        self.btn_register.setEnabled(self.btn_agree_check.isChecked())
+
     def show_password(self, button: QPushButton, input: QLineEdit):
         if input.echoMode() == QLineEdit.EchoMode.Password:
             input.setEchoMode(QLineEdit.EchoMode.Normal)
@@ -182,33 +193,38 @@ class Register(QWidget):
             input.setEchoMode(QLineEdit.EchoMode.Password)
             button.setIcon(QIcon("img/eye-slash-solid.svg"))
     
-        # Hàm mới để kiểm tra độ mạnh của mật khẩu
+        # New function to check password strength
     def validate_password_strength(self, password):
-        # Yêu cầu 1: Mật khẩu phải có ít nhất 8 ký tự
+        # Requirement 1: Password must be at least 8 characters
         if len(password) < 8:
             return "Password must be at least 8 characters."
 
-        # Yêu cầu 2: Mật khẩu phải chứa ít nhất một chữ số
+        # Requirement 2: Password must contain at least one digit
         has_digit = any(char.isdigit() for char in password)
         if not has_digit:
             return "Password must contain at least one digit."
 
-        # Yêu cầu 3: Mật khẩu phải chứa ít nhất một ký tự đặc biệt
+        # Requirement 3: Password must contain at least one special character
         special_chars = "!@#$%^&*()-_+=[]{}|;:',.<>/?`~"
         has_special = any(char in special_chars for char in password)
         if not has_special:
             return "Password must contain at least one special character."
         
-        return None # Trả về None nếu mật khẩu hợp lệ
+        return None # Return None if password is valid
     
     def validate_email_strength(self, email):
         pattern = r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
         if not re.match(pattern, email):
             QMessageBox.warning(self, "Invalid Email", "Email must be in the form example@gmail.com")
-            return False   # Sai email
-        return True        # Email hợp lệ
+            return False   # Wrong email
+        return True        # Correct email
 
     def register(self):
+        # CHECK BOX 
+        if not self.abtn_gree_check.isChecked():
+            msg.error_message("Register", "You must agree to the terms and conditions")
+            return
+        
         email = self.email_input.text().strip()
         name = self.name_input.text().strip()
         password = self.password_input.text().strip()
@@ -240,13 +256,13 @@ class Register(QWidget):
             return
 
         error = self.validate_password_strength(password)
-        if error:  # Nếu có lỗi thì error chứa thông báo
+        if error:  # If there is an error, error contains a message.
             msg.error_message("Register", error)
             self.password_input.setFocus()
             return
         
         if not self.validate_email_strength(email):
-            return  # ❌ dừng, không chạy tiếp
+            return  # Stop, do not continue
         
         if confirm_password == "":
             msg.error_message("Register", "Confirm Password is required")
@@ -274,7 +290,6 @@ class Register(QWidget):
         self.login.show()
         self.close()
         
-
 class SongItemWidget(QWidget):
     play_song = pyqtSignal(str)
     add_song_to_playlist = pyqtSignal(str)
