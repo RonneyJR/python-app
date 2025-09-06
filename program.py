@@ -5,6 +5,7 @@ from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PyQt6 import uic
 import sys
 import os
+import re
 from data_io import *
 
 def normalize_path(path):
@@ -123,6 +124,12 @@ class Register(QWidget):
         # Load UI
         uic.loadUi("ui/register.ui", self)
 
+        layout = QVBoxLayout(self)   # <-- layout được định nghĩa ở đây
+
+        # Checkbox Remember me
+        self.remember_check = QCheckBox("Remember account")  # <-- self chỉ hợp lệ trong class
+        layout.addWidget(self.remember_check)
+
         # Find widgets
         self.email_input = self.findChild(QLineEdit, "txt_email")
         self.password_input = self.findChild(QLineEdit, "txt_password")
@@ -155,26 +162,43 @@ class Register(QWidget):
     def validate_password_strength(self, password):
         # Yêu cầu 1: Mật khẩu phải có ít nhất 8 ký tự
         if len(password) < 8:
-            return "Mật khẩu phải có ít nhất 8 ký tự."
+            return "Password must be at least 8 characters."
 
         # Yêu cầu 2: Mật khẩu phải chứa ít nhất một chữ số
         has_digit = any(char.isdigit() for char in password)
         if not has_digit:
-            return "Mật khẩu phải chứa ít nhất một chữ số."
+            return "Password must contain at least one digit."
 
         # Yêu cầu 3: Mật khẩu phải chứa ít nhất một ký tự đặc biệt
         special_chars = "!@#$%^&*()-_+=[]{}|;:',.<>/?`~"
         has_special = any(char in special_chars for char in password)
         if not has_special:
-            return "Mật khẩu phải chứa ít nhất một ký tự đặc biệt."
+            return "Password must contain at least one special character."
         
         return None # Trả về None nếu mật khẩu hợp lệ
+    
+    def validate_email_strength(self, email):
+        pattern = r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
+        if not re.match(pattern, email):
+            QMessageBox.warning(self, "Invalid Email", "Email must be in the form example@gmail.com")
+            return False   # Sai email
+        return True        # Email hợp lệ
 
     def register(self):
         email = self.email_input.text().strip()
         name = self.name_input.text().strip()
         password = self.password_input.text().strip()
         confirm_password = self.confirm_password_input.text().strip()
+
+        # Check email
+        if not self.validate_email(email):
+            return
+
+        # Check password strength
+        error = self.validate_password(password)
+        if error:
+            QMessageBox.warning(self, "Weak Password", error)
+            return
         
         if name == "":
             msg.error_message("Register", "Name is required")
@@ -190,11 +214,15 @@ class Register(QWidget):
             msg.error_message("Register", "Password is required")
             self.password_input.setFocus()
             return
-        
-        if self.validate_password_strength(password):
-            msg.error_message("Register",self.validate_password_strength(password))
+
+        error = self.validate_password_strength(password)
+        if error:  # Nếu có lỗi thì error chứa thông báo
+            msg.error_message("Register", error)
             self.password_input.setFocus()
             return
+        
+        if not self.validate_email_strength(email):
+            return  # ❌ dừng, không chạy tiếp
         
         if confirm_password == "":
             msg.error_message("Register", "Confirm Password is required")
@@ -205,6 +233,19 @@ class Register(QWidget):
             msg.error_message("Register", "Password and Confirm Password do not match")
             self.password_input.setFocus()
             return
+        
+        if self.remember_check.isChecked():
+            with open("account.json", "w") as f:
+                json.dump({
+                    "email": email,
+                    "password": password,
+                    "remember": True  # để biết có tick remember hay không
+            }, f, indent=4)  # indent=4 cho dễ đọc
+        else:
+            try:
+                os.remove("account.json")
+            except FileNotFoundError:
+                pass
 
         user = get_user_by_email(email)
         if user:
