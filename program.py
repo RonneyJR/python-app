@@ -218,24 +218,46 @@ class Register(QWidget):
             QMessageBox.warning(self, "Invalid Email", "Email must be in the form example@gmail.com")
             return False   # Wrong email
         return True        # Correct email
+    
+    def validate_name(self, name):
+        # Check length ≥ 8
+        if len(name) < 8:
+            msg.error_message("Register", "Name must be at least 8 characters")
+            self.name_input.setFocus()
+            return False
 
+        # Check at least 1 number
+        if not any(char.isdigit() for char in name):
+            msg.error_message("Register", "Name must contain at least one number")
+            self.name_input.setFocus()
+            return False
+
+        # Check no accents, no special characters
+        if not re.match(r'^[A-Za-z0-9]+$', name):
+            msg.error_message("Register", "Name can only contain letters and numbers (no special characters, no accents)")
+            self.name_input.setFocus()
+            return False
+
+        return True
+
+    
     def register(self):
-        # Check Box
-        if not self.btn_agree_check.isChecked():
-            msg.error_message("Register", "You must agree to the terms and conditions")
-            return
-        
         email = self.email_input.text().strip()
         name = self.name_input.text().strip()
         password = self.password_input.text().strip()
         confirm_password = self.confirm_password_input.text().strip()
 
         # Check email
-        if not self.validate_email(email):
+        if not self.validate_email_strength(email):
+            return
+        
+        name = self.name_input.text().strip()
+        # Check name
+        if not self.validate_name(name):
             return
 
         # Check password strength
-        error = self.validate_password(password)
+        error = self.validate_password_strength(password)
         if error:
             QMessageBox.warning(self, "Weak Password", error)
             return
@@ -267,6 +289,11 @@ class Register(QWidget):
         if confirm_password == "":
             msg.error_message("Register", "Confirm Password is required")
             self.confirm_password_input.setFocus()
+            return
+        
+        # Check Box
+        if not self.btn_agree_check.isChecked():
+            msg.error_message("Register", "You must agree to the terms and conditions")
             return
         
         if password != confirm_password:
