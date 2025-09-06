@@ -15,6 +15,15 @@
         "name": "RonneyJR",
         "birthday": "",
         "gender": "",
+        "avatar": "D:/Ch\u1ee9a b\u00e0i MindX/pti/Example Images/Ng\u01b0\u1eddi Ngo\u00e0i H\u00e0nh Tinh Da Xanh.jpg"
+    },
+    {
+        "id": 3,
+        "email": "maillahopthu@gmail.com",
+        "password": "12345678@",
+        "name": "NguyenKhoi1",
+        "birthday": "",
+        "gender": "",
         "avatar": ""
     }
 ]

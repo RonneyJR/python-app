@@ -52,5 +52,23 @@
         "song_name": "Anh Thanh Ni\u00ean",
         "image_path": "songs_images/ab67616d0000b273a4e9a4ec1d94855f9340f5f5.jpg",
         "file_path": "music_files/2qoGaLtl0nzLlqib9aIaCe.m4a"
+    },
+    {
+        "id": 7,
+        "user_id": 2,
+        "song_id": "14",
+        "name": "My Playlist",
+        "song_name": "\u0110\u00f4ng",
+        "image_path": "songs_images/ab67616d0000b2734992bf290fe8c9f82a0e66e4.jpg",
+        "file_path": "music_files/0fqFygWkyZWScsPF9P3Qli.m4a"
+    },
+    {
+        "id": 8,
+        "user_id": 2,
+        "song_id": "29",
+        "name": "My Playlist",
+        "song_name": "Gh\u00e9 Qua",
+        "image_path": "songs_images/ab67616d0000b273c8a72f2106b40db2c8b1afc9.jpg",
+        "file_path": "music_files/0pQ67Kp2kED4ISy1ieGPEq.m4a"
     }
 ]
