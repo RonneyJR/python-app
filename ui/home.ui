@@ -706,7 +706,7 @@ font-size: 15px</string>
   <widget class="QPushButton" name="btn_volume">
    <property name="geometry">
     <rect>
-     <x>840</x>
+     <x>800</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -733,7 +733,7 @@ background: none</string>
   <widget class="QSlider" name="slider_volume">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>900</x>
      <y>640</y>
      <width>141</width>
      <height>22</height>
@@ -992,60 +992,6 @@ background: transparent;
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_shuffle">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>620</y>
-     <width>91</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: none;
-background: none</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../img/shuffle-solid.svg</normaloff>../img/shuffle-solid.svg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>40</width>
-     <height>40</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_repeat">
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>620</y>
-     <width>91</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: none;
-background: none</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../img/repeat-solid.svg</normaloff>../img/repeat-solid.svg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>40</width>
-     <height>40</height>
-    </size>
-   </property>
-  </widget>
   <zorder>slider_duration</zorder>
   <zorder>btn_play</zorder>
   <zorder>user_btn</zorder>
@@ -1065,8 +1011,6 @@ background: none</string>
   <zorder>stackedWidget</zorder>
   <zorder>label_37</zorder>
   <zorder>btn_log_out</zorder>
-  <zorder>btn_shuffle</zorder>
-  <zorder>btn_repeat</zorder>
  </widget>
  <resources/>
  <connections/>
