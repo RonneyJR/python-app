@@ -67,11 +67,6 @@ class Login(QWidget):
         self.btn_eye = self.findChild(QPushButton, "btn_eye")
         self.remember_check = self.findChild(QCheckBox, "remember_check")
 
-        # ✅ Remember me checkbox
-        self.remember_check = QCheckBox("Remember me", self)
-        layout = self.layout() or QVBoxLayout(self)  # gắn vào layout hiện có
-        layout.addWidget(self.remember_check)
-
         # Load account.json nếu có
         self.load_account()
 
@@ -84,14 +79,15 @@ class Login(QWidget):
             self.btn_register.clicked.connect(self.show_register)
 
     def load_account(self):
-        """Load tài khoản từ file account.json nếu Remember me được chọn"""
-        if os.path.exists("account.json"):
-            with open("account.json", "r") as f:
+        try:
+            with open("data/account.json", "r") as f:
                 data = json.load(f)
-
-            self.email_input.setText(data.get("email", ""))
-            self.password_input.setText(data.get("password", ""))
-            self.remember_check.setChecked(data.get("remember", False))
+                if data.get("remember"):
+                    self.email_input.setText(data.get("email", ""))
+                    self.password_input.setText(data.get("password", ""))
+                    self.remember_check.setChecked(True)
+        except FileNotFoundError:
+            pass
 
     def show_password(self, button: QPushButton, input: QLineEdit):
         if input.echoMode() == QLineEdit.EchoMode.Password:
@@ -117,28 +113,27 @@ class Login(QWidget):
         
         user = get_user_by_email_and_password(email, password)
         if user:
+            # ✅ Nếu login thành công và có tick remember thì lưu
+            if self.remember_check.isChecked():
+                with open("data/account.json", "w") as f:
+                    json.dump({
+                        "email": email,
+                        "password": password,
+                        "remember": True
+                    }, f, indent=4)
+            else:
+                try:
+                    os.remove("data/account.json")
+                except FileNotFoundError:
+                    pass
+
+        if user:
             msg.success_message("Login", "Welcome to the system")
             self.show_home(user["id"])
             return
         
         msg.error_message("Login", "Invalid email or password")
         self.email_input.setFocus()
-
-            # Lưu account nếu Remember me
-        if self.remember_check.isChecked():
-            with open("account.json", "w") as f:
-                json.dump({
-                    "email": email,
-                    "password": password,
-                    "remember": True
-                }, f, indent=4)
-        else:
-            try:
-                os.remove("account.json")
-            except FileNotFoundError:
-                pass
-            else:
-                QMessageBox.critical(self, "Login", "Invalid email or password!")
 
     def show_register(self):
         self.register = Register()
