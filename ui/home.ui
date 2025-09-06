@@ -61,7 +61,7 @@
 }</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QLabel" name="label_4">
@@ -583,7 +583,7 @@ border:none</string>
   <widget class="QPushButton" name="btn_play">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>560</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -706,7 +706,7 @@ font-size: 15px</string>
   <widget class="QPushButton" name="btn_volume">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>790</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -733,7 +733,7 @@ background: none</string>
   <widget class="QSlider" name="slider_volume">
    <property name="geometry">
     <rect>
-     <x>870</x>
+     <x>900</x>
      <y>640</y>
      <width>141</width>
      <height>22</height>
@@ -749,7 +749,7 @@ background: none</string>
   <widget class="QPushButton" name="btn_next_song">
    <property name="geometry">
     <rect>
-     <x>670</x>
+     <x>650</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -776,7 +776,7 @@ background: none</string>
   <widget class="QPushButton" name="btn_prev_song">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>450</x>
      <y>620</y>
      <width>91</width>
      <height>51</height>
@@ -800,7 +800,7 @@ background: none</string>
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_curr_img">
+  <widget class="QLabel" name="pixma">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -824,7 +824,7 @@ QFrame:hover {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../img/z6588244063627_74df258950c533ffb1a252c12d4ad801.jpg</pixmap>
+    <pixmap>../img/Black bg.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -870,33 +870,6 @@ background: transparent;
    </property>
    <property name="scaledContents">
     <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_shuffle">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>620</y>
-     <width>91</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: none;
-background: none</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../img/shuffle-solid.svg</normaloff>../img/shuffle-solid.svg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>40</width>
-     <height>40</height>
-    </size>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_time">
@@ -1027,14 +1000,13 @@ background: transparent;
   <zorder>slider_volume</zorder>
   <zorder>btn_next_song</zorder>
   <zorder>btn_prev_song</zorder>
-  <zorder>lbl_curr_img</zorder>
+  <zorder>pixma</zorder>
   <zorder>lbl_curr_name</zorder>
   <zorder>lbl_time</zorder>
   <zorder>btn_song_list</zorder>
   <zorder>btn_history</zorder>
   <zorder>label_32</zorder>
   <zorder>label_34</zorder>
-  <zorder>btn_shuffle</zorder>
   <zorder>label_24</zorder>
   <zorder>stackedWidget</zorder>
   <zorder>label_37</zorder>
