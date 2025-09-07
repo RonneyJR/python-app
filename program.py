@@ -444,7 +444,6 @@ class PlaylistWidget(QWidget):
         remove_song_from_user_playlist_json(self.user_id, song_id)
         self.load_songs()  # Refresh the view
 
-
 class Home(QWidget):
     def __init__(self, id):
         super().__init__()
@@ -522,6 +521,7 @@ class Home(QWidget):
         self.player.playbackStateChanged.connect(self.mediaStateChanged)
         self.player.positionChanged.connect(self.positionChanged)
         self.player.durationChanged.connect(self.durationChanged)
+        self.player.mediaStatusChanged.connect(self.handle_media_status)
         
         # Initialize UI elements
         self.playBtn = self.findChild(QPushButton, "btn_play")
@@ -867,6 +867,12 @@ class Home(QWidget):
             self.playBtn.setIcon(self.pauseIcon)
         else:
             self.playBtn.setIcon(self.playIcon)
+
+    def handle_media_status(self, status):
+        from PyQt6.QtMultimedia import QMediaPlayer
+        if status == QMediaPlayer.MediaStatus.EndOfMedia:
+            # Khi bài hát kết thúc, phát bài tiếp theo
+            self.next_song()
 
     def positionChanged(self, position):
         self.durationBar.setValue(position)
